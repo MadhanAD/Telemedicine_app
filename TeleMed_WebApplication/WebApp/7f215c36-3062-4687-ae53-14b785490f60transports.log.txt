@@ -1,0 +1,8 @@
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection 8d422e98-73cf-4361-8600-eecea9f9e5e3 is New.
+SignalR.Transports.WebSocketTransport Information: 0 : CloseSocket(8d422e98-73cf-4361-8600-eecea9f9e5e3)
+SignalR.Transports.WebSocketTransport Information: 0 : Abort(8d422e98-73cf-4361-8600-eecea9f9e5e3)
+SignalR.Transports.TransportHeartBeat Information: 0 : Removing connection 8d422e98-73cf-4361-8600-eecea9f9e5e3
+SignalR.Transports.WebSocketTransport Information: 0 : End(8d422e98-73cf-4361-8600-eecea9f9e5e3)
+SignalR.Transports.WebSocketTransport Verbose: 0 : DrainWrites(8d422e98-73cf-4361-8600-eecea9f9e5e3)
+SignalR.Transports.WebSocketTransport Information: 0 : CompleteRequest (8d422e98-73cf-4361-8600-eecea9f9e5e3)
+SignalR.Transports.TransportHeartBeat Information: 0 : Dispose(). Closing all connections

@@ -1,0 +1,226 @@
+﻿@using System.Globalization
+@model DataAccess.CustomModels.GetAppDetail
+@{
+    Layout = null;
+}
+@if (Model != null && Model.appID != 0)
+{
+    var doctorName = "";
+    var age = "N.A";
+    var gender = "N.A";
+    var languages = "";
+    var specialities = "";
+
+    var appDate = "";
+    var appTime = "";
+    var rov = "N.A";
+    var chiefComplaints = "N.A";
+    var amount = "N.A";
+    var pharmacy = "N.A";
+    var cellPhone = "N.A";
+    var formattedDate = "";
+    var formattedTime = "";
+    var showTimings = "";
+    var utcdate = "";
+    appDate = Model.appDate.ToString();
+    appTime = Model.appTime.ToString();
+
+    if (Model.DoctorVM != null)
+    {
+        doctorName = Model.DoctorVM.doctorName;
+        if (Model.DoctorVM.GetAge() != null) { age = Model.DoctorVM.GetAge(); }
+        if (Model.DoctorVM.doctorGender != null)
+        {
+            gender = Model.DoctorVM.doctorGender;
+        }
+        if (Model.DoctorVM.dcellPhone != null)
+        {
+            cellPhone = Model.DoctorVM.dcellPhone;
+        }
+        if (Model.DoctorVM.languages != null)
+        {
+            foreach (var item in Model.DoctorVM.languages)
+            {
+                languages = languages + item.languageName + ",";
+
+            }
+        }
+        if (Model.DoctorVM.specialities != null)
+        {
+            foreach (var item in Model.DoctorVM.specialities)
+            {
+                specialities = specialities + item.specialityName + ",";
+
+            }
+        }
+
+
+    }
+
+
+
+    if (Model.rov != null) { rov = Model.rov; }
+    if (Model.chiefComplaints != null)
+    {
+        chiefComplaints = Model.chiefComplaints;
+    }
+    if (Model.paymentAmt != null)
+    {
+        amount = (Model.paymentAmt).ToString();
+    }
+    if (Model.PatientVM != null)
+    { pharmacy = Model.PatientVM.pharmacy; }
+
+
+    if (languages == "") { languages = "N.A"; }
+
+
+
+    if (specialities == "") { specialities = "N.A"; }
+
+
+    if (appDate != "" && appTime != "")
+    {
+        DateTime utcappdate = DateTime.Parse(appDate);
+
+        TimeSpan utcapptimings = TimeSpan.Parse(appTime);
+        DateTime result = Convert.ToDateTime(utcappdate.ToString("yyyy-MM-dd")) + utcapptimings;
+        utcdate = string.Format("{0:yyyy-MM-dd HH:mm:ss}", result);
+
+        //formattedDate = string.Format("{0:dd MMM, yyyy}", date);
+
+        formattedDate = string.Format("{0:dd MMM, yyyy hh:mm tt}", utcdate);
+
+    }
+    if (appDate != "")
+    {
+        DateTime date = DateTime.Parse(appDate);
+        //DateTime temp=DateTime.ParseExact(date.Date.ToString(), "MM/dd/yyyy", null);
+        formattedDate = string.Format("{0:dd MMM, yyyy}", date);
+        showTimings = string.Format("{0:dd/MM/yyyy}", date);
+        showTimings = showTimings.Replace("-", "/");
+
+
+    }
+    if (appTime != "")
+    {
+        TimeSpan apptimings = TimeSpan.Parse(appTime);
+        var dateTime = new DateTime(apptimings.Ticks); // Date part is 01-01-0001
+        formattedTime = dateTime.ToString("hh:mm tt", CultureInfo.InvariantCulture);
+    }
+
+    <style>
+        .user-detail {
+            /*max-width: 250px;*/
+            margin: 0 auto;
+            color: #375781;
+            height: 100px;
+        }
+
+        .img-viewdetail {
+            float: left;
+            border-radius: 50%;
+            max-width: 100px;
+        }
+
+        .img-1 {
+            float: left;
+        }
+
+            .img-1 img {
+                border-radius: 50%;
+                max-width: 100px;
+            }
+
+        .name-sec {
+            float: left;
+            margin-left: 20px;
+        }
+    </style>
+    <div class="modal-header text-center" style="background: #E4F1FE; border-bottom-color: #c3bebe;">
+            <h2 style="margin: 0; color: #337ab7"><b>Appoinment Details</b></h2>
+        </div><!--/.modal header-->
+
+
+    <div class="modal-body text-left">
+        <div class="user-detail">
+            <div class="img-1">
+                <img style="width:126px;height:126px" src="@Model.DoctorVM.ProfilePhotoBase64" alt="" class="m-b-10 img-responsive">
+            </div>
+            <div class="name-sec">
+                <h2>@doctorName</h2>
+                <p style="font-size:10px">
+                    @age<br>@*<span>Gender: @gender</span>*@
+                    Gender: @gender<br>
+                    Languages: @languages<br>
+                    Specialities: @specialities<br>
+                    Cell Phone:@cellPhone
+                </p>
+</div>
+        </div>
+
+         <div style="border-bottom: 1px Solid #c3bebe; border-top: 1px Solid #c3bebe; margin: 36px -15px 20px; padding: 10px 21px 0; ">
+            <p style="color: #375781;"><span style="width: 150px; float: left;">App. Date/Time</span><b><span id="replaceme"></span>
+                <script type="text/javascript">
+                    var fdate = showLocal('@utcdate');
+                    $("#replaceme").html(fdate);
+                </script>
+                </b></p>
+        </div>
+        @*<div style="border-bottom: 1px Solid #c3bebe; border-top: 1px Solid #c3bebe; margin: 0 -15px 20px; padding: 10px 21px 0; float: left;">
+        <p style="color: #375781;"><span style="width: 150px; float: left;">Reason of Visit</span><b>@rov</b></p>
+    </div>*@
+       
+        <p style="color: #375781;font-family:Helvetica Neue,Roboto,Arial,Droid Sans,sans-serif; font-size: 14px;font-weight: 400;line-height: 1.471;"><b>Reason of Visit:</b><br> @rov</p>
+        <p id="p_chiefComplaints" style="color: #375781;font-family:Helvetica Neue,Roboto,Arial,Droid Sans,sans-serif; font-size: 14px;font-weight: 400;line-height: 1.471;"><b>Chief Complaint:</b><br> @chiefComplaints</p>
+        <p id="p_amount" style="color: #375781;font-family:Helvetica Neue,Roboto,Arial,Droid Sans,sans-serif; font-size: 14px;font-weight: 400;line-height: 1.471;"><b>Consult Charges:</b><br> @amount</p>
+        
+        <p style="color: #375781;font-family:Helvetica Neue,Roboto,Arial,Droid Sans,sans-serif; font-size: 14px;font-weight: 400;line-height: 1.471;">
+            <b>Appointment Files:</b>
+            <div id="p_files" style="color: #375781;font-family:Helvetica Neue,Roboto,Arial,Droid Sans,sans-serif; font-size: 14px;font-weight: 400;line-height: 1.471; width:290px; height:40px;overflow:auto;">
+                <table>
+                    <tr>
+                        @if (Model.AppFiles.Count > 0)
+                        {
+                            var j = 1;
+                            foreach (var item in Model.AppFiles)
+                            {
+                                <td>
+                                    <button id="@item.fileID" type="button" class="btn btn-default" style="display:block; font-size:10px;position:relative" onclick="downloadFile(@item.fileID,@Model.PatientVM.patientid)">
+                                        File#@j;
+                                    </button>
+                                </td>
+                                j = j + 1;
+                            }
+
+                        }
+                        @if (Model.AppFiles.Count == 0)
+                        {
+                            <td>N.A</td>
+                        }
+                    </tr>
+                </table>
+            </div>
+        </p>
+           
+        @*<div style="border-bottom: 1px Solid #c3bebe; border-top: 1px Solid #c3bebe; margin: 0 -15px -11px; padding: 10px 21px 0; ">
+            <p style="color: #375781;"><span style="width: 150px; float: left;">Pharmacy</span><b>@pharmacy</b></p>
+        </div><br />*@    
+         @*<label style="color: #375781;font-family:Helvetica Neue,Roboto,Arial,Droid Sans,sans-serif; font-size: 14px;font-weight: 400;line-height: 1.471;">Cell Phone</label>
+            <input type="text" value="@cellPhone" style="max-width: 100%;" class="form-control" />*@
+        <div class="m-t-10" style="margin-top:-26px">
+            <button onclick=sendVariables($("#st").val(),$("#doctorid").val(),$("#editappid").val(),this); data-assigned-id="@doctorName" data-todo='{"docid":"$("#doctorid").val()","doctorName":"@doctorName"}' data-toggle="modal" data-target="#myModal1" id="editappointment" style="width: 100%; border-radius: 0; color: #fff; padding: 15px 5px; font-size: 20px;" type="button" class="btn btn-primary">Reschedule App</button>
+            <button onclick=completeConsult($("#editappid").val(),$("#cid").val()); data-assigned-id="@doctorName" data-todo='{"docid":"$("#doctorid").val()","doctorName":"@doctorName"}' id="cc" style="display:none;width: 100%; border-radius: 0; color: #fff; padding: 15px 5px; font-size: 20px;" type="button" class="btn btn-primary">Complete Consult</button>
+            @*<li><a href="#" class="reschedule" data-id="@item.appDate" data-toggle="modal" data-target="#myModal1" data-todo='{"docid":"@item.doctorID","doctorName":"@item.DoctorName","appID":"@item.appID","appDate":"@item.appDate"}' onclick=showDoctorTimings(@item.doctorID,@item.appID) id="@item.doctorID">Reschedule App</a></li>*@
+            <input type="text" style="display:none" id="editappid">
+            <input type="text" style="display:none" id="doctorid">
+            <input type="text" style="display:none" id="cid">
+           
+            <input type="text" style="display:none" id="st" value="@showTimings">
+           
+        </div>
+
+    </div><!--/.modal body-->
+}
+
+

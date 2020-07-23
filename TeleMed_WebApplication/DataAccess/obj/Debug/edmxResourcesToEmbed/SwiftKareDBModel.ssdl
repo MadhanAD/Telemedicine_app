@@ -1,0 +1,2041 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SwiftKareDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdminUsers">
+    <Key>
+      <PropertyRef Name="adminID" />
+    </Key>
+    <Property Name="adminID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="lastName" Type="varchar" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="roleID" Type="bigint" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+    <Property Name="userId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Alerts">
+    <Key>
+      <PropertyRef Name="alertID" />
+    </Key>
+    <Property Name="alertID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="alertText" Type="varchar" MaxLength="200" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" Nullable="false" />
+    <Property Name="read" Type="bit" />
+    <Property Name="alertFor" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Allergy">
+    <Key>
+      <PropertyRef Name="allergyID" />
+    </Key>
+    <Property Name="allergyID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="allergyName" Type="varchar" MaxLength="50" />
+    <Property Name="active" Type="bit" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AppAttachment">
+    <Key>
+      <PropertyRef Name="appAttachmentID" />
+    </Key>
+    <Property Name="appAttachmentID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="appID" Type="bigint" />
+    <Property Name="FileName" Type="varchar" MaxLength="100" />
+    <Property Name="fileContent" Type="varbinary(max)" />
+    <Property Name="fileurl" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Appointments">
+    <Key>
+      <PropertyRef Name="appID" />
+    </Key>
+    <Property Name="appID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="doctorID" Type="bigint" />
+    <Property Name="patientID" Type="bigint" />
+    <Property Name="appDate" Type="date" />
+    <Property Name="appTime" Type="time" Precision="7" />
+    <Property Name="notes" Type="varchar" MaxLength="500" />
+    <Property Name="paymentID" Type="varchar" MaxLength="100" />
+    <Property Name="paymentAmt" Type="int" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+    <Property Name="appTypeAV" Type="varchar" MaxLength="50" />
+    <Property Name="chiefComplaints" Type="varchar" MaxLength="500" />
+    <Property Name="rov" Type="varchar" MaxLength="500" />
+    <Property Name="consultationType" Type="varchar" MaxLength="50" />
+    <Property Name="appointmentStatus" Type="varchar" MaxLength="10" />
+    <Property Name="rescheduleRequiredBy" Type="varchar" MaxLength="10" />
+    <Property Name="Pharmacy_Id" Type="bigint" />
+    <Property Name="Pharmacy_Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Discriminator" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar(max)" />
+    <Property Name="State" Type="nvarchar(max)" />
+    <Property Name="PostalCode" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" />
+    <Property Name="LastName" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ChatLog">
+    <Key>
+      <PropertyRef Name="chatID" />
+    </Key>
+    <Property Name="chatID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sender" Type="varchar" MaxLength="50" />
+    <Property Name="reciever" Type="varchar" MaxLength="50" />
+    <Property Name="message" Type="varchar" MaxLength="500" />
+    <Property Name="consultID" Type="bigint" />
+    <Property Name="cd" Type="datetime" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="cityID" />
+    </Key>
+    <Property Name="cityID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cityName" Type="varchar" MaxLength="50" />
+    <Property Name="active" Type="bit" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Conditions">
+    <Key>
+      <PropertyRef Name="conditionID" />
+    </Key>
+    <Property Name="conditionID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="conditionName" Type="varchar" MaxLength="50" />
+    <Property Name="Source" Type="varchar" MaxLength="50" />
+    <Property Name="patientID" Type="bigint" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+    <Property Name="reportedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Consultation">
+    <Key>
+      <PropertyRef Name="consultID" />
+    </Key>
+    <Property Name="consultID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="appID" Type="bigint" />
+    <Property Name="duration" Type="int" />
+    <Property Name="review" Type="varchar" MaxLength="1000" />
+    <Property Name="reviewStar" Type="int" />
+    <Property Name="reviewStatus" Type="bit" />
+    <Property Name="doctorID" Type="bigint" />
+    <Property Name="patientID" Type="bigint" />
+    <Property Name="consultationRosID" Type="bigint" />
+    <Property Name="subjective" Type="varchar(max)" />
+    <Property Name="objective" Type="varchar(max)" />
+    <Property Name="assessment" Type="varchar(max)" />
+    <Property Name="plans" Type="varchar(max)" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+    <Property Name="startTime" Type="time" Precision="7" />
+    <Property Name="endTime" Type="time" Precision="7" />
+    <Property Name="seesionID" Type="varchar" MaxLength="100" />
+    <Property Name="token" Type="varchar" MaxLength="500" />
+    <Property Name="endby" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="ConsultationROS">
+    <Key>
+      <PropertyRef Name="consultationRosID" />
+    </Key>
+    <Property Name="consultationRosID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="patientID" Type="bigint" />
+    <Property Name="systemItemID" Type="bigint" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="datetime" />
+    <Property Name="md" Type="varchar" MaxLength="50" />
+    <Property Name="active" Type="bit" />
+    <Property Name="systemItemName" Type="varchar" MaxLength="50" />
+    <Property Name="consultationID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Doctor">
+    <Key>
+      <PropertyRef Name="doctorID" />
+    </Key>
+    <Property Name="doctorID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="lastName" Type="varchar" MaxLength="100" />
+    <Property Name="firstName" Type="varchar" MaxLength="100" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="secretQuestion1" Type="varchar" MaxLength="100" />
+    <Property Name="secretQuestion2" Type="varchar" MaxLength="100" />
+    <Property Name="secretQuestion3" Type="varchar" MaxLength="100" />
+    <Property Name="secretAnswer1" Type="varchar" MaxLength="100" />
+    <Property Name="secretAnswer2" Type="varchar" MaxLength="100" />
+    <Property Name="secretAnswer3" Type="varchar" MaxLength="100" />
+    <Property Name="gender" Type="varchar" MaxLength="10" />
+    <Property Name="address1" Type="varchar" MaxLength="500" />
+    <Property Name="address2" Type="varchar" MaxLength="500" />
+    <Property Name="homePhone" Type="varchar" MaxLength="50" />
+    <Property Name="cellPhone" Type="varchar" MaxLength="50" />
+    <Property Name="zip" Type="varchar" MaxLength="10" />
+    <Property Name="dob" Type="datetime" />
+    <Property Name="licenseNumber" Type="varchar" MaxLength="50" />
+    <Property Name="npiNumber" Type="varchar" MaxLength="50" />
+    <Property Name="additionalInfo" Type="varchar" MaxLength="1000" />
+    <Property Name="picture" Type="varbinary(max)" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+    <Property Name="lat" Type="float" />
+    <Property Name="lon" Type="float" />
+    <Property Name="status" Type="bit" />
+    <Property Name="publication" Type="varchar" MaxLength="1000" />
+    <Property Name="aboutMe" Type="varchar(max)" />
+    <Property Name="userId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="50" />
+    <Property Name="state" Type="varchar" MaxLength="50" />
+    <Property Name="consultCharges" Type="bigint" />
+    <Property Name="title" Type="varchar" MaxLength="10" />
+    <Property Name="suffix" Type="varchar" MaxLength="10" />
+    <Property Name="education" Type="varchar(max)" />
+    <Property Name="workexperience" Type="varchar(max)" />
+    <Property Name="specialization" Type="varchar(max)" />
+    <Property Name="timezone" Type="varchar" MaxLength="100" />
+    <Property Name="iOSToken" Type="varchar" MaxLength="1000" />
+    <Property Name="AndroidToken" Type="varchar" MaxLength="1000" />
+    <Property Name="ProfilePhotoBase64" Type="varchar(max)" />
+    <Property Name="reviewStar" Type="int" />
+    <Property Name="timezoneoffset" Type="varchar" MaxLength="10" />
+    <Property Name="deaNumber" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DoctorLanguages">
+    <Key>
+      <PropertyRef Name="doctorLanguageID" />
+    </Key>
+    <Property Name="doctorLanguageID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="languageName" Type="varchar" MaxLength="50" />
+    <Property Name="doctorID" Type="bigint" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="DoctorLicenseStates">
+    <Key>
+      <PropertyRef Name="doctorLicenseStateID" />
+    </Key>
+    <Property Name="doctorLicenseStateID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="doctorID" Type="bigint" />
+    <Property Name="stateName" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="DoctorSpeciality">
+    <Key>
+      <PropertyRef Name="doctorSpecialityID" />
+    </Key>
+    <Property Name="doctorSpecialityID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="specialityName" Type="varchar" MaxLength="50" />
+    <Property Name="doctorID" Type="bigint" />
+    <Property Name="CB" Type="varchar" MaxLength="50" />
+    <Property Name="MB" Type="varchar" MaxLength="50" />
+    <Property Name="CD" Type="datetime" />
+    <Property Name="MD" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="DoctorTimings">
+    <Key>
+      <PropertyRef Name="doctorTimingsID" />
+    </Key>
+    <Property Name="doctorTimingsID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="doctorID" Type="bigint" />
+    <Property Name="day" Type="varchar" MaxLength="10" />
+    <Property Name="from" Type="time" Precision="7" />
+    <Property Name="to" Type="time" Precision="7" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+    <Property Name="repeatTimings" Type="bit" />
+    <Property Name="utcDay" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="DocumentType">
+    <Key>
+      <PropertyRef Name="docTypeID" />
+    </Key>
+    <Property Name="docTypeID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="typeName" Type="varchar" MaxLength="50" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Drug">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RXCUI(DrugCoded)" Type="bigint" Nullable="false" />
+    <Property Name="GENERIC_RXCUI" Type="bigint" />
+    <Property Name="TTY(DrugDBCodeQualifier)" Type="varchar" MaxLength="50" />
+    <Property Name="FULL_NAME" Type="varchar" MaxLength="500" />
+    <Property Name="RXN_DOSE_FORM" Type="varchar" MaxLength="50" />
+    <Property Name="FULL_GENERIC_NAME" Type="varchar" MaxLength="500" />
+    <Property Name="BRAND_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="DISPLAY_NAME" Type="varchar" MaxLength="100" />
+    <Property Name="ROUTE" Type="nvarchar" MaxLength="50" />
+    <Property Name="NEW_DOSE_FORM" Type="varchar" MaxLength="50" />
+    <Property Name="STRENGTH" Type="varchar" MaxLength="50" />
+    <Property Name="SUPPRESS_FOR" Type="varchar" MaxLength="50" />
+    <Property Name="DISPLAY_NAME_SYNONYM" Type="varchar" MaxLength="100" />
+    <Property Name="IS_RETIRED" Type="bit" />
+    <Property Name="SXDG_RXCUI" Type="bigint" />
+    <Property Name="SXDG_TTY" Type="varchar" MaxLength="50" />
+    <Property Name="SXDG_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="PSN(DrugDescription)" Type="varchar" MaxLength="250" />
+    <Property Name="NCPDP_Quantity_Term" Type="varchar" MaxLength="50" />
+    <Property Name="Potency Unit Code" Type="varchar" MaxLength="50" />
+    <Property Name="DEA_Schedule_#" Type="bigint" />
+    <Property Name="DEA_Schedule" Type="varchar" MaxLength="50" />
+    <Property Name="Ingredients" Type="varchar" MaxLength="100" />
+    <Property Name="Drug Interaction" Type="varchar(max)" />
+    <Property Name="Unit Source Code" Type="varchar" MaxLength="50" />
+    <Property Name="Code List Qualifier" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EPrescriptinXMLDate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="XMLDate" Type="varchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="AppId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="FamilyHXItems">
+    <Key>
+      <PropertyRef Name="familyHXItemsID" />
+    </Key>
+    <Property Name="familyHXItemsID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="FavouriteDoctor">
+    <Key>
+      <PropertyRef Name="favID" />
+    </Key>
+    <Property Name="favID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="doctorID" Type="bigint" />
+    <Property Name="patientID" Type="bigint" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="FileType">
+    <Key>
+      <PropertyRef Name="fileTypeID" />
+    </Key>
+    <Property Name="fileTypeID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="typeName" Type="varchar" MaxLength="50" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Frequency">
+    <Key>
+      <PropertyRef Name="frequencyID" />
+    </Key>
+    <Property Name="frequencyID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Languages">
+    <Key>
+      <PropertyRef Name="languageID" />
+    </Key>
+    <Property Name="languageID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="languageName" Type="varchar" MaxLength="50" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="LifeStyleQuestions">
+    <Key>
+      <PropertyRef Name="questionID" />
+    </Key>
+    <Property Name="questionID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="question" Type="varchar" MaxLength="200" />
+    <Property Name="active" Type="bit" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+  </EntityType>
+  <EntityType Name="LiveReqLog">
+    <Key>
+      <PropertyRef Name="LiveReqID" />
+    </Key>
+    <Property Name="LiveReqID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="patientID" Type="bigint" />
+    <Property Name="doctorID" Type="bigint" />
+    <Property Name="message" Type="varchar" MaxLength="500" />
+    <Property Name="From" Type="varchar" MaxLength="500" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Medications">
+    <Key>
+      <PropertyRef Name="medicationID" />
+    </Key>
+    <Property Name="medicationID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="medicineName" Type="varchar" MaxLength="50" />
+    <Property Name="frequency" Type="varchar" MaxLength="50" />
+    <Property Name="source" Type="varchar" MaxLength="50" />
+    <Property Name="patientId" Type="bigint" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+    <Property Name="reportedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Medicine">
+    <Key>
+      <PropertyRef Name="medicineID" />
+    </Key>
+    <Property Name="medicineID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="medicineName" Type="varchar" MaxLength="50" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="MessageFiles">
+    <Key>
+      <PropertyRef Name="msgFileID" />
+    </Key>
+    <Property Name="msgFileID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="msgID" Type="bigint" />
+    <Property Name="fileContent" Type="varbinary(max)" />
+    <Property Name="fileName" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="msgID" />
+    </Key>
+    <Property Name="msgID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mesage" Type="varchar(max)" />
+    <Property Name="from" Type="varchar" MaxLength="50" />
+    <Property Name="to" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="varchar" MaxLength="10" />
+    <Property Name="isRead" Type="bit" />
+    <Property Name="replyLink" Type="bigint" />
+    <Property Name="subject" Type="varchar" MaxLength="100" />
+    <Property Name="senderName" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="hasAttachment" Type="bit" />
+  </EntityType>
+  <EntityType Name="Modules">
+    <Key>
+      <PropertyRef Name="moduleID" />
+    </Key>
+    <Property Name="moduleID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="moduleName" Type="varchar" MaxLength="50" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="newsID" />
+    </Key>
+    <Property Name="newsID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="newsTitle" Type="varchar(max)" />
+    <Property Name="newsDetail" Type="varchar(max)" />
+    <Property Name="newsThumbnail" Type="image" />
+    <Property Name="newsImage" Type="image" />
+    <Property Name="cb" Type="varchar" MaxLength="500" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="500" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+    <Property Name="newsThumbnailBase64" Type="varchar(max)" />
+    <Property Name="newsImageBase64" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="patientID" />
+    </Key>
+    <Property Name="patientID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstName" Type="varchar" MaxLength="100" />
+    <Property Name="lastName" Type="varchar" MaxLength="100" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="secretQuestion1" Type="varchar" MaxLength="100" />
+    <Property Name="secretQuestion2" Type="varchar" MaxLength="100" />
+    <Property Name="secretQuestion3" Type="varchar" MaxLength="100" />
+    <Property Name="secretAnswer1" Type="varchar" MaxLength="100" />
+    <Property Name="secretAnswer2" Type="varchar" MaxLength="100" />
+    <Property Name="secretAnswer3" Type="varchar" MaxLength="100" />
+    <Property Name="gender" Type="varchar" MaxLength="10" />
+    <Property Name="address1" Type="varchar" MaxLength="500" />
+    <Property Name="address2" Type="varchar" MaxLength="500" />
+    <Property Name="homePhone" Type="varchar" MaxLength="50" />
+    <Property Name="cellPhone" Type="varchar" MaxLength="50" />
+    <Property Name="zip" Type="varchar" MaxLength="10" />
+    <Property Name="dob" Type="datetime" />
+    <Property Name="languages" Type="varchar" MaxLength="100" />
+    <Property Name="picture" Type="varbinary(max)" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+    <Property Name="userId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="pharmacy" Type="varchar" MaxLength="1000" />
+    <Property Name="pharmacyid" Type="bigint" />
+    <Property Name="title" Type="varchar" MaxLength="10" />
+    <Property Name="height" Type="int" />
+    <Property Name="weight" Type="int" />
+    <Property Name="suffix" Type="varchar" MaxLength="10" />
+    <Property Name="timezone" Type="varchar" MaxLength="100" />
+    <Property Name="city" Type="varchar" MaxLength="50" />
+    <Property Name="state" Type="varchar" MaxLength="50" />
+    <Property Name="lat" Type="float" />
+    <Property Name="lon" Type="float" />
+    <Property Name="iOSToken" Type="varchar" MaxLength="1000" />
+    <Property Name="AndroidToken" Type="varchar" MaxLength="1000" />
+    <Property Name="DoseSpotPatientId" Type="varchar" MaxLength="10" />
+    <Property Name="pharmacyaddress" Type="varchar" MaxLength="100" />
+    <Property Name="pharmacycitystatezip" Type="varchar" MaxLength="100" />
+    <Property Name="ProfilePhotoBase64" Type="varchar(max)" />
+    <Property Name="timezoneoffset" Type="varchar" MaxLength="10" />
+    <Property Name="DoctorId" Type="bigint" />
+    <Property Name="LocationId" Type="int" />
+    <Property Name="ReminderId" Type="int" />
+    <Property Name="PaymentId" Type="int" />
+    <Property Name="LocationName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PatientAllergies">
+    <Key>
+      <PropertyRef Name="allergiesID" />
+    </Key>
+    <Property Name="allergiesID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="allergyName" Type="varchar" MaxLength="50" />
+    <Property Name="severity" Type="varchar" MaxLength="50" />
+    <Property Name="reaction" Type="varchar" MaxLength="50" />
+    <Property Name="source" Type="varchar" MaxLength="50" />
+    <Property Name="patientID" Type="bigint" />
+    <Property Name="status" Type="varchar" MaxLength="10" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+    <Property Name="reportedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PatientFamilyHX">
+    <Key>
+      <PropertyRef Name="fhxid" />
+    </Key>
+    <Property Name="fhxid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="relationship" Type="varchar" MaxLength="50" />
+    <Property Name="patientID" Type="bigint" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="PatientLanguages">
+    <Key>
+      <PropertyRef Name="patientLanguageID" />
+    </Key>
+    <Property Name="patientLanguageID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="languageName" Type="varchar" MaxLength="50" />
+    <Property Name="patientID" Type="bigint" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="PatientLifeStyle">
+    <Key>
+      <PropertyRef Name="patientlifestyleID" />
+    </Key>
+    <Property Name="patientlifestyleID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="patientID" Type="bigint" />
+    <Property Name="question" Type="varchar" MaxLength="50" />
+    <Property Name="answer" Type="varchar" MaxLength="50" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="PatientSurgeries">
+    <Key>
+      <PropertyRef Name="surgeryID" />
+    </Key>
+    <Property Name="surgeryID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bodyPart" Type="varchar" MaxLength="100" />
+    <Property Name="active" Type="bit" />
+    <Property Name="patientID" Type="bigint" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="reportedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PatientSystems">
+    <Key>
+      <PropertyRef Name="systemID" />
+    </Key>
+    <Property Name="systemID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="systemName" Type="varchar" MaxLength="50" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Pharmacy">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="APP" Type="nvarchar" MaxLength="50" />
+    <Property Name="NCPDP" Type="nvarchar" MaxLength="50" />
+    <Property Name="NCPDP_safe" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mutually_Defined_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mutually_Defined_ID_safe" Type="nvarchar" MaxLength="50" />
+    <Property Name="NPI" Type="nvarchar" MaxLength="50" />
+    <Property Name="NPI_safe" Type="nvarchar" MaxLength="50" />
+    <Property Name="Business_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address_Line_1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address_Line_2" Type="nvarchar" MaxLength="100" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZipCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZipCode_safe" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country_Code&#xD;&#xA;1" Type="bit" />
+    <Property Name="Latitude" Type="bigint" />
+    <Property Name="Longitude" Type="bigint" />
+    <Property Name="Pharmacy_Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pharmacy_Phone_safe" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pharmacy_Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pharmacy_Fax_safe" Type="nvarchar" MaxLength="50" />
+    <Property Name="Types" Type="nvarchar" MaxLength="50" />
+    <Property Name="Script_Msg_Accepted" Type="nvarchar" MaxLength="50" />
+    <Property Name="Specialized_Msg_Accepted" Type="nvarchar" MaxLength="50" />
+    <Property Name="Connectivity_Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Accept_TSO" Type="bit" />
+    <Property Name="DEA_Audit_Exp" Type="datetime" />
+    <Property Name="Test_Pharmacy" Type="bit" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="Deleted" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PrescriptionFrequency">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FrequencyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Reaction">
+    <Key>
+      <PropertyRef Name="reactionID" />
+    </Key>
+    <Property Name="reactionID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="reactionName" Type="varchar" MaxLength="50" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Relationship">
+    <Key>
+      <PropertyRef Name="relationshipID" />
+    </Key>
+    <Property Name="relationshipID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="activre" Type="bit" />
+  </EntityType>
+  <EntityType Name="RoleModules">
+    <Key>
+      <PropertyRef Name="roleModuleID" />
+    </Key>
+    <Property Name="roleModuleID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="moduleID" Type="bigint" />
+    <Property Name="roleID" Type="bigint" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="roleID" />
+    </Key>
+    <Property Name="roleID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="roleName" Type="varchar" MaxLength="50" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="ROV">
+    <Key>
+      <PropertyRef Name="rovID" />
+    </Key>
+    <Property Name="rovID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="SecretQuestions">
+    <Key>
+      <PropertyRef Name="secretQuestionID" />
+    </Key>
+    <Property Name="secretQuestionID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="secretQuestionn" Type="varchar" MaxLength="200" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Severity">
+    <Key>
+      <PropertyRef Name="severityID" />
+    </Key>
+    <Property Name="severityID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="severityName" Type="varchar" MaxLength="50" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Speciallity">
+    <Key>
+      <PropertyRef Name="speciallityID" />
+    </Key>
+    <Property Name="speciallityID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="specialityName" Type="varchar" MaxLength="50" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="States">
+    <Key>
+      <PropertyRef Name="stateID" />
+    </Key>
+    <Property Name="stateID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="stateName" Type="varchar" MaxLength="50" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="SuffixMaster">
+    <Key>
+      <PropertyRef Name="SuffixID" />
+    </Key>
+    <Property Name="SuffixID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SuffixName" Type="varchar" MaxLength="50" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Surgery">
+    <Key>
+      <PropertyRef Name="surgeryID" />
+    </Key>
+    <Property Name="surgeryID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="surgeryName" Type="varchar" MaxLength="50" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="SystemItemss">
+    <Key>
+      <PropertyRef Name="systemItemID" />
+    </Key>
+    <Property Name="systemItemID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="systemItemName" Type="varchar" MaxLength="50" />
+    <Property Name="systemID" Type="bigint" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="TimeZones">
+    <Key>
+      <PropertyRef Name="zoneID" />
+    </Key>
+    <Property Name="zoneID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="timeZonee" Type="varchar" MaxLength="100" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+    <Property Name="zoneName" Type="varchar" MaxLength="500" />
+    <Property Name="zoneOffset" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="TitleMaster">
+    <Key>
+      <PropertyRef Name="titleID" />
+    </Key>
+    <Property Name="titleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="titleName" Type="varchar" MaxLength="50" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="UserFiles">
+    <Key>
+      <PropertyRef Name="fileID" />
+    </Key>
+    <Property Name="fileID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="documentType" Type="varchar" MaxLength="50" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="nchar" MaxLength="10" />
+    <Property Name="md" Type="datetime" />
+    <Property Name="active" Type="bit" />
+    <Property Name="FileName" Type="varchar" MaxLength="50" />
+    <Property Name="fileContent" Type="varbinary(max)" />
+    <Property Name="patientID" Type="bigint" />
+    <Property Name="doctorID" Type="bigint" />
+    <Property Name="AppID" Type="bigint" />
+    <Property Name="fileContentBase64" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="VCLog">
+    <Key>
+      <PropertyRef Name="VCLogID" />
+    </Key>
+    <Property Name="VCLogID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="consultID" Type="bigint" />
+    <Property Name="duration" Type="int" />
+    <Property Name="endBy" Type="varchar" MaxLength="50" />
+    <Property Name="endReason" Type="varchar" MaxLength="100" />
+    <Property Name="logBy" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Zips">
+    <Key>
+      <PropertyRef Name="zipID" />
+    </Key>
+    <Property Name="zipID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="zipName" Type="varchar" MaxLength="50" />
+    <Property Name="active" Type="bit" />
+    <Property Name="cb" Type="varchar" MaxLength="50" />
+    <Property Name="cd" Type="datetime" />
+    <Property Name="mb" Type="varchar" MaxLength="50" />
+    <Property Name="md" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_AdminUsers_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="AdminUsers" Type="Self.AdminUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="roleID" />
+      </Principal>
+      <Dependent Role="AdminUsers">
+        <PropertyRef Name="roleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Allergies_Patient">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+    <End Role="PatientAllergies" Type="Self.PatientAllergies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="patientID" />
+      </Principal>
+      <Dependent Role="PatientAllergies">
+        <PropertyRef Name="patientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppAttachment_Appointments">
+    <End Role="Appointments" Type="Self.Appointments" Multiplicity="0..1" />
+    <End Role="AppAttachment" Type="Self.AppAttachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Appointments">
+        <PropertyRef Name="appID" />
+      </Principal>
+      <Dependent Role="AppAttachment">
+        <PropertyRef Name="appID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointments_Doctor">
+    <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
+    <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctor">
+        <PropertyRef Name="doctorID" />
+      </Principal>
+      <Dependent Role="Appointments">
+        <PropertyRef Name="doctorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointments_Patient">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+    <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="patientID" />
+      </Principal>
+      <Dependent Role="Appointments">
+        <PropertyRef Name="patientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Conditions_Patient">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+    <End Role="Conditions" Type="Self.Conditions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="patientID" />
+      </Principal>
+      <Dependent Role="Conditions">
+        <PropertyRef Name="patientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Consultation_Appointments">
+    <End Role="Appointments" Type="Self.Appointments" Multiplicity="0..1" />
+    <End Role="Consultation" Type="Self.Consultation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Appointments">
+        <PropertyRef Name="appID" />
+      </Principal>
+      <Dependent Role="Consultation">
+        <PropertyRef Name="appID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Consultation_ConsultationROS">
+    <End Role="ConsultationROS" Type="Self.ConsultationROS" Multiplicity="0..1" />
+    <End Role="Consultation" Type="Self.Consultation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ConsultationROS">
+        <PropertyRef Name="consultationRosID" />
+      </Principal>
+      <Dependent Role="Consultation">
+        <PropertyRef Name="consultationRosID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Consultation_Doctor">
+    <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
+    <End Role="Consultation" Type="Self.Consultation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctor">
+        <PropertyRef Name="doctorID" />
+      </Principal>
+      <Dependent Role="Consultation">
+        <PropertyRef Name="doctorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Consultation_Patient">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+    <End Role="Consultation" Type="Self.Consultation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="patientID" />
+      </Principal>
+      <Dependent Role="Consultation">
+        <PropertyRef Name="patientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConsultationROS_Patient">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+    <End Role="ConsultationROS" Type="Self.ConsultationROS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="patientID" />
+      </Principal>
+      <Dependent Role="ConsultationROS">
+        <PropertyRef Name="patientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConsultationROS_SystemItems">
+    <End Role="SystemItemss" Type="Self.SystemItemss" Multiplicity="0..1" />
+    <End Role="ConsultationROS" Type="Self.ConsultationROS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemItemss">
+        <PropertyRef Name="systemItemID" />
+      </Principal>
+      <Dependent Role="ConsultationROS">
+        <PropertyRef Name="systemItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoctorLanguages_Doctor">
+    <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
+    <End Role="DoctorLanguages" Type="Self.DoctorLanguages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctor">
+        <PropertyRef Name="doctorID" />
+      </Principal>
+      <Dependent Role="DoctorLanguages">
+        <PropertyRef Name="doctorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoctorLicenseStates_Doctor">
+    <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
+    <End Role="DoctorLicenseStates" Type="Self.DoctorLicenseStates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctor">
+        <PropertyRef Name="doctorID" />
+      </Principal>
+      <Dependent Role="DoctorLicenseStates">
+        <PropertyRef Name="doctorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoctorSpeciality_Doctor">
+    <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
+    <End Role="DoctorSpeciality" Type="Self.DoctorSpeciality" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctor">
+        <PropertyRef Name="doctorID" />
+      </Principal>
+      <Dependent Role="DoctorSpeciality">
+        <PropertyRef Name="doctorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoctorTimings_Doctor">
+    <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
+    <End Role="DoctorTimings" Type="Self.DoctorTimings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctor">
+        <PropertyRef Name="doctorID" />
+      </Principal>
+      <Dependent Role="DoctorTimings">
+        <PropertyRef Name="doctorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FamilyHX_Patient">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+    <End Role="PatientFamilyHX" Type="Self.PatientFamilyHX" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="patientID" />
+      </Principal>
+      <Dependent Role="PatientFamilyHX">
+        <PropertyRef Name="patientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Medications_Patient">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+    <End Role="Medications" Type="Self.Medications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="patientID" />
+      </Principal>
+      <Dependent Role="Medications">
+        <PropertyRef Name="patientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleModules_Modules">
+    <End Role="Modules" Type="Self.Modules" Multiplicity="0..1" />
+    <End Role="RoleModules" Type="Self.RoleModules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modules">
+        <PropertyRef Name="moduleID" />
+      </Principal>
+      <Dependent Role="RoleModules">
+        <PropertyRef Name="moduleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleModules_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="RoleModules" Type="Self.RoleModules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="roleID" />
+      </Principal>
+      <Dependent Role="RoleModules">
+        <PropertyRef Name="roleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Surgeries_Patient">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+    <End Role="PatientSurgeries" Type="Self.PatientSurgeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="patientID" />
+      </Principal>
+      <Dependent Role="PatientSurgeries">
+        <PropertyRef Name="patientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemItems_Systems">
+    <End Role="PatientSystems" Type="Self.PatientSystems" Multiplicity="0..1" />
+    <End Role="SystemItemss" Type="Self.SystemItemss" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PatientSystems">
+        <PropertyRef Name="systemID" />
+      </Principal>
+      <Dependent Role="SystemItemss">
+        <PropertyRef Name="systemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserFiles_Doctor">
+    <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
+    <End Role="UserFiles" Type="Self.UserFiles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctor">
+        <PropertyRef Name="doctorID" />
+      </Principal>
+      <Dependent Role="UserFiles">
+        <PropertyRef Name="doctorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserFiles_Patient">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+    <End Role="UserFiles" Type="Self.UserFiles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="patientID" />
+      </Principal>
+      <Dependent Role="UserFiles">
+        <PropertyRef Name="patientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SearchDoctorJSON" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="language" Type="varchar" Mode="In" />
+    <Parameter Name="spec" Type="varchar" Mode="In" />
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="appDay" Type="varchar" Mode="In" />
+    <Parameter Name="appTime" Type="time" Mode="In" />
+    <Parameter Name="gender" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SearchDoctorWithShift" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="language" Type="varchar" Mode="In" />
+    <Parameter Name="spec" Type="varchar" Mode="In" />
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="appDay" Type="varchar" Mode="In" />
+    <Parameter Name="fromTime" Type="time" Mode="In" />
+    <Parameter Name="toTime" Type="time" Mode="In" />
+    <Parameter Name="gender" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="lastName" Type="varchar" Mode="In" />
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="email" Type="varchar" Mode="In" />
+    <Parameter Name="UserId" Type="nvarchar" Mode="In" />
+    <Parameter Name="CB" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddAlerts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="alertText" Type="varchar" Mode="In" />
+    <Parameter Name="alertFor" Type="varchar" Mode="In" />
+    <Parameter Name="CB" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddAllergy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="allergyName" Type="varchar" Mode="In" />
+    <Parameter Name="CB" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddAppointment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="doctorID" Type="bigint" Mode="In" />
+    <Parameter Name="patientID" Type="bigint" Mode="In" />
+    <Parameter Name="appDate" Type="date" Mode="In" />
+    <Parameter Name="appTime" Type="time" Mode="In" />
+    <Parameter Name="cb" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddCity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cityName" Type="varchar" Mode="In" />
+    <Parameter Name="CB" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddConsultReview" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="consultID" Type="bigint" Mode="In" />
+    <Parameter Name="reviewText" Type="varchar" Mode="In" />
+    <Parameter Name="star" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_AddDoctor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="CB" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddDocumentType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="typeName" Type="varchar" Mode="In" />
+    <Parameter Name="CB" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_addextendedproc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="functname" Type="nvarchar" Mode="In" />
+    <Parameter Name="dllname" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddLanguage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="languageName" Type="varchar" Mode="In" />
+    <Parameter Name="CB" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddMedicine" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="medicineName" Type="varchar" Mode="In" />
+    <Parameter Name="CB" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddNewss" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="newstitle" Type="varchar(max)" Mode="In" />
+    <Parameter Name="newsdetail" Type="varchar(max)" Mode="In" />
+    <Parameter Name="newsthumbnail" Type="image" Mode="In" />
+    <Parameter Name="newsImage" Type="image" Mode="In" />
+    <Parameter Name="CB" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddPatient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="CB" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddPatientAllergy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="allergyName" Type="varchar" Mode="In" />
+    <Parameter Name="Severity" Type="varchar" Mode="In" />
+    <Parameter Name="Reaction" Type="varchar" Mode="In" />
+    <Parameter Name="patientID" Type="bigint" Mode="In" />
+    <Parameter Name="cb" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddPatientConditions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="conditionName" Type="varchar" Mode="In" />
+    <Parameter Name="Source" Type="varchar" Mode="In" />
+    <Parameter Name="patientID" Type="bigint" Mode="In" />
+    <Parameter Name="cb" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddPatientMedications" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="medicineName" Type="varchar" Mode="In" />
+    <Parameter Name="frequency" Type="varchar" Mode="In" />
+    <Parameter Name="source" Type="varchar" Mode="In" />
+    <Parameter Name="patientId" Type="bigint" Mode="In" />
+    <Parameter Name="cb" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddPatientROV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="appID" Type="bigint" Mode="In" />
+    <Parameter Name="rov" Type="varchar" Mode="In" />
+    <Parameter Name="mb" Type="varchar" Mode="In" />
+    <Parameter Name="md" Type="datetime" Mode="In" />
+    <Parameter Name="notes" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="roleName" Type="varchar" Mode="In" />
+    <Parameter Name="CB" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddSpeciality" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="specialityName" Type="varchar" Mode="In" />
+    <Parameter Name="CB" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddStates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="stateName" Type="varchar" Mode="In" />
+    <Parameter Name="CB" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddSystemItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sysitemName" Type="varchar" Mode="In" />
+    <Parameter Name="sysid" Type="bigint" Mode="In" />
+    <Parameter Name="CB" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddSystems" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="systemName" Type="varchar" Mode="In" />
+    <Parameter Name="CB" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddUSerFiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="documentType" Type="varchar" Mode="In" />
+    <Parameter Name="patientID" Type="bigint" Mode="In" />
+    <Parameter Name="doctorID" Type="bigint" Mode="In" />
+    <Parameter Name="cb" Type="varchar" Mode="In" />
+    <Parameter Name="FileName" Type="varchar" Mode="In" />
+    <Parameter Name="fileContent" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="fileurl" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_AddZipCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="zipName" Type="varchar" Mode="In" />
+    <Parameter Name="CB" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="SP_AppointmentReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="datefrom" Type="datetime" Mode="In" />
+    <Parameter Name="dateto" Type="datetime" Mode="In" />
+    <Parameter Name="patientID" Type="bigint" Mode="In" />
+    <Parameter Name="docID" Type="bigint" Mode="In" />
+    <Parameter Name="criteria" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_ApproveConsultation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="bigint" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_ApproveDoctor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="bigint" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="SP_CancelRescheduleRequest" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="doctorID" Type="bigint" Mode="In" />
+    <Parameter Name="appID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_CheckForDuplicatePatient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="firstname" Type="varchar" Mode="In" />
+    <Parameter Name="lastname" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_ConsultationReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="datefrom" Type="datetime" Mode="In" />
+    <Parameter Name="dateto" Type="datetime" Mode="In" />
+    <Parameter Name="patientID" Type="bigint" Mode="In" />
+    <Parameter Name="docID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="adminID" Type="bigint" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteAlerts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="alertID" Type="bigint" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteAllergy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="allergyID" Type="bigint" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteCity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cityID" Type="bigint" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteDoctor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="bigint" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteDocumentType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="docTypeID" Type="bigint" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteLanguage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="languageID" Type="bigint" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteMedicine" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="medicineID" Type="bigint" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="newsID" Type="bigint" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_DeletePatient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="bigint" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="SP_DeletePatientAllergy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="patientAllergyId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_DeletePatientConditions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="conditionId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_DeletePatientMedications" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="medicationId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="roleID" Type="bigint" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteSpeciality" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="speciallityID" Type="bigint" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteStates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="stateID" Type="bigint" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteSystemItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sysitemID" Type="bigint" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteSystems" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="systemID" Type="bigint" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteZipCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="zipID" Type="bigint" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="SP_DoctorReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="datefrom" Type="datetime" Mode="In" />
+    <Parameter Name="dateto" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_dropextendedproc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="functname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_FetchDoctorTimings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="docID" Type="bigint" Mode="In" />
+    <Parameter Name="appDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="SP_GetAppDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="appID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetCancelledAppforDoctor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="doctorID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetCancelledAppforPatient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="patientID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetConsultationDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="consultID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetDcotorAllConsultations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="doctorID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetDcotorConsultations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="doctorID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetDoctorInfoforAppointment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="doctorID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetDrugSmartSearch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="P_Name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GetParmacyAddress" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="City" Type="nvarchar" Mode="In" />
+    <Parameter Name="State" Type="nvarchar" Mode="In" />
+    <Parameter Name="Zip" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GetParmacySmartSearch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="P_Name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GetPatientAllConsultations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="patientID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetPatientAllergies" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="patientID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetPatientConditions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="patientID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetPatientConsultations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="patientID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetPatientMedication" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="patientID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetPatientSurgeries" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="patientID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetPendingAppforDoctor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="doctorID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetPendingAppforPatient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="patientID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetRescheduleAppforDoctor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="doctorID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetRescheduleAppforPatient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="patientID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetROS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="consultID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetUpcomingAppforDoctor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="doctorID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetUpcomingAppforPatient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="patientID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_PatientReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="datefrom" Type="datetime" Mode="In" />
+    <Parameter Name="dateto" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_RescheduleRequest" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="doctorID" Type="bigint" Mode="In" />
+    <Parameter Name="appID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sp_ResetDoctorPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="bigint" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_ResetPatientPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="bigint" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="SP_SearchDoctor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="language" Type="varchar" Mode="In" />
+    <Parameter Name="spec" Type="varchar" Mode="In" />
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="appDay" Type="varchar" Mode="In" />
+    <Parameter Name="appTime" Type="time" Mode="In" />
+    <Parameter Name="gender" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_SelectAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_SelectAlerts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_SelectAllergy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_SelectCity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_SelectConsultation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_SelectDoctor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_SelectDoctorsForApproval" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_SelectDocType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_SelectLanguages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_SelectMedicine" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_SelectNewss" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_SelectPatient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_SelectRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_SelectSpeciality" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_SelectStates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_SelectSystemItems" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_SelectSystems" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectTransactionHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="datefrom" Type="datetime" Mode="In" />
+    <Parameter Name="dateto" Type="datetime" Mode="In" />
+    <Parameter Name="patientID" Type="bigint" Mode="In" />
+    <Parameter Name="docID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_SelectZipCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_UpdateAlerts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="alertID" Type="bigint" Mode="In" />
+    <Parameter Name="alertText" Type="varchar" Mode="In" />
+    <Parameter Name="alertFor" Type="varchar" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateAllergy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="allergyID" Type="bigint" Mode="In" />
+    <Parameter Name="allergyName" Type="varchar" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateCity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cityID" Type="bigint" Mode="In" />
+    <Parameter Name="cityName" Type="varchar" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateDoctor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="bigint" Mode="In" />
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateDocumentType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="docTypeID" Type="bigint" Mode="In" />
+    <Parameter Name="typeName" Type="varchar" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateLanguages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="languageID" Type="bigint" Mode="In" />
+    <Parameter Name="languageName" Type="varchar" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateMedicine" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="medicineID" Type="bigint" Mode="In" />
+    <Parameter Name="medicineName" Type="varchar" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="newsID" Type="bigint" Mode="In" />
+    <Parameter Name="newstitle" Type="varchar(max)" Mode="In" />
+    <Parameter Name="newsdetail" Type="varchar(max)" Mode="In" />
+    <Parameter Name="newsthumbnail" Type="image" Mode="In" />
+    <Parameter Name="newsImage" Type="image" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdatePatient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="bigint" Mode="In" />
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="SP_UpdatePatientAllergy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="patientallergyid" Type="bigint" Mode="In" />
+    <Parameter Name="allergyName" Type="varchar" Mode="In" />
+    <Parameter Name="Severity" Type="varchar" Mode="In" />
+    <Parameter Name="Reaction" Type="varchar" Mode="In" />
+    <Parameter Name="mb" Type="varchar" Mode="In" />
+    <Parameter Name="md" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="SP_UpdatePatientConditions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="conditionId" Type="bigint" Mode="In" />
+    <Parameter Name="conditionName" Type="varchar" Mode="In" />
+    <Parameter Name="Source" Type="varchar" Mode="In" />
+    <Parameter Name="patientID" Type="bigint" Mode="In" />
+    <Parameter Name="mb" Type="varchar" Mode="In" />
+    <Parameter Name="reportedDate" Type="datetime" Mode="In" />
+    <Parameter Name="md" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="SP_UpdatePatientMedications" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="medicineId" Type="bigint" Mode="In" />
+    <Parameter Name="medicineName" Type="varchar" Mode="In" />
+    <Parameter Name="frequency" Type="varchar" Mode="In" />
+    <Parameter Name="mb" Type="varchar" Mode="In" />
+    <Parameter Name="md" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateSpeciality" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="speciallityID" Type="bigint" Mode="In" />
+    <Parameter Name="specialityName" Type="varchar" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateStates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="stateID" Type="bigint" Mode="In" />
+    <Parameter Name="stateName" Type="varchar" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateSystemItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sysitemID" Type="bigint" Mode="In" />
+    <Parameter Name="sysID" Type="bigint" Mode="In" />
+    <Parameter Name="sysitemName" Type="varchar" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateSystems" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="systemID" Type="bigint" Mode="In" />
+    <Parameter Name="systemName" Type="varchar" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateZipCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="zipID" Type="bigint" Mode="In" />
+    <Parameter Name="zipName" Type="varchar" Mode="In" />
+    <Parameter Name="MB" Type="varchar" Mode="In" />
+    <Parameter Name="MD" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_ViewPatientProfile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="patID" Type="bigint" Mode="In" />
+  </Function>
+  <EntityContainer Name="SwiftKareDBModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdminUsers" EntityType="Self.AdminUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Alerts" EntityType="Self.Alerts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Allergy" EntityType="Self.Allergy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AppAttachment" EntityType="Self.AppAttachment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Appointments" EntityType="Self.Appointments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChatLog" EntityType="Self.ChatLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Conditions" EntityType="Self.Conditions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Consultation" EntityType="Self.Consultation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ConsultationROS" EntityType="Self.ConsultationROS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doctor" EntityType="Self.Doctor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DoctorLanguages" EntityType="Self.DoctorLanguages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DoctorLicenseStates" EntityType="Self.DoctorLicenseStates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DoctorSpeciality" EntityType="Self.DoctorSpeciality" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DoctorTimings" EntityType="Self.DoctorTimings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentType" EntityType="Self.DocumentType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Drug" EntityType="Self.Drug" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EPrescriptinXMLDate" EntityType="Self.EPrescriptinXMLDate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FamilyHXItems" EntityType="Self.FamilyHXItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FavouriteDoctor" EntityType="Self.FavouriteDoctor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FileType" EntityType="Self.FileType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Frequency" EntityType="Self.Frequency" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Languages" EntityType="Self.Languages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LifeStyleQuestions" EntityType="Self.LifeStyleQuestions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LiveReqLog" EntityType="Self.LiveReqLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Medications" EntityType="Self.Medications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Medicine" EntityType="Self.Medicine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MessageFiles" EntityType="Self.MessageFiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Modules" EntityType="Self.Modules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PatientAllergies" EntityType="Self.PatientAllergies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PatientFamilyHX" EntityType="Self.PatientFamilyHX" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PatientLanguages" EntityType="Self.PatientLanguages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PatientLifeStyle" EntityType="Self.PatientLifeStyle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PatientSurgeries" EntityType="Self.PatientSurgeries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PatientSystems" EntityType="Self.PatientSystems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pharmacy" EntityType="Self.Pharmacy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PrescriptionFrequency" EntityType="Self.PrescriptionFrequency" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reaction" EntityType="Self.Reaction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Relationship" EntityType="Self.Relationship" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoleModules" EntityType="Self.RoleModules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROV" EntityType="Self.ROV" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SecretQuestions" EntityType="Self.SecretQuestions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Severity" EntityType="Self.Severity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Speciallity" EntityType="Self.Speciallity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="States" EntityType="Self.States" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SuffixMaster" EntityType="Self.SuffixMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Surgery" EntityType="Self.Surgery" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SystemItemss" EntityType="Self.SystemItemss" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TimeZones" EntityType="Self.TimeZones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TitleMaster" EntityType="Self.TitleMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserFiles" EntityType="Self.UserFiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VCLog" EntityType="Self.VCLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Zips" EntityType="Self.Zips" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AdminUsers_Roles" Association="Self.FK_AdminUsers_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="AdminUsers" EntitySet="AdminUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Allergies_Patient" Association="Self.FK_Allergies_Patient">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="PatientAllergies" EntitySet="PatientAllergies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppAttachment_Appointments" Association="Self.FK_AppAttachment_Appointments">
+      <End Role="Appointments" EntitySet="Appointments" />
+      <End Role="AppAttachment" EntitySet="AppAttachment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointments_Doctor" Association="Self.FK_Appointments_Doctor">
+      <End Role="Doctor" EntitySet="Doctor" />
+      <End Role="Appointments" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointments_Patient" Association="Self.FK_Appointments_Patient">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="Appointments" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Conditions_Patient" Association="Self.FK_Conditions_Patient">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="Conditions" EntitySet="Conditions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Consultation_Appointments" Association="Self.FK_Consultation_Appointments">
+      <End Role="Appointments" EntitySet="Appointments" />
+      <End Role="Consultation" EntitySet="Consultation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Consultation_ConsultationROS" Association="Self.FK_Consultation_ConsultationROS">
+      <End Role="ConsultationROS" EntitySet="ConsultationROS" />
+      <End Role="Consultation" EntitySet="Consultation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Consultation_Doctor" Association="Self.FK_Consultation_Doctor">
+      <End Role="Doctor" EntitySet="Doctor" />
+      <End Role="Consultation" EntitySet="Consultation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Consultation_Patient" Association="Self.FK_Consultation_Patient">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="Consultation" EntitySet="Consultation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConsultationROS_Patient" Association="Self.FK_ConsultationROS_Patient">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="ConsultationROS" EntitySet="ConsultationROS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConsultationROS_SystemItems" Association="Self.FK_ConsultationROS_SystemItems">
+      <End Role="SystemItemss" EntitySet="SystemItemss" />
+      <End Role="ConsultationROS" EntitySet="ConsultationROS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoctorLanguages_Doctor" Association="Self.FK_DoctorLanguages_Doctor">
+      <End Role="Doctor" EntitySet="Doctor" />
+      <End Role="DoctorLanguages" EntitySet="DoctorLanguages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoctorLicenseStates_Doctor" Association="Self.FK_DoctorLicenseStates_Doctor">
+      <End Role="Doctor" EntitySet="Doctor" />
+      <End Role="DoctorLicenseStates" EntitySet="DoctorLicenseStates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoctorSpeciality_Doctor" Association="Self.FK_DoctorSpeciality_Doctor">
+      <End Role="Doctor" EntitySet="Doctor" />
+      <End Role="DoctorSpeciality" EntitySet="DoctorSpeciality" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoctorTimings_Doctor" Association="Self.FK_DoctorTimings_Doctor">
+      <End Role="Doctor" EntitySet="Doctor" />
+      <End Role="DoctorTimings" EntitySet="DoctorTimings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FamilyHX_Patient" Association="Self.FK_FamilyHX_Patient">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="PatientFamilyHX" EntitySet="PatientFamilyHX" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Medications_Patient" Association="Self.FK_Medications_Patient">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="Medications" EntitySet="Medications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleModules_Modules" Association="Self.FK_RoleModules_Modules">
+      <End Role="Modules" EntitySet="Modules" />
+      <End Role="RoleModules" EntitySet="RoleModules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleModules_Roles" Association="Self.FK_RoleModules_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="RoleModules" EntitySet="RoleModules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Surgeries_Patient" Association="Self.FK_Surgeries_Patient">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="PatientSurgeries" EntitySet="PatientSurgeries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemItems_Systems" Association="Self.FK_SystemItems_Systems">
+      <End Role="PatientSystems" EntitySet="PatientSystems" />
+      <End Role="SystemItemss" EntitySet="SystemItemss" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserFiles_Doctor" Association="Self.FK_UserFiles_Doctor">
+      <End Role="Doctor" EntitySet="Doctor" />
+      <End Role="UserFiles" EntitySet="UserFiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserFiles_Patient" Association="Self.FK_UserFiles_Patient">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="UserFiles" EntitySet="UserFiles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

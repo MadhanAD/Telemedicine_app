@@ -1,0 +1,234 @@
+﻿@using WebApp.Helper;
+@{
+    Layout = null;
+}
+<link href="~/Content/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+   
+        <div class="row" id="patientFamilyHX">
+            <ul class="to_do">
+                <li style="display: inline-block; width: 100%; margin-bottom: 5px;">
+                    <div class="col-sm-12">
+                        <div class="title_right">
+                            <div class="form-group top_search m-b-0" style="height: 60px;">
+                                
+                                <div class="input-group m-b-0">
+                                    <div style="color:red; display:none;float:left" id="divfhx">Family History is required.</div>
+                                    <div style="color:red; display:none;float:right;width: 45%;" id="divrel">Relationship is required.</div><br/>
+                                    <div><input id="nametxt" class="form-control" placeholder="" style="border-radius: 0; height: 35px; width: 53%;" type="text"></div>
+
+                                    <div style="float:right;width: 45%;">
+                                        <select id="Relationship" class="form-control" style="width: 94%; height: 35px;">
+                                            <option>Relationship</option>
+                                            @if (ViewBag.relationships != null)
+                                            {
+                                                foreach (var itemm in ViewBag.relationships)
+                                                {
+                                                    <option value="@itemm.relationshipID">
+                                                        @itemm.name
+                                                    </option>
+                                                }
+                                            }
+                                           
+                                        </select>
+                                    </div>
+                                    <span class="input-group-btn" style="height:75px">
+                                        <button id="btnAdd" class="btn btn-primary" style="border-radius: 0; padding-top: 3px; padding-bottom: 3px; color: #fff;" type="button">Add</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                @if (ViewBag.familyHX != null)
+                {
+                    var j = 1;
+                    foreach (var item in ViewBag.familyHX)
+                    {
+                <li>
+                    <div class="row" >
+                        <div class="col-lg-8 col-md-6 col-sm-6 col-xs-6">
+                            <div class="checkbox" >
+                                <label id="mycheckbox">
+                                    <input id="@("div"+j)" type="checkbox" class="flat"  name="@item.name@item.fhxID">&nbsp;&nbsp; @item.name
+                                    <script>
+                                        if(@item.patientID!=0)
+                                        {
+                                           $('#div' + "@j").prop('checked', true);
+                                        }
+                                        
+                                    </script>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+                            <select id="@("UR"+j)" class="form-control" onchange="updateFamilyHX(@j,@item.fhxID)">
+                                <option>Relationship</option>
+                            @if (ViewBag.relationships != null)
+                            {
+                                  foreach (var itemm in ViewBag.relationships)
+                                  {
+                                        <option value="@itemm.name"  @(itemm.name == item.relationship ? "selected" : "")>
+                                            @itemm.name
+                                           
+                                        </option>
+                                      
+
+                                }
+                            }
+
+                            </select>
+                           
+                        </div>
+                    </div>
+                </li>
+                        j = j + 1;
+                    }
+                }
+
+
+            </ul>
+        </div>
+
+    
+<!-- Datatables -->
+<script>
+
+
+    $(document).ready(function () {
+
+
+        $("#btnAdd").click(function () {
+
+            if ($("#nametxt").val() == "" && $("#Relationship option:selected").text()!="Relationship") {
+
+                document.getElementById("divfhx").style.display = "block";
+                document.getElementById("divrel").style.display = "none";
+                return;
+            }
+            if ($("#nametxt").val() != "" && $("#Relationship option:selected").text()=="Relationship") {
+
+                document.getElementById("divfhx").style.display = "none";
+                document.getElementById("divrel").style.display = "block";
+                return;
+            }
+            if ($("#nametxt").val() == "" && $("#Relationship option:selected").text()=="Relationship") {
+
+                document.getElementById("divfhx").style.display = "block";
+                document.getElementById("divrel").style.display = "block";
+                return;
+            }
+            if ($("#nametxt").val() == "") {
+
+                document.getElementById("divfhx").style.display = "block";
+                return;
+            }
+            if($("#Relationship option:selected").text()=="Relationship") {
+
+                document.getElementById("divrel").style.display = "block";
+                return;
+            }
+
+
+            document.getElementById("divfhx").style.display = "none";
+            document.getElementById("divrel").style.display = "none";
+            var objFamilyHX = {};
+            objFamilyHX["patientID"]=@SessionHandler.UserInfo.Id;
+            objFamilyHX["name"]=$("#nametxt").val();
+            if($("#Relationship option:selected").text()=="Relationship")
+            {
+                objFamilyHX["relationship"]="";
+            }
+            else
+            {
+                objFamilyHX["relationship"]=$("#Relationship option:selected").text();
+            }
+
+            var _objFHX=objFamilyHX;
+            addFamilyHX(_objFHX);
+
+        });
+
+        
+
+
+        $('#patientFamilyHX input').on('ifUnchecked', function(event){
+
+                //if($("#"+this.id).prop('checked') == false)
+                //{
+                    //if (confirm("Are you sure you want to delete?")) {
+                        showLoader();
+                        var delfhxID = this.name.replace(/[^0-9]/g, '');
+                        var delrelID=this.id.replace(/[^0-9]/g, '');
+                        var cUrl = "@Url.Action("deleteFamilyHX", "MyHealth")?fhxID=" + delfhxID;
+                        $.post(cUrl, function (oResp) {
+                            if (oResp.message == "") {
+                                //reloadContainer(function () {
+                                new PNotify({ title: 'Success', text: 'Family History is deleted successfully.', type: 'info',addclass: 'dark', styling: 'bootstrap3' });
+                                $("#UR"+delrelID).val($("#UR"+delrelID+ " option:first").val());
+                                hideLoader();
+                                //});
+                            } else {
+                                new PNotify({ title: 'Error', text: oResp.message, type: 'error', styling: 'bootstrap3' });
+                                hideLoader();
+                            }
+
+                        });
+                        return;
+                    //}
+                    //else
+                    //{
+
+                    //    $('#' + this.id).iCheck('toggle');
+                    //}
+                //}
+
+
+            });
+
+        $('#patientFamilyHX input').on('ifChecked', function(event)
+        {
+
+            var fhxID = this.name.replace(/[^0-9]/g, '');
+            var name = this.name.replace(/[0-9]/g, '');
+            var relID=this.id.replace(/[^0-9]/g, '');
+            if(fhxID!=0)
+            {
+                var objFHX = {};
+                objFHX["patientID"]=@SessionHandler.UserInfo.Id;
+                objFHX["name"]=name;
+                if($("#UR"+relID+" option:selected").text()=="Relationship")
+                {
+                    objFHX["relationship"]="";
+                }
+                else
+                {
+                    objFHX["relationship"]=$("#UR"+chkid+" option:selected").text();
+                }
+                $("#UR"+relID+" option").prop('disabled', false);
+                restore(objFHX);
+            }
+            if(fhxID==0)
+            {
+                var objFHX = {};
+                objFHX["patientID"]=@SessionHandler.UserInfo.Id;
+                objFHX["name"]=name;
+
+                if($("#UR"+relID+" option:selected").text()=="Relationship")
+                {
+                    objFHX["relationship"]="";
+                }
+                else
+                {
+                    objFHX["relationship"]=$("#UR"+relID+" option:selected").text();
+                }
+                var _objFHXX=objFHX;
+                $("#UR"+relID+" option").prop('disabled', false);
+                addFamilyHX(_objFHXX);
+            }
+        });
+    });
+</script>
+<!-- /Datatables -->
+

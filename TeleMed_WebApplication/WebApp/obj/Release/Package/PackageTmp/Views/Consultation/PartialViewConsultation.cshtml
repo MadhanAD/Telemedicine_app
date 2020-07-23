@@ -1,0 +1,243 @@
+﻿@*@model IEnumerable<DataAccess.SP_GetPatientConsultations_Result>*@
+
+   @if (ViewBag.oData == null)
+   {
+    <div class="well">
+        There is no consultation.
+    </div>
+   }
+   else
+   {
+
+    <table id="datatableconsultation" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <tr class="headings">
+                <th class="column-title" style="text-align:center">Doctor's Name </th>
+                <th class="column-title" style="text-align:center">Date & Time </th>
+                <th class="column-title" style="text-align:center">Rating</th>
+                <th class="column-title" style="text-align:center">ROV </th>
+                <th class="column-title" style="text-align:center">Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @if (ViewBag.oData != null)
+            {
+                var j = 1;
+                foreach (var item in ViewBag.oData)
+                {
+                    <tr class="even pointer">
+                        <td style="text-align:center">
+                            <a href="" onclick='showProfile(@item.doctorID)' class="thumbnail-col-inner m-b-15" data-toggle="modal" data-target="#myModal8" style="word-wrap: break-word;">
+                                @item.DoctorName
+                            </a>
+                        </td>
+                        <td style="text-align:center">
+                            <span class="replacer" id="@("replacepc" + j)"></span>
+                            <script type="text/javascript">
+                                var fdate = showLocal('@item.utcappDate');
+                                $("#replacepc"+@j).html(fdate);
+                            </script>
+                        </td>
+                        <td style="text-align:center">
+                            @if (item.reviewStar == 0)
+                            {
+
+                                <a href="#" class="thumbnail-col-inner" data-id="@item.consultID" id="@item.consultID"  onclick=writeReview(@item.consultID);>Write Review</a>
+
+                            }
+                            else
+                            {
+                                if (item.reviewStar >= 3)
+                                {
+                                    for (var i = 0; i < item.reviewStar; i++)
+                                    {
+                                        <a href='javascript:void(0);' class="thumbnail-col-inner" data-id="@item.consultID" id="@item.consultID" onclick=showReview(@item.consultID);><span class='fa fa-star'></span></a>
+                                    }
+                                    for (var i = 0; i < 5 - item.reviewStar; i++)
+                                    {
+                                         <a href='javascript:void(0);'><span class='fa fa-star-o'></span></a>
+
+                                    }
+                                }
+                                else if (item.reviewStar < 3)
+                                {
+                                    if (item.reviewStatus == true)
+                                    {
+                                        for (var i = 0; i < item.reviewStar; i++)
+                                        {
+                                            
+                                            <a href='javascript:void(0);' class="thumbnail-col-inner" data-id="@item.consultID" id="@item.consultID" onclick=showReview(@item.consultID);><span class='fa fa-star'></span></a>
+                                        }
+                                        for (var i = 0; i < 5 - item.reviewStar; i++)
+                                        {
+                                            <a href='javascript:void(0);'><span class='fa fa-star-o'></span></a>
+
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <a href='javascript:void(0);'>Approval Pending</a>
+                                    }
+                                }
+
+
+                            }
+                            </td>
+                        <td style="text-align:center">@item.rov</td>
+
+                        <td style="text-align:center">
+                            @*<button data-toggle="modal" data-id="@item.consultID" id="@item.consultID" data-target="#myModal4"
+                                    class="btn btn-primary btn-sm m-b-0 " type="button" onclick=showConsult(@item.consultID);>
+                                View
+                            </button>*@
+                            <div class="btn-group" role="group">
+
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Action
+                                    <span class="caret"></span>
+                                </button>
+
+                                <ul class="dropdown-menu dropdown-menu-left" style="margin-left:-55px">
+                                    <li><a href="#" data-toggle="modal" class="thumbnail-col-inner" data-id="@item.consultID" id="@item.consultID" data-target="#myModal4" onclick=showConsult(@item.consultID);>View</a></li>
+                                    <li><a href="#" class="waivebilling"  onclick=waivebilling(@item.consultID) id="@item.consultID">Waive Billing</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    j = j + 1;
+                }
+            }
+
+
+
+        </tbody>
+    </table>
+
+   }
+
+<script>
+    function waivebilling(consultID)
+    {
+        $.ajax({
+            url: '@Url.Action("WaiveBilling", "Consultation")',
+            type: "POST",
+            data: {'consultID':consultID},
+            dataType: 'json',
+            success: function (result) {
+                //Reload container
+                if (result.Message != undefined) {
+                    new PNotify({ title: 'Error', text: result.Message.ReasonPhrase, type: 'error', styling: 'bootstrap3' });
+                    hideLoader();
+                }
+                else {
+
+                    if(result.ApiResultModel.message=="")
+                    {
+                        new PNotify({ title: 'Success', text: "Weive Billing Request is sent successfully.", type: 'info',addclass: 'dark', styling: 'bootstrap3' });
+                        hideLoader();
+                    }
+                    else
+                    {
+                        new PNotify({ title: 'Error', text: result.ApiResultModel.message, type: 'error', styling: 'bootstrap3' });
+                        hideLoader();
+                    }
+
+
+                }
+
+            },
+            error: function (err) {
+                //alert(err.statusText);
+                new PNotify({ title: 'Error', text: err.statusText, type: 'error', styling: 'bootstrap3' });
+                //Stop displaying loader
+                hideLoader();
+            }
+        });
+
+    }
+    </script>
+<!-- Datatables -->
+<script>
+      $(document).ready(function() {
+        var handleDataTableButtons = function() {
+          if ($("#datatable-buttons").length) {
+            $("#datatable-buttons").DataTable({
+              dom: "Bfrtip",
+              buttons: [
+                {
+                  extend: "copy",
+                  className: "btn-sm"
+                },
+                {
+                  extend: "csv",
+                  className: "btn-sm"
+                },
+                {
+                  extend: "excel",
+                  className: "btn-sm"
+                },
+                {
+                  extend: "pdfHtml5",
+                  className: "btn-sm"
+                },
+                {
+                  extend: "print",
+                  className: "btn-sm"
+                },
+              ],
+              responsive: true
+            });
+          }
+        };
+
+        TableManageButtons = function() {
+          "use strict";
+          return {
+            init: function() {
+              handleDataTableButtons();
+            }
+          };
+        }();
+
+       
+        $('#datatableconsultation').dataTable({
+            //'order': [[1, 'desc']],
+            "ordering": false,
+            columnDefs: [
+              { type: 'date-dd-mmm-yyyy', targets: 1 }
+            ]
+        });
+        $('#datatable-keytable').DataTable({
+          keys: true
+        });
+
+        $('#datatable-responsive').DataTable();
+
+        $('#datatable-scroller').DataTable({
+          ajax: "js/datatables/json/scroller-demo.json",
+          deferRender: true,
+          scrollY: 380,
+          scrollCollapse: true,
+          scroller: true
+        });
+
+        $('#datatable-fixed-header').DataTable({
+          fixedHeader: true
+        });
+
+        var $datatable = $('#datatable-checkbox');
+
+
+        $datatable.on('draw.dt', function() {
+          $('input').iCheck({
+            checkboxClass: 'icheckbox_flat-green'
+          });
+        });
+
+        TableManageButtons.init();
+      });
+</script>
+<!-- /Datatables -->
+

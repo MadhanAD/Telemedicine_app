@@ -1,0 +1,139 @@
+﻿@model IEnumerable<DataAccess.CustomModels.RescheduleAppModel>
+@{
+    Layout = null;
+}
+
+
+@if (Model == null || Model.Count() == 0)
+{
+    <div class="well">
+        There is no rescheduled appointment.
+    </div>
+}
+else
+{
+
+    <table id="rescheduledatatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <tr class="headings">
+                <th class="column-title" style="text-align:center">Doctor Name </th>
+                <th class="column-title" style="text-align:center">Appointment Time</th>
+                <th class="column-title" style="text-align:center">Reason of Visit </th>
+                <th class="column-title" style="text-align:center">Chief Complaint</th>
+                <th class="column-title" style="text-align:center">Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+@if (Model != null)
+{
+    var j = 1;
+    foreach (var item in Model)
+    {
+                <tr class="even pointer">
+                    <td style="text-align:center">
+                    <a href="" onclick='showProfile(@item.doctorID)' class="thumbnail-col-inner m-b-15" data-toggle="modal" data-target="#myModal8" style="word-wrap: break-word;">
+                @item.DoctorName
+                </a></td>
+                    <td style="text-align:center">
+                        <span class="replacer" id="@("replacer" + j)"></span>
+                        <script type="text/javascript">
+                            var fdate = showLocal('@item.utcappDate');
+                            $("#replacer"+@j).html(fdate);
+                        </script>
+                    </td>
+                    <td style="text-align:center">@item.rov</td>
+                    <td style="text-align:center">@item.chiefComplaints</td>
+                    <!-- <td><button class="btn btn-primary btn-sm m-b-0 " type="submit">View</button></td> -->
+                    <td style="text-align:center">
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Action
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-left">
+                                <li>
+                                    @*<a href='#' data-toggle="modal" class="thumbnail-col-inner" data-id="@item.doctorID" id="@item.appID" data-target="#myModal4"
+            data-todo='{"appID":"@item.appID","appDateTime":"@item.appDate@item.appTime","rov":"@item.rov","chiefComplaints":"@item.chiefComplaints","amount":"@item.paymentAmount","pharmacy":"@item.pharmacy"
+            ,"cellPhone":"@item.cellphone"}'>View Detail</a>*@
+                                <li><a href="#" data-toggle="modal" class="thumbnail-col-reschedule" data-id="@item.doctorID" id="@item.appID" data-target="#myModal4" onclick=$("#pvappid").val(@item.appID);>View Detail</a></li>
+                                
+                                <li><a href="#" class="reschedule" data-id="@item.appDate" data-toggle="modal" data-target="#myModal1" data-todo='{"docid":"@item.doctorID","doctorName":"@item.DoctorName","appID":"@item.appID","appDate":"@item.appDate"}' onclick=showDoctorTimings(@item.doctorID,@item.appID,'@item.appDate') id="@item.doctorID">Reschedule App</a></li>
+                                <li><input type="text" style="display:none" id="apptype" value="R"></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+        j = j + 1;
+    }
+}
+
+        </tbody>
+    </table>
+
+}
+
+<!-- Datatables -->
+<script>
+      $(document).ready(function() {
+          
+
+        //$('#rescheduledatatable').dataTable();
+        //$('#rescheduledatatable').dataTable();
+        $('#datatable-keytable').DataTable({
+          keys: true
+        });
+
+        $('#datatable-responsive').DataTable();
+        
+        $('#rescheduledatatable').DataTable({
+            "bAutoWidth": false, // Disable the auto width calculation 
+            "ordering": false,
+            "aoColumns": [
+             { "sWidth": "15%" },  
+             { "sWidth": "15%" }, 
+             { "sWidth": "15%" }, 
+            { "sWidth": "30%" }, 
+            { "sWidth": "15%" }
+            ]
+
+
+        });
+                
+      });
+</script>
+<!-- /Datatables -->
+<script>
+    $(document).ready(function () {
+        $('#rescheduledatatable').on('click', '.thumbnail-col-reschedule', function(){
+        //$(".thumbnail-col-reschedule").click(function () {
+
+            debugger;
+            var $buttonClicked = $(this);
+            var AppDetailPostBackURL = '/Appointment/ViewAppDetails';
+            var docid = $buttonClicked.attr('data-id');
+            var appID = $buttonClicked.attr('id');
+            //$('#myModalContent').html(data);
+            //$('#myModal4').modal('show');
+            //$("#myModalContent").load('@Url.Action("ViewAppDetails", "Appointment")', function () {
+            //callback();
+            //});
+            //$('#myModal4').modal('show');
+
+            reloadModelContainer(function () {
+                var $modal = $('#myModal4');
+                $editappid = $modal.find('#editappid');
+                $doctorid = $modal.find('#doctorid');
+                $editappid.val(appID);
+                $doctorid.val(docid);
+                //Stop displaying loader
+                //stopLoader();
+
+            });
+
+        });
+
+
+    });
+</script>
+

@@ -1,0 +1,2105 @@
+﻿@using System.Globalization
+@using WebApp.Helper;
+@{
+    ViewBag.Title = "SeeDoctor";
+    Layout = "~/Views/Shared/_PatientLayout.cshtml";
+    string publisherKey = Convert.ToString(ViewBag.PublisherKey);
+    int amount = Convert.ToInt32(ViewBag.Amount);
+}
+<style>
+    #mainpanel {
+        display: none;
+    }
+</style>
+<style>
+    #loader {
+        border: 5px solid #0061B2;
+        border-radius: 50%;
+        border-top: 5px solid #FE0000;
+        width: 40px;
+        height: 40px;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+    }
+</style>
+
+<script src="@Url.Content("~/Scripts/Appointment/Appointment.js")"></script>
+<script src="@Url.Content("~/Scripts/HealthConditions/HealthConditions.js")"></script>
+<script src="@Url.Content("~/Scripts/Medicine/Medicine.js")"></script>
+<script src="@Url.Content("~/Scripts/PatientAllergies/PateintAllergies.js")"></script>
+<script src="@Url.Content("~/Scripts/Surgeries/Surgeries.js")"></script>
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<script src="@Url.Content("~/Scripts/SeeDoctor/SearchDoctor.js")"></script>
+<script src="@Url.Content("~/Scripts/icheck.min.js")"></script>
+<script src="@Url.Content("~/Scripts/general.js")"></script>
+@*<script src="@Url.Content("~/Scripts/Prescription/Prescription.js")"></script>*@
+
+@*<script src="~/Scripts/jquery.blockUI.js"></script>*@
+
+<script src="@Url.Content("~/Scripts/StripePay.js")"></script>
+<!--Added for autocomplete-->
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<div class="right_col">
+    <div class="clearfix"></div>
+    <!--Forms-->
+    @if (ViewBag.errorMessage == "" && ViewBag.successMessage == "")
+    {
+        <script>
+            $(function () {
+                new PNotify({
+                    title: 'Information',
+                    text: "@ViewBag.infoMessage",
+                    type: 'info',
+                    styling: 'bootstrap3'
+                });
+            });
+
+        </script>
+
+    }
+    @if (ViewBag.errorMessage == "" && ViewBag.infoMessage == "")
+    {
+        <script>
+            $(function () {
+                new PNotify({
+                    title: 'Success',
+                    text: "@ViewBag.successMessage",
+                    type: 'info',addclass: 'dark',
+                    styling: 'bootstrap3'
+                });
+            });
+
+        </script>
+    }
+    @if (ViewBag.successMessage == "" && ViewBag.infoMessage == "")
+    {
+
+        <script>
+            $(function () {
+                new PNotify({
+                    title: 'Error',
+                    text: "@ViewBag.errorMessage",
+                    type: 'error',
+                    styling: 'bootstrap3'
+                });
+            });
+        </script>
+    }
+    <div id="busy" class="loader" style="display:none"></div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <input type="text" style="display:none" id="userID">
+        <input type="text" style="display:none" id="appointmentID">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>See a Physician</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <div id="wizard" class="form_wizard wizard_horizontal">
+                        <ul class="wizard_steps">
+                            <li>
+                                <a href="#step-1">
+                                    <span class="step_no">1</span>
+                                    <span class="step_descr">Search Physician</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#step-2">
+                                    <span class="step_no">2</span>
+                                    <span class="step_descr">Reason Of Visit</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#step-3">
+                                    <span class="step_no">3</span>
+                                    <span class="step_descr">Medical History</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#step-4">
+                                    <span class="step_no">4</span>
+                                    <span class="step_descr">Pharmacy</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#step-5">
+                                    <span class="step_no">5</span>
+                                    <span class="step_descr">Summary & Payment</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div id="step-1">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Favorite AirDoc</h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+
+                                        <li>
+                                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content" style="float: none;">
+                                    <div id="mycareteam" class="table-responsive">
+                                        @{
+                                            Html.RenderAction("MyCareTeam", "SeeDoctor");
+                                        }
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="x_panel">
+                                <div class="x_title" id="divsearchtitle">
+                                    <h2>Search Doctor</h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="x_content" id="divsearchdoctor">
+                                    <div class="row">
+
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <form class="form-horizontal form-label-left">
+                                                <label class="control-label">Appointment Date:</label>
+                                                <div class="xdisplay_inputx form-group has-feedback">
+                                                    <div class="form-group">
+
+                                                        <input type="text" id="searchdate" class="form-control floating-label" placeholder="Date">
+
+                                                    </div>
+                                                </div>
+
+
+                                                <label class="control-label">Perferred Time:</label>
+                                                <div class="form-group">
+
+                                                    @*<input style:display:"none" type="text" id="time" class="form-control floating-label" placeholder="Time">*@
+                                                    <select class="form-control" name="Shift">
+                                                        <option value="A">ALL</option>
+                                                        <option value="M">Morning (8:00am-4:00pm)</option>
+                                                        <option value="E">Evening (4:00pm-12:00am)</option>
+                                                        <option value="N">Night(12:00am-8:00am)</option>
+                                                    </select>
+                                                </div>
+                                            </form>
+
+                                        </div>
+
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+
+
+                                            <label class="control-label">Speciality:</label>
+                                            <div class="form-group">
+                                                <select class="form-control" id="Speciality">
+                                                    <option value="">ALL</option>
+
+                                                </select>
+                                            </div>
+                                            <label class="control-label">Language:</label>
+                                            <div class="form-group">
+                                                <select class="form-control" id="Language">
+                                                    <option value="">ALL</option>
+
+                                                </select>
+                                            </div>
+
+
+
+
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <label class="control-label">Gender:</label>
+                                            <div class="form-group">
+
+                                                <select class="form-control" id="Gender">
+                                                    <option value="">ALL</option>
+                                                    <option value="">Male</option>
+                                                    <option value="">Female</option>
+                                                </select>
+
+                                            </div>
+                                            <label class="control-label">Provider name:</label>
+                                            <div class="form-group">
+
+                                                <input id="providerName" type="text" class="form-control" placeholder="Search By Name">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="ln_solid"></div>
+                                    <button type="button" class="btn btn-primary pull-right" id="search-click" onclick="SearchDoctor(@SessionHandler.UserInfo.Id);">Search</button>
+
+                                </div>
+
+                            </div>
+
+
+                            <div id="maindiv"></div>
+                            <div class="x_panel" id="mainpanel">
+                                <div class="x_title">
+                                    <h2>Doctor Result</h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+
+                                        <li>
+                                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content according-defalut-close" style="float: none;" id="doctorList">
+                                    <ul class="doctor_details" id="docList"></ul>
+
+                                </div>
+                            </div>
+                        </div>@*step1*@
+
+                        <input type="text" style="display:none" id="pvdocid" value="0">
+                        <div class="modal fade" id="myModal8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel8">
+                            <div class="modal-dialog" role="document" style="border-bottom: 0;">
+                                <div id='DoctorProfileContent' class="modal-content" style="overflow:auto; border-radius: 0;">
+
+                                </div>
+
+
+                            </div>
+                        </div><!-- col4 -->
+                        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -10px;color: #0035ff;"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="timingsmodaltitle"></h4>
+                                    </div><!--/.modal header-->
+
+                                    <div class="modal-body text-left">
+                                        <div class="row" id="docrow">
+                                            <input type="text" style="display:none" id="doctorid">
+
+                                            <form class="form-horizontal form-label-left">
+                                                @*style="height:230px"*@
+                                                <div class="col-sm-offset-4 col-sm-4" style="width: 182px;">
+                                                    <div class="xdisplay_inputx form-group has-feedback">
+                                                        <input type="text" class="form-control has-feedback-left active" id="fetchdate" placeholder="Choose a Date" aria-describedby="inputSuccess2Status">
+                                                        <span class="fa fa-calendar-o form-control-feedback left date" aria-hidden="true"></span>
+                                                        <span id="inputSuccess2Status" class="sr-only">(success)</span>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            @*<div class="col-sm-offset-4 col-sm-4">
+                                                    <div class="xdisplay_inputx form-group has-feedback">
+                                                        @*+ response.DoctorModel[item].doctorID + "," + $('#appdate').val() + "
+                                                        <input onchange="fetchTimings(this)" type="text" id="appdate" class="form-control floating-label" placeholder="Choose a Date">
+
+                                                        @*<span class="fa fa-calendar-o form-control-feedback left date" aria-hidden="true"></span>
+                                                        @*<span id="inputSuccess2Status" class="sr-only">(success)</span>
+                                                    </div>
+                                                </div>*@
+
+
+                                            <form class="form-horizontal form-label-left">
+                                                <div class="col-sm-12 text-center" style="height:230px;overflow:auto">
+                                                    <ul class="doctor_time" id="TimingsData"></ul>
+                                                </div>
+                                                @*<button type="button" class="btn btn-primary btn-sm pull-right" id="apply">Apply</button>*@
+                                            </form>
+
+                                        </div><!--/.modal body-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- col1 -->
+                        <!--start smartWizard content-->
+                        <div id="step-2">
+                            <form class="form">
+                                <div class="from-group m-b-20">
+                                    <label for="heard">What is the reason for your appointment? (ex: Sore Thorat):</label>
+                                    <select id="ROV" class="form-control">
+                                        <option value="">Choose Reason of Visit</option>
+                                    </select>
+
+                                </div>
+
+                                <div class="form-group m-b-20">
+                                    <label class="ex4">Chief complaints</label>
+                                    <textarea class="form-control" placeholder="" id="chiefcomplaints"></textarea>
+                                </div>
+                            </form>
+                            <p>Add a photo(helpful for rashes, cut, etc). Only jpg and png format are allowed</p>
+                            <form id="frmUpload" class="form-inline">
+
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td style="width:15%">
+                                            <strong>Add File 1:</strong>
+                                        </td>
+                                        <td>
+                                            <div class="form-group m-b-10">
+                                                <button type="button" class="btn btn-primary" onclick="document.getElementById('fileID1').click(); return false;">
+                                                    Browse
+                                                </button>
+                                                <input type="file" id="fileID1" style="visibility: hidden;display:none;" />
+                                                <input type="hidden" id="hdnFileID1" />
+                                                <input type="hidden" id="hdnFileID1Name" />
+                                                <button id="btnSelectedFile1" type="button" class="btn btn-default" style="display:none;">
+                                                    <span id="spnSelFileName1"></span> <i class="fa fa-times" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Add File 2:</strong>
+                                        </td>
+                                        <td>
+                                            <div class="form-group m-b-10">
+                                                <button type="button" class="btn btn-primary" onclick="document.getElementById('fileID2').click(); return false;">
+                                                    Browse
+                                                </button>
+                                                <input type="file" id="fileID2" style="visibility: hidden;display:none;" />
+                                                <input type="hidden" id="hdnFileID2" />
+                                                <input type="hidden" id="hdnFileID2Name" />
+                                                <button id="btnSelectedFile2" type="button" class="btn btn-default" style="display:none;">
+                                                    <span id="spnSelFileName2"></span> <i class="fa fa-times" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Add File 3:</strong>
+                                        </td>
+                                        <td>
+                                            <div class="form-group m-b-10">
+                                                <button type="button" class="btn btn-primary" onclick="document.getElementById('fileID3').click(); return false;">
+                                                    Browse
+                                                </button>
+                                                <input type="file" id="fileID3" style="visibility: hidden;display:none;" />
+                                                <input type="hidden" id="hdnFileID3" />
+                                                <input type="hidden" id="hdnFileID3Name" />
+                                                <button id="btnSelectedFile3" type="button" class="btn btn-default" style="display:none;">
+                                                    <span id="spnSelFileName3"></span> <i class="fa fa-times" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                            <p>Only .png & .jpg formats are allowed</p>
+                        </div>
+                        <br>
+
+                        <div id="step-3">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>My Health Conditions</h2>
+                                    @*<ul class="nav navbar-right panel_toolbox">
+                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </ul>*@
+                                    <div class="clearfix"></div>
+                                </div>
+                                <input id="conditionID" type="number" style="display:none" value="0" />
+                                <div class="x_content">
+                                    <div class="table-responsive">
+                                        <table class="table" style="margin-bottom: 5px;">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="border-top: none; width:78%"><h2>Do you have any health conditions?</h2></td>
+                                                    <td style="border-top: none;float: right;">
+
+                                                        <div class="text-right" style="vertical-align:bottom">
+
+                                                            <label style="display:none;">
+                                                                No <input type="checkbox" class="js-switch" id="conditionCheckbox" /> Yes
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <!-- colspan="3" -->
+                                                    <td style="width:78%;">
+                                                        <div style="color:red; display:none;float:right" id="divcondition">Condition is required.</div>
+
+                                                        <div class="input-group" style="width: 100%;">
+                                                            @*<input type="text" name="country" placeholder="Add Conditions" id="autocomplete-custom-append" class="form-control" />*@
+
+                                                            <input style="display:block" maxlength="50" type="text" name="country" placeholder="Add Conditions" id="myCondition" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div style="color:red;display:none" id="btncondition"><label></label></div>
+                                                        <button class="btn btn-primary" style="max-width: 200px; float: right;display:block" type="button" id="reset">Reset</button>
+                                                        <button class="btn btn-primary" style="max-width: 200px; float: right;display:block" type="button" id="addcondition">Add Conditions</button>
+
+                                                    </td>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <table id="conditionstable" class="table table-striped table-bordered dt-responsive" cellspacing="0" style="width:100%">
+                                            <thead>
+                                                <tr class="headings">
+                                                    <th class="colum+n-title">sr.no </th>
+                                                    <th class="column-title">My conditions </th>
+                                                    <th class="column-title">Reported Date</th>
+                                                    <th class="column-title">Action</th>
+
+                                                </tr>
+                                            </thead>
+
+                                            <tbody id="conditionsTable"></tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>My Medications</h2>
+                                    @*<ul class="nav navbar-right panel_toolbox">
+                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </ul>*@
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="x_content">
+                                    <div class="table-responsive">
+                                        <table class="table" style="margin-bottom: 5px;">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="border-top: none" width="50%"><h2>Are you currently taking any medication?</h2></td>
+                                                    <td style="border-top: none" width="25%"></td>
+                                                    <td style="border-top: none">
+                                                        <div class="text-right">
+                                                            <label style="display:none;">
+                                                                No <input type="checkbox" class="js-switch" id="medicineCheckbox" /> Yes
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td width="50%">
+                                                        <div class="form-group">
+                                                            <div style="color:red; display:none;float:right" id="divmedicine">Medicine is required.</div>
+                                                            <input maxlength="50" style="display:block" type="text" name="country" placeholder="Search Medicine" id="myMedicine" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td width="25%">
+                                                        <div class="form-group">
+                                                            <div style="color:red;display:none" id="divfrequency"><label></label></div>
+                                                            <select class="form-control" id="myFrequency" style="display:block">
+                                                                <option value="">Choose Frequency</option>
+
+                                                            </select>
+                                                            @*<input type="text" name="country" placeholder="Select Frequency" id="autocomplete-custom-append2" class="form-control" />*@
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div style="color:red;display:none" id="btnmedicine"><label></label></div>
+                                                        <button class="btn btn-primary" style="max-width: 200px; float: right;display:block" type="button" id="resetmedicine">Reset</button>
+                                                        <button class="btn btn-primary" style="max-width: 200px; float: right;display:block" type="button" id="addmedicine">Add Medication</button>
+
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <table id="medicinestable" class="table table-striped table-bordered" cellspacing="0" style="width:100%">
+                                            <thead>
+                                                <tr class="headings">
+                                                    <th class="column-title">Sr.No </th>
+                                                    <th class="column-title">My Medication</th>
+                                                    <th class="column-title">Frequency</th>
+                                                    <th class="column-title" style="width:15%">Reported Date</th>
+                                                    <th class="column-title">Action</th>
+
+                                                </tr>
+                                            </thead>
+
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>My Allergies</h2>
+                                    @*<ul class="nav navbar-right panel_toolbox">
+                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </ul>*@
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="x_content">
+                                    <div class="table-responsive">
+                                        <table class="table" style="margin-bottom: 5px;">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="border-top: none"><h2>Do you have any allergies or Drug Severities?</h2></td>
+                                                    <td style="border-top: none"></td>
+                                                    <td style="border-top: none"></td>
+                                                    <td style="border-top: none">
+                                                        <div class="text-right">
+                                                            <label style="display:none;">
+                                                                No <input type="checkbox" class="js-switch" id="allergyCheckbox" /> Yes
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div style="color:red; display:none;float:right" id="divallergy">Allergy is required.</div>
+                                                            <input maxlength="50" display:block" type="text" name="country" placeholder="Add Allergy" id="myAllergy" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div style="color:red;display:none" id="divsensitivity"><label></label></div>
+                                                            <select class="form-control" id="Sensitivity" style="display:block">
+                                                                <option value="">Choose Severity</option>
+
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div style="color:red;display:none" id="divreaction"><label></label></div>
+                                                            <select class="form-control" id="Reaction" style="display:block">
+
+                                                                <option value="">Choose Reaction</option>
+
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div style="color:red;display:none" id="btnallergy"><label></label></div>
+                                                        <button id="resetallergy" class="btn btn-primary" style="max-width: 200px; float: right; margin-right: 0;display:block" type="button">Reset</button>&nbsp;
+                                                        <button id="addallergy" class="btn btn-primary" style="max-width: 200px; float: right; margin-right: 5px;display:block" type="button">Add Allergy</button>
+
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <table id="allergiestable" class="table table-striped table-bordered" cellspacing="0" style="width:100%">
+                                            <thead>
+                                                <tr class="headings">
+                                                    <th class="column-title">Sr.No </th>
+                                                    <th class="column-title">Allergy</th>
+                                                    <th class="column-title">Severity</th>
+                                                    <th class="column-title">Reaction</th>
+                                                    <th class="column-title" style="width:15%">Reported Date</th>
+                                                    <th class="column-title">Action</th>
+
+                                                </tr>
+                                            </thead>
+
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>My Surgeries and Procedures</h2>
+                                    @*<ul class="nav navbar-right panel_toolbox">
+                                            <li>
+                                                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                            </li>
+                                        </ul>*@
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <div id="divSurgery" class="table-responsive">
+                                        @{
+                                            Html.RenderAction("PartialViewSurgery", "SeeDoctor");
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+
+                        <div id="step-4">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="x_panel">
+                                        <div class="x_title">
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label for="Name">Pharmacy Name :</label>
+                                                        @*//Felix*@
+
+                                                        @*@Html.TextBox("txtPharmacySrchName", "", new { @class = "form-control" })*@
+
+                                                        <div style="color:red; display:none;float:right" id="divmedicine">Pharmacy is required.</div>
+                                                        <input maxlength="50" display:block" type="text" name="country" placeholder="Search Pharmacy" id="txtPharmacySrchName" class="form-control" />
+
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label for="City">City:</label>
+                                                        @Html.TextBox("txtPharmacySrchCity", "", new { @class = "form-control" })
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label for="State">State:</label>
+                                                        @Html.TextBox("txtPharmacySrchState", "", new { @class = "form-control" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label for="Zip">Zip:</label>
+                                                        @Html.TextBox("txtPharmacySrchZip", "", new { @class = "form-control" })
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    <button style="margin-top:23px" id="btnPharmacySrch" type="button" class="btn btn-primary">Search Pharmacy</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="divPharmacyResultContainer" class="row" style="margin-bottom: 70px; display:none;">
+                                <div class="col-md-6">
+                                    <div class="x_content">
+                                        <input type="number" id="PharmacyID" style="display:none">
+                                        <h2 class="m-t-0">Current Pharmacy</h2>
+                                        <h2 id="h2SelPharmacyName"></h2>
+                                        <p id="pSelPharmacyAddress"></p>
+                                        <p id="pSelPharmacyCityStateZip"></p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                        <div id="step-5" style="margin-bottom: 70px;">
+                            <h2>Your appointment will be confirmed after payment.</h2>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="x_panel" style="height:262px;">
+                                        <div class="x_title">
+                                            <h2>Doctor Information</h2>
+                                            <ul class="nav navbar-right panel_toolbox">
+                                                @*<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>*@
+                                            </ul>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="x_content" id="docInfo">
+                                            @*<address>
+                                                    <strong>Iron Admin, Inc.</strong>
+                                                    <br><strong>Specaility: </strong>General Practice
+                                                    <br><strong>Phone: </strong> 1 (804) 123-9876
+                                                    <br><strong>Email: </strong> ironadmin.com
+                                                </address>*@
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="x_panel" style="height:262px;">
+                                        <div class="x_title">
+                                            <h2>Appointment Information</h2>
+                                            <ul class="nav navbar-right panel_toolbox">
+                                                @*<li>
+                                                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                                    </li>*@
+                                            </ul>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="x_content" id="appsummary">
+                                            @*<address>
+                                                    <strong>Date: </strong>Saturday,October 1, 2016
+                                                    <br><strong>Time:</strong> 1:01 am
+                                                    <br><strong>Reason for Visit: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis, massa non semper posuere, risus diam aliquet metus, eu mollis magna...
+                                                </address>*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <center>  <button class="btn btn-primary" id="btnProceedWithPayment" type="button">Proceed with payment</button></center>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- End SmartWizard Content -->
+
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+
+<div id="mdlPharmacy" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Pharmacy Search Results</h4>
+            </div>
+            <div id="divPharmacySearchBody" class="modal-body" style="width:100%;">
+                <p style="font-size:12px;">Please enter the email address</p>
+                <div style="width:250px;height:100px;float:left;margin-right:50px;">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Email">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+</div>
+
+<script>
+    var doctorId;
+    function reloadContainer(callback) {
+        $("#mycareteam").load('@Url.Action("MyCareTeam", "SeeDoctor")', function () {
+            callback();
+        });
+    }
+
+    var reader1  = new FileReader();
+    var reader2  = new FileReader();
+    var reader3  = new FileReader();
+    function showProfile(docid) {
+
+        var did=docid;//$("#pvdocid").val();
+
+        $("#DoctorProfileContent").load('@Url.Action("DoctorProfile", "SeeDoctor")?doctorID='+did, function () {
+
+        });
+
+    };
+
+    function showDoctorInfo()
+    {
+        var tableHtml = "";
+        $.ajax({
+            type: 'POST',
+
+            url: '/SeeDoctor/FetchDoctoInfo',
+            data:{'doctorID': _selecteddoctorID},
+            dataType: 'json',
+            success: function (response) {
+                if (response.Object != null || response.Object != undefined)
+                {
+
+                    var spec = "";
+                    var lang = "";
+                    for (var i = 0; i < response.Object.specialities.length; i++)
+                    {
+                        spec = spec + response.Object.specialities[i].specialityName + ",";
+                    }
+                    for (var i = 0; i < response.Object.languages.length; i++) {
+                        lang = lang + response.Object.languages[i].languageName + ",";
+                    }
+
+                    spec = spec.slice(0, -1);
+                    lang = lang.slice(0, -1);
+
+                    if (response.Object.specialities.length == 0) { spec = "N.A"; }
+                    if (response.Object.languages.length == 0) { lang = "N.A"; }
+                    var doccell = "N.A";
+                    var dochomephone = "N.A";
+                    var docemail = "N.A";
+                    var cc = "N.A";
+                    var docstate = "N.A";
+                    var gender = "";
+
+                    if (response.Object.dcellPhone != null) { doccell = response.Object.dcellPhone; }
+                    if (response.Object.dhomePhone != null) { dochomephone = response.Object.dhomePhone; }
+                    if (response.Object.email != null) { docemail = response.Object.email; }
+                    if (response.Object.consultCharges != null) { cc = response.Object.consultCharges; }
+                    if (response.Object.state != null) { docstate = response.Object.state; }
+                    if (response.Object.gender != null) { gender = " (" + response.Object.gender + ")"; }
+                    tableHtml = "<address>" +
+                             "<strong>Dr. " + response.Object.doctorName + gender + "</strong>" +
+                             "<br><strong>Specaility: </strong>&nbsp;" + spec +
+                             "<br><strong>Languages: </strong>&nbsp;" + lang +
+                             "<br><strong>State: </strong>&nbsp;" + docstate +
+                             "<br><strong>Cell Phone: </strong>&nbsp;" + doccell +
+                           //   "<br><strong>Home Phone: </strong>&nbsp;" + dhomePhone +
+                             "<br><strong>Email: </strong>&nbsp; " + docemail +
+                             "<br><strong>Consult Charges: </strong>&nbsp; " + cc +
+                              "</address>";
+                    document.getElementById("docInfo").innerHTML = tableHtml;
+                }
+                var oDocInfo = null;
+                if (appType == "L"){
+                for (var i = 0; i < availableDoctors.doctor.length; i++) {
+                    if (availableDoctors.doctor[i].docId == _selecteddoctorID) {
+                        oDocInfo = availableDoctors.doctor[i];
+                        break;
+                    }
+                }
+            }
+                debugger;
+                if((oDocInfo==null) && (appType=="L")){
+                    var cCallLogUrl = '@Url.Action("AddCallLogbyPatient", "UserChat")?doctorId=' + _selecteddoctorID + '&message=Doctor-is-offline-for-live-call';
+                    $.post(cCallLogUrl);
+                    new PNotify({
+                        title: 'Oops, Doctor is Offline!!!',
+                        text: "Sorry, the doctor is offline now. Please select any other doctor before making payment.",
+                        type: 'error',
+                        styling: 'bootstrap3'
+                    });
+                    //  $('#wizard').smartWizard('goToStep', 1);
+
+
+
+                }
+                else{
+                    //Stripe Initialization after getting consultCharges of selected doctor
+                    var amount=response.Object.consultCharges*100;
+                    console.log('Consult Charges: '+amount);
+                    var oStripePayCheckout = new StripePayCheckout({
+                        publisherKey: '@publisherKey',
+                        amount: amount,
+                        targetButton: "#btnProceedWithPayment",
+                        actionUrl: '@Url.Action("ProceedWithPay", "seedoctor")',
+                        handleSuccess: function () {
+                            console.log('Payment Done...');
+                            new PNotify({
+                                title: 'Success',
+                                text: "$"+amount/100+" has been  charged successfully.",
+                                type: 'info', addclass: 'dark',
+                                styling: 'bootstrap3'
+                            });
+
+                            var cCallLogUrl = '@Url.Action("AddCallLogbyPatient", "UserChat")?doctorId=' + $("#doctorid").val() + '&message=Patient-paid-successfully';
+                            $.post(cCallLogUrl);
+                            showLoader();
+                            CreateAppointment(@ViewBag.PatienID,response.Object.consultCharges);
+                        },
+                        handleFailure: function () {
+                            var cCallLogUrl = '@Url.Action("AddCallLogbyPatient", "UserChat")?doctorId=' + $("#doctorid").val() + '&message=Patient-payment-failed';
+                            $.post(cCallLogUrl);
+                            showAlert("Alert","Stripe Payment Failed!!!");
+                            new PNotify({
+                                title: 'Payment Failed',
+                                text: "Stripe Payment Failed!!!",
+                                type: 'error',
+                                styling: 'bootstrap3'
+                            });
+                            return;
+                            //alert("OOPS! Some thing goes wrong. User can be redirected to appropriate page.");
+                        }
+                    });
+
+                    oStripePayCheckout.initialize();
+                }
+
+            },
+            error: errorRes
+
+        });
+
+    }
+    $(document).ready(function () {
+
+        GetAllLanguages();
+        GetAllSpecialities();
+        GetROV('@SessionHandler.UserInfo.Id');
+        if($("#wizard").smartWizard('currentStep','1'))
+        {
+
+            $('.buttonNext').hide();
+            $('.buttonPrevious').hide();
+        }
+
+        if($("#wizard").smartWizard('currentStep','2'))
+        {
+
+            $('.buttonNext').hide();
+            $('.buttonPrevious').hide();
+        }
+
+        //Get Files in ROV - Starts
+        reader1.addEventListener("load", function () {
+            $("#hdnFileID1").val(reader1.result);
+        }, false);
+
+        reader2.addEventListener("load", function () {
+            $("#hdnFileID2").val(reader2.result);
+        }, false);
+
+        reader3.addEventListener("load", function () {
+            $("#hdnFileID3").val(reader3.result);
+        }, false);
+
+    });
+
+   function CreateAppointment(patientID,amount)
+   {
+      // debugger;
+        var fetchdatedd = $("#fetchdate").val();
+       //alert(fetchdatedd);
+       var myDate = new Date(new Date(fetchdatedd));
+       var timeString = myDate.getFullYear() + '-' + (myDate.getMonth() + 1) + '-'
+       + myDate.getDate() + ' ' + myDate.getHours() + ':' + myDate.getMinutes();
+       console.log(timeString);
+       var dbDate = new Date(Date.UTC(myDate.getFullYear(), myDate.getMonth(), myDate.getDate(), myDate.getHours(), myDate.getMinutes(), 0));
+
+       var options = {
+           weekday: "long", year: "numeric", month: "short",
+           day: "numeric", hour: "2-digit", minute: "2-digit"
+       };
+
+       var localDate = (dbDate.toLocaleTimeString("en-us", options));
+
+       var tempfetchdate = formatDate(new Date(localDate), "dd/MM/yyyy");  
+       //alert(tempfetchdate);
+       _objAppointment["appDate"] = tempfetchdate.trim();  //$("#fetchdate").val();
+       //return false;
+       // edit end 
+
+      
+         //_objAppointment["appDate"] = $("#fetchdate").val();
+        _objAppointment["doctorID"] = $("#doctorid").val();
+        _objAppointment["patientID"] = patientID;
+        _objAppointment["paymentAmt"] = amount;
+        _objAppointment["rov"] = $("#ROV option:selected").text();
+        _objAppointment["chiefComplaints"] = $("#chiefcomplaints").val();
+
+        _objAppointment["rovFile1Base64"] = $("#hdnFileID1").val();
+        _objAppointment["rovFile1Name"] = $("#hdnFileID1Name").val();
+
+        _objAppointment["rovFile2Base64"] = $("#hdnFileID2").val();
+        _objAppointment["rovFile2Name"] = $("#hdnFileID2Name").val();
+
+        _objAppointment["rovFile3Base64"] = $("#hdnFileID3").val();
+        _objAppointment["rovFile3Name"] = $("#hdnFileID3Name").val();
+
+
+
+        $.ajax({
+            type: 'POST',
+            url: '/SeeDoctor/SaveAppointment',
+            dataType: 'text',
+            data: 'inputModel='+ JSON.stringify(_objAppointment),
+            success: function (response) {
+                var result=JSON.parse(response);
+                if(result.Message!=undefined)
+                {
+                    hideLoader();
+                    new PNotify({
+                        title: 'Error',
+                        text: result.Message.ReasonPhrase,
+                        type: 'error',
+                        styling: 'bootstrap3'
+                    });
+                }
+
+                if (result.Success == true) {
+
+                    if (result.ApiResultModel.message == "") {
+                        if (appType == "S")
+                            hideLoader();
+                        new PNotify({
+                            title: 'Success',
+                            text: "Appointment has been scheduled successfully. Reference #:"+result.ApiResultModel.ID,
+                            type: 'info',addclass: 'dark',
+                            styling: 'bootstrap3'
+                        });
+                        var cCallLogUrl = '@Url.Action("AddCallLogbyPatient", "UserChat")?doctorId=' + $("#doctorid").val() + '&message=Live-App-created-'+result.ApiResultModel.ID;
+                        $.post(cCallLogUrl);
+
+                        if (appType == "S")
+                        {
+                            window.location.href = '/Appointment/Index/';
+                        }
+                        if (appType == "L")
+                        {
+                            console.log('Live Appointment');
+                            localStorage.setItem("livecall","1");
+                            localStorage.setItem("doctorid",$("#doctorid").val());
+                            localStorage.setItem("patientid",patientID);
+                            localStorage.setItem("apptime",new Date());
+
+
+                            createConsultFromPatient($("#doctorid").val(), patientID, result.ApiResultModel.ID);}
+
+
+
+
+                    }
+                }
+                else
+                { hideLoader();
+                new PNotify({
+                    title: 'Error',
+                    text: 'Error in appointment saving.',
+                    type: 'error',
+                    styling: 'bootstrap3'
+                });
+
+                var cCallLogUrl = '@Url.Action("AddCallLogbyPatient", "UserChat")?doctorId=' + $("#doctorid").val() + '&message=Err-in-app-save';
+                $.post(cCallLogUrl);
+                }
+
+
+            },
+            error: errorRes
+
+        });
+
+    }
+    var _objConsult = {};
+    function createConsultFromPatient(doctorID, patientID, appID) {
+        debugger;
+        _objConsult["doctorId"] = doctorID;
+        _objConsult["patientId"] = patientID;
+        _objConsult["appID"] = appID;
+        _objConsult["sessionID"] = "0";
+        _objConsult["token"] = "0";
+        _objConsult["userID"] = '0'
+
+        $.ajax({
+            type: 'POST',
+            url: '/SeeDoctor/CreateConsult',
+            data: JSON.stringify(_objConsult),
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (response) {
+
+                if (response.Success == true) {
+                    if (response.ApiResultModel.message != "") {
+                        hideLoader();
+                        new PNotify({
+                            title: 'Error',
+                            text: response.ApiResultModel.message,
+                            type: 'error',
+                            styling: 'bootstrap3'
+                        });
+                        //Log consult creation error
+
+                        var cCallLogUrl = '@Url.Action("ConsultCreationFailedbyPatient", "UserChat")?doctorId=' + doctorId;
+                        $.post(cCallLogUrl);
+                        showAlert('Consult Creation Error', 'Appointment schedule with app ID:'+appID+', but Unable to create consult');
+                    }
+                    else if (response.ApiResultModel.message == "") {
+                        console.log('consult created');
+                      /*  new PNotify({
+                            title: 'Success',
+                            text: "Consultation is created successfully.",
+                            type: 'info', addclass: 'dark',
+                            styling: 'bootstrap3'
+                        });*/
+
+                        //Log consultion creation sucess
+                        var cCallLogUrl = '@Url.Action("AddCallLogbyPatient", "UserChat")?doctorId=' + doctorID + '&message=consult-created-by-patient';
+                    $.post(cCallLogUrl);
+                        if(appType="L")
+                        {
+                            debugger;
+                            localStorage.setItem('consultationKey', response.ApiResultModel.ID);
+
+                            var consultID=response.ApiResultModel.ID;
+                            //send consultID to doctor incase of live appointment
+                            var docId = doctorID;
+
+                            var oDocInfo = null;
+                            for (var i = 0; i < availableDoctors.doctor.length; i++) {
+                                if (availableDoctors.doctor[i].docId == docId) {
+                                    oDocInfo = availableDoctors.doctor[i];
+                                    break;
+                                }
+                            }
+                            debugger;
+
+                            if(oDocInfo!=null){
+                                var cCallLogUrl = '@Url.Action("AddCallLogbyPatient", "UserChat")?doctorId=' + doctorID + '&message=consultID-sent-to-doctor';
+                                $.post(cCallLogUrl);
+                                chat.server.sendMessageToDoctor(
+                                {
+                                    SenderId: '@SessionHandler.UserInfo.Id',
+                                    UserName: '@SessionHandler.UserInfo.Email',
+                                    ReceiverConnectionId: oDocInfo.connectionId,
+                                    ReceiverId: docId,
+                                    DoctorName: oDocInfo.firstName + ' ' + oDocInfo.lastName,
+                                    PatientName: '@(SessionHandler.UserInfo.FirstName + " " + SessionHandler.UserInfo.LastName)',
+                                    SenderType: 'Patient',
+                                    Message: JSON.stringify({ status: 'consultID', name: consultID }),
+                                    UserGroup: 'doctors'
+                                });
+
+                                hideLoader();
+                                new PNotify({
+                                    title: 'Success',
+                                    text: "Your Live consultation consultation will be started soon.",
+                                    type: 'info', addclass: 'dark',
+                                    styling: 'bootstrap3'
+                                });
+                            }
+                            else {
+                                new PNotify({ title: 'Error', text: "Doctor is offline. Please try later", type: 'error', styling: 'bootstrap3' });
+
+                                var cCallLogUrl = '@Url.Action("AddCallLogbyPatient", "UserChat")?doctorId=' + doctorID + '&message=doctor-is-offline-for-live-call';
+                                $.post(cCallLogUrl);
+                                return false;
+                            }
+                            debugger;
+
+
+                            var signalRInfo = JSON.parse(localStorage.getItem('signalRInfo'));
+                            var tokboxInfo=localStorage.getItem('tokbox');
+                            //check for apptype if l then go here
+                            //create consult here
+                          //  var cUrlReadyForCall = "@Url.Action("ReadyForCall","UserChat")?senderId="+ signalRInfo.SenderId +"&userType=Patient&receiverId=" + signalRInfo.ReceiverId + "&recipientName=" + signalRInfo.RecipientName;
+
+                          //  $.post(cUrlReadyForCall, function (oResp) {
+                                if (tokboxInfo!="0")
+                                {
+                                    var cCallLogUrl = '@Url.Action("AddCallLogbyPatient", "UserChat")?doctorId=' + doctorID + '&message=patient-ready-for-VC';
+                                    $.post( cCallLogUrl, function() {
+                                        //Redirect patient to call
+                                        window.location = '@Url.Action("Index","UserChat")?tokboxInfo='+tokboxInfo;
+                                    });
+
+
+
+                                }
+                                else
+                                { new PNotify({ title: 'Error', text: "Error in getting tokbox info.", type: 'error', styling: 'bootstrap3' });
+                                var cCallLogUrl = '@Url.Action("AddCallLogbyPatient", "UserChat")?doctorId=' + doctorID + '&message=Error-in-getting-tokbox-info';
+                                $.post(cCallLogUrl);
+                                }
+                          // });
+
+                            //Redirect User for video chat
+                           // showAlert("Payment Alert","Payment successful. Your consultation will be started soon.");
+                            //alert("Payment successful. Your consultation will be started soon.");
+                            //location.reload();
+                        }
+
+                    }
+                }
+
+            },
+            error: errorRes
+
+        });
+    }
+
+    //$('#searchdate').bootstrapMaterialDatePicker
+    //        ({
+    //            time: false,
+    //            clearButton: true,
+    //            format: 'DD/MM/YYYY ',
+
+    //        });
+    $('#searchdate').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: false,
+        calender_style: "picker_2",
+        format: 'DD/MM/YYYY ',
+        minDate: new Date()
+    }, function (start, end, label) {
+        console.log(start.toISOString(), end.toISOString(), label);
+    });
+
+
+    $("#fetchdate").daterangepicker({
+        singleDatePicker: true,
+        calender_style: "picker_2",
+        format: 'MM/DD/YYYY ',
+        minDate: new Date()
+    });
+    $('#fetchdate').data('daterangepicker').setStartDate();
+
+    //$("#appdate").on('input', function () {
+    //    alert("Selected date: " + this.value);
+    //});
+    //$('#appdate').on("input change", function (e) {
+    //// alert(e.target.value);
+    // //console.log("Date changed: ", e.target.value);
+    // fetchTimings(e.target)
+    //});
+
+    $('#time').bootstrapMaterialDatePicker
+    ({
+        date: false,
+        shortTime: false,
+        format: 'HH:mm'
+    });
+    //$('#time').bootstrapMaterialDatePicker('setTime', moment());// update check in sp for null time
+    $("#myModal1").on('show.bs.modal', function (e) {
+        var $modal = $(this);
+
+        mydocid = e.relatedTarget.id;
+
+        $("#doctorid").val(mydocid);
+        //alert($('#' + mydocid).data('todo').id+' '+$('#' + mydocid).data('todo').doctorName);
+        var todoId = $('#' + mydocid).data('todo').id;
+        var docName = $('#' + mydocid).data('todo').doctorName;
+        var cap=docName.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+        $("#timingsmodaltitle").text("Dr. "+cap + " Timings");
+    });
+    $("#myModal8").on('show.bs.modal', function (e) {
+        var $modal = $(this);
+        mydocid = e.relatedTarget.id;
+        //alert(mydocid);
+        $("#docscheduleid").val(mydocid);
+
+    });
+
+
+
+
+</script>
+
+@*For Health Conditions*@
+<script>
+    $(document).ready(function () {
+        if(localStorage.getItem('flag')==0)
+        {
+            $('#divsearchtitle').css('display', 'none');
+            $('#divsearchdoctor').css('display', 'none');
+        }
+        if(localStorage.getItem('flag')==1)
+        {
+            $('#divsearchtitle').css('display', 'block');
+            //$('#divsearchdoctor').css('display', 'none');
+        }
+        GetHealthConditions(@ViewBag.PatienID);
+        $('#conditionstable').DataTable({
+            'order': [[0, 'asc']],
+            'columnDefs': [
+               { visible: false, targets: [0] }
+
+            ],
+            "bAutoWidth": false, // Disable the auto width calculation
+            "aoColumns": [
+             { "sWidth": "5%" },
+             { "sWidth": "30%" },
+             { "sWidth": "20%" },
+            { "sWidth": "8%" }
+
+            ]
+        });
+    });
+    //For health conditions//
+    $('#addcondition').on('click', function () {
+        if ($("#myCondition").val() == "") {
+            //$("#myCondition").val("Condition name is required.");
+            document.getElementById("divcondition").style.display = "block";
+            document.getElementById("btncondition").style.display = "block";
+        }
+        else {
+            document.getElementById("divcondition").style.display = "none";
+            document.getElementById("btncondition").style.display = "none";
+            addupdateCondition(@ViewBag.PatienID);
+        }
+
+
+    });
+    $('#reset').on('click', function () {
+        resetCondition();
+
+    });
+    $('#conditionCheckbox').on('click', function () {
+        if ($('#conditionCheckbox')[0].checked) {
+
+            document.getElementById("myCondition").style.display = "block";
+            document.getElementById("addcondition").style.display = "block";
+            document.getElementById("reset").style.display = "block";
+        }
+        else {
+
+            //document.getElementById("healthconditions").style.display = "none";
+            document.getElementById("myCondition").style.display = "none";
+            document.getElementById("addcondition").style.display = "none";
+            document.getElementById("reset").style.display = "none";
+            document.getElementById("divcondition").style.display = "none";
+            document.getElementById("btncondition").style.display = "none";
+
+        }
+
+    });
+
+    //For health conditions//
+</script>
+
+@*For Medicine*@
+<script>
+
+    $(document).ready(function () {
+
+        GetMedications(@ViewBag.PatienID);
+        GetFrequency();
+        $('#medicinestable').DataTable({
+            'order': [[0, 'asc']],
+            'columnDefs': [
+               { visible: false, targets: [0] }
+
+            ],
+            "bAutoWidth": false, // Disable the auto width calculation
+            "aoColumns": [
+             { "sWidth": "5%" },
+             { "sWidth": "30%" },
+             { "sWidth": "20%" },
+            { "sWidth": "15%" },
+             { "sWidth": "15%" }
+
+            ]
+        });
+
+
+    });
+    $('#addmedicine').on('click', function () {
+        if ($("#myMedicine").val() == "") {
+            document.getElementById("divmedicine").style.display = "block";
+            document.getElementById("btnmedicine").style.display = "block";
+            document.getElementById("divfrequency").style.display = "block";
+
+        }
+        else
+        {
+            document.getElementById("divmedicine").style.display = "none";
+            document.getElementById("btnmedicine").style.display = "none";
+            document.getElementById("divfrequency").style.display = "none";
+            addupdateMedicine(@ViewBag.PatienID);
+        }
+
+
+    });
+    $('#resetmedicine').on('click', function () {
+        resetMedicine();
+
+    });
+    $('#medicineCheckbox').on('click', function () {
+        if ($('#medicineCheckbox')[0].checked) {
+            document.getElementById("myMedicine").style.display = "block";
+            document.getElementById("myFrequency").style.display = "block";
+            document.getElementById("resetmedicine").style.display = "block";
+            document.getElementById("addmedicine").style.display = "block";
+        }
+        else {
+
+            document.getElementById("myMedicine").style.display = "none";
+            document.getElementById("myFrequency").style.display = "none";
+            document.getElementById("resetmedicine").style.display = "none";
+            document.getElementById("addmedicine").style.display = "none";
+            document.getElementById("divmedicine").style.display = "none";
+            document.getElementById("divfrequency").style.display = "none";
+            document.getElementById("btnmedicine").style.display = "none";
+
+        }
+
+    });
+</script>
+
+@*For Allergies*@
+<script>
+    $(document).ready(function () {
+        //GetAllergies();
+
+        GetSensitivities();
+        GetReactions();
+        GetPatientAllergies(@ViewBag.PatienID);
+        $('#allergiestable').DataTable({
+            'order': [[0, 'asc']],
+            'columnDefs': [
+               { visible: false, targets: [0] }
+
+            ],
+            "bAutoWidth": false, // Disable the auto width calculation
+            "aoColumns": [
+             { "sWidth": "5%" },
+             { "sWidth": "20%" },
+             { "sWidth": "15%" },
+            { "sWidth": "15%" },
+            { "sWidth": "20%" },
+            { "sWidth": "15%" }
+            ]
+
+
+        });
+    });
+    $('#addallergy').on('click', function () {
+        if ($("#myAllergy").val() == "") {
+            document.getElementById("divallergy").style.display = "block";
+            document.getElementById("btnallergy").style.display = "block";
+            document.getElementById("divsensitivity").style.display = "block";
+            document.getElementById("divreaction").style.display = "block";
+        }
+        else {
+            document.getElementById("divallergy").style.display = "none";
+            document.getElementById("btnallergy").style.display = "none";
+            document.getElementById("divsensitivity").style.display = "none";
+            document.getElementById("divreaction").style.display = "none";
+            addupdateAllergies(@ViewBag.PatienID);
+        }
+
+    });
+    $('#resetallergy').on('click', function () {
+        resetAllergies();
+
+    });
+    $('#allergyCheckbox').on('click', function () {
+        if ($('#allergyCheckbox')[0].checked) {
+
+            document.getElementById("myAllergy").style.display = "block";
+            document.getElementById("Sensitivity").style.display = "block";
+            document.getElementById("Reaction").style.display = "block";
+            document.getElementById("resetallergy").style.display = "block";
+            document.getElementById("addallergy").style.display = "block";
+        }
+        else {
+
+            document.getElementById("myAllergy").style.display = "none";
+            document.getElementById("Sensitivity").style.display = "none";
+            document.getElementById("Reaction").style.display = "none";
+            document.getElementById("resetallergy").style.display = "none";
+            document.getElementById("addallergy").style.display = "none";
+            document.getElementById("divallergy").style.display = "none";
+            document.getElementById("divsensitivity").style.display = "none";
+            document.getElementById("divreaction").style.display = "none";
+            document.getElementById("btnallergy").style.display = "none";
+        }
+
+    });
+</script>
+
+
+<!-- /jQuery Smart Wizard -->
+<script>
+    $(document).ready(function () {
+
+        //  $('#wizard').smartWizard('onShowStep', 2);
+        $('#wizard_verticle').smartWizard({
+            transitionEffect: 'slide'
+
+        });
+
+
+        //showApppointmentSummary();
+        $('.buttonNext').addClass('btn btn-primary');
+        $('.buttonPrevious').addClass('btn btn-primary');
+        $('.buttonFinish').addClass('btn btn-default');
+    });
+
+    $('#wizard').smartWizard({
+        onLeaveStep:leaveAStepCallback
+
+    });
+
+    function leaveAStepCallback(obj, context){
+        //alert("Leaving step " + context.fromStep + " to go to step " + context.toStep);
+        return validateSteps(context.toStep); // return false to stay on step and true to continue navigation
+    }
+
+
+
+    // Your Step validation logic
+    function validateSteps(stepnumber){
+        var isStepValid = true;
+        //alert(stepnumber);
+        // validate step 1
+        if( stepnumber== 2){
+            GetPatientChiefComplaints(@SessionHandler.UserInfo.Id);
+        }
+        if( stepnumber== 5){
+            //alert('load appointment detaul');
+            // Your step validation logic
+            // set isStepValid = false if has errors
+            showDoctorInfo();
+            showApppointmentSummary();
+
+
+        }
+        if( stepnumber== 4){
+            loadPatientPharmacy('@SessionHandler.UserInfo.Id');
+        }
+        return true;
+        // ...
+    }
+
+
+    $('#fetchdate').on('apply.daterangepicker', function (ev, picker) {
+        //do something, like clearing an input
+        fetchTimings( $('#fetchdate').val());
+
+    });
+</script>
+
+<script>
+    $('#compose, .compose-close').click(function () {
+        $('.compose').slideToggle();
+    });
+</script>
+
+<script>
+    $('#compose1, .compose1-close').click(function () {
+        $('.compose1').slideToggle();
+    });
+</script>
+
+<script>
+    $('#compose2, .compose2-close').click(function () {
+        $('.compose2').slideToggle();
+    });
+</script>
+
+<script>
+    $('#compose3, .compose3-close').click(function () {
+        $('.compose3').slideToggle();
+    });
+</script>
+
+<script>
+    $('#compose4, .compose4-close').click(function () {
+        $('.compose4').slideToggle();
+    });
+</script>
+
+<script>
+    $('#compose5, .compose5-close').click(function () {
+        $('.compose5').slideToggle();
+    });
+</script>
+
+<script>
+    $('#compose6, .compose6-close').click(function () {
+        $('.compose6').slideToggle();
+    });
+</script>
+
+<script>
+    $('#compose7, .compose7-close').click(function () {
+        $('.compose7').slideToggle();
+    });
+</script>
+
+<script>
+    $('#compose8, .compose8-close').click(function () {
+        $('.compose8').slideToggle();
+    });
+</script>
+
+<script>
+    $('#compose9, .compose9-close').click(function () {
+        $('.compose9').slideToggle();
+    });
+</script>
+
+<script>
+    $('#compose10, .compose10-close').click(function () {
+        $('.compose10').slideToggle();
+    });
+</script>
+
+<script>
+    $('#compose11, .compose11-close').click(function () {
+        $('.compose11').slideToggle();
+    });
+</script>
+
+<script>
+    $('#compose12, .compose12-close').click(function () {
+        $('.compose12').slideToggle();
+    });
+</script>
+
+
+
+<script>
+    $('#search-click').click(function () {
+        $('.according-defalut-close').show();
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+
+        $("#btnPharmacySrch").click(function(){
+
+            //Perform Validation - Starts
+            if($("#txtPharmacySrchName").val() == "" && $("#txtPharmacySrchCity").val() == "" && $("#txtPharmacySrchState").val() == "" && $("#txtPharmacySrchZip").val() == ""){
+                showErrorMsgBox('Please select atleast one search criteria.');
+                return;
+            }
+            else if($("#txtPharmacySrchName").val() != "" && $("#txtPharmacySrchName").val().length <3){
+                showErrorMsgBox('Pharmacy search must be atleast three characters.');
+                return;
+            }
+            //Perform Validation - Ends
+
+            //Build Params, Call Search and get results
+            var oModel = {
+                Name:$("#txtPharmacySrchName").val(),
+                City:$("#txtPharmacySrchCity").val(),
+                State:$("#txtPharmacySrchState").val(),
+                Zip:$("#txtPharmacySrchZip").val()
+            };
+
+            var cUrl = '@Url.Action("SearchPharmacy","SeeDoctor")';
+            $.post(cUrl, oModel, function(oResult){
+                $("#divPharmacySearchBody").html(oResult);
+                $('#mdlPharmacy').modal('show');
+            });
+        });
+
+
+        //Upload files binding - Starts
+
+        $("#fileID1").change(function () {
+            var filepath = $("#fileID1").val();
+            var filename = filepath.substring(filepath.lastIndexOf('\\') + 1);
+
+            //Validate file
+            var fileExt = filepath.substring(filepath.lastIndexOf('.') + 1).toLowerCase();
+
+            if (fileExt != "jpg" && fileExt != "png") {
+                new PNotify({ title: 'Error', text: 'File format is not supported. Please choose appropriate file format.', type: 'error', styling: 'bootstrap3' });
+                deSelectFile1();
+                return;
+            }
+
+            var fileID1 = document.querySelector('#fileID1').files[0];
+
+            if(fileID1.size == 0){
+                new PNotify({ title: 'Error', text: 'Blank file is not allowed.', type: 'error', styling: 'bootstrap3' });
+                deSelectFile1();
+                return;
+            }
+            if(fileID1.size >= (1048576*2)){
+                new PNotify({ title: 'Error', text: 'File 1 size must be less than 2 MB.', type: 'error', styling: 'bootstrap3' });
+                deSelectFile1();
+                return;
+            }
+
+            reader1.readAsDataURL(fileID1);
+            $("#hdnFileID1Name").val(filename);
+            $("#spnSelFileName1").html(filename);
+            $("#btnSelectedFile1").show();
+        });
+
+        $("#btnSelectedFile1").click(deSelectFile1);
+
+        function deSelectFile1() {
+            $("#fileID1").val('');
+            $("#hdnFileID1").val('');
+            $("#hdnFileID1Name").val('');
+            $("#btnSelectedFile1").hide();
+            $("#spnSelFileName1").html('');
+        }
+
+        //--------------------------//
+
+        $("#fileID2").change(function () {
+            var filepath = $("#fileID2").val();
+            var filename = filepath.substring(filepath.lastIndexOf('\\') + 1);
+
+            //Validate file
+            var fileExt = filepath.substring(filepath.lastIndexOf('.') + 1).toLowerCase();
+
+            if (fileExt != "jpg" && fileExt != "png") {
+                new PNotify({ title: 'Error', text: 'File format is not supported. Please choose appropriate file format.', type: 'error', styling: 'bootstrap3' });
+                deSelectFile2();
+                return;
+            }
+
+            var fileID2 = document.querySelector('#fileID2').files[0];
+
+            if(fileID2.size == 0){
+                new PNotify({ title: 'Error', text: 'Blank file is not allowed.', type: 'error', styling: 'bootstrap3' });
+                deSelectFile1();
+                return;
+            }
+            if(fileID2.size >= (1048576*2)){
+                new PNotify({ title: 'Error', text: 'File 2 size must be less than 2 MB.', type: 'error', styling: 'bootstrap3' });
+                deSelectFile2();
+                return;
+            }
+
+            reader2.readAsDataURL(fileID2);
+            $("#hdnFileID2Name").val(filename);
+            $("#spnSelFileName2").html(filename);
+            $("#btnSelectedFile2").show();
+        });
+
+        $("#btnSelectedFile2").click(deSelectFile2);
+
+        function deSelectFile2() {
+            $("#fileID2").val('');
+            $("#hdnFileID2").val('');
+            $("#hdnFileID2Name").val('');
+            $("#btnSelectedFile2").hide();
+            $("#spnSelFileName2").html('');
+        }
+
+        //--------------------------//
+
+        $("#fileID3").change(function () {
+            var filepath = $("#fileID3").val();
+            var filename = filepath.substring(filepath.lastIndexOf('\\') + 1);
+
+            //Validate file
+            var fileExt = filepath.substring(filepath.lastIndexOf('.') + 1).toLowerCase();
+
+            if (fileExt != "jpg" && fileExt != "png") {
+                new PNotify({ title: 'Error', text: 'File format is not supported. Please choose appropriate file format.', type: 'error', styling: 'bootstrap3' });
+                deSelectFile3();
+                return;
+            }
+
+            var fileID3 = document.querySelector('#fileID3').files[0];
+            if(fileID3.size == 0){
+                new PNotify({ title: 'Error', text: 'Blank file is not allowed.', type: 'error', styling: 'bootstrap3' });
+                deSelectFile1();
+                return;
+            }
+            if(fileID3.size >= (1048576*2)){
+                new PNotify({ title: 'Error', text: 'File 3 size must be less than 2 MB.', type: 'error', styling: 'bootstrap3' });
+                deSelectFile3();
+                return;
+            }
+
+            reader3.readAsDataURL(fileID3);
+            $("#hdnFileID3Name").val(filename);
+            $("#spnSelFileName3").html(filename);
+            $("#btnSelectedFile3").show();
+        });
+
+        $("#btnSelectedFile3").click(deSelectFile3);
+
+        function deSelectFile3() {
+            $("#fileID3").val('');
+            $("#hdnFileID3").val('');
+            $("#hdnFileID3Name").val('');
+            $("#btnSelectedFile3").hide();
+            $("#spnSelFileName3").html('');
+        }
+        //Upload files binding - Ends
+
+
+        $('#single_cal1').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+            calender_style: "picker_1",
+
+        }, function (start, end, label) {
+            console.log(start.toISOString(), end.toISOString(), label);
+        });
+
+        $('#single_cal2').daterangepicker({
+            singleDatePicker: true,
+            calender_style: "picker_2"
+        }, function (start, end, label) {
+            console.log(start.toISOString(), end.toISOString(), label);
+        });
+
+        $('#single_cal3').daterangepicker({
+            singleDatePicker: true,
+            calender_style: "picker_3"
+        }, function (start, end, label) {
+            console.log(start.toISOString(), end.toISOString(), label);
+        });
+
+        $('#single_cal4').daterangepicker({
+            singleDatePicker: true,
+            calender_style: "picker_4"
+        }, function (start, end, label) {
+            console.log(start.toISOString(), end.toISOString(), label);
+        });
+
+        $('#single_cal5').daterangepicker({
+            singleDatePicker: true,
+            calender_style: "picker_5"
+        }, function (start, end, label) {
+            console.log(start.toISOString(), end.toISOString(), label);
+        });
+
+        $('#single_cal6').daterangepicker({
+            singleDatePicker: true,
+            calender_style: "picker_6"
+        }, function (start, end, label) {
+            console.log(start.toISOString(), end.toISOString(), label);
+        });
+
+        $('#single_cal7').daterangepicker({
+            singleDatePicker: true,
+            calender_style: "picker_7"
+        }, function (start, end, label) {
+            console.log(start.toISOString(), end.toISOString(), label);
+        });
+
+        $('#single_cal8').daterangepicker({
+            singleDatePicker: true,
+            calender_style: "picker_8"
+        }, function (start, end, label) {
+            console.log(start.toISOString(), end.toISOString(), label);
+        });
+
+        $('#single_cal9').daterangepicker({
+            singleDatePicker: true,
+            calender_style: "picker_9"
+        }, function (start, end, label) {
+            console.log(start.toISOString(), end.toISOString(), label);
+        });
+
+        $('#single_cal10').daterangepicker({
+            singleDatePicker: true,
+            calender_style: "picker_10"
+        }, function (start, end, label) {
+            console.log(start.toISOString(), end.toISOString(), label);
+        });
+
+        $('#single_cal11').daterangepicker({
+            singleDatePicker: true,
+            calender_style: "picker_11"
+        }, function (start, end, label) {
+            console.log(start.toISOString(), end.toISOString(), label);
+        });
+
+        $('#single_cal12').daterangepicker({
+            singleDatePicker: true,
+            calender_style: "picker_12"
+        }, function (start, end, label) {
+            console.log(start.toISOString(), end.toISOString(), label);
+        });
+
+        $('#single_cal13,#single_cal14,#single_cal15,#single_cal16,#single_cal17,#single_cal18,#single_cal19,#single_cal20,#single_cal21,#single_cal22,#single_cal23,#single_cal24,#single_cal25,#single_cal26,#single_cal27,#single_cal28,#single_cal29,#single_cal30,#single_cal31,#single_cal32,#single_cal33,#single_cal34,#single_cal35,#single_cal36').daterangepicker({
+            singleDatePicker: true,
+            calender_style: "picker_13,picker_14,picker_15,picker_16,picker_17,picker_18,picker_19,picker_20,picker_21,picker_22,picker_23,picker_24,picker_25,picker_26,picker_27,picker_28,picker_29,picker_30,picker_31,picker_32,picker_33,picker_34,picker_35,picker_36"
+        }, function (start, end, label) {
+            console.log(start.toISOString(), end.toISOString(), label);
+        });
+
+
+        //Felix
+        $("#txtPharmacySrchName").autocomplete({
+            //var key=$(this).val();
+                source: function(request, response) {
+                    $.ajax({
+                        type: "POST",
+
+                        url: "/SeeDoctor/GetPharmacySearchResult",
+
+                        dataType: "json",
+                        data: { "P_Name": request.term },
+                        success: function (data) {
+                            response($.map(data, function (item) {
+                                return { label: item.Business_Name, value: item.Business_Name };
+
+                            }))
+                        }
+                    });
+                }
+            });
+
+
+
+        //$("#txtPharmacySrchName").autocomplete({
+
+        //     var key = $(this).val();
+
+        //     });
+
+    //     $("#txtPharmacySrchName").chosen();
+    //$("#txtPharmacySrchName_chosen").find(".chosen-search > input[type='text']").keyup(function (e) {
+    //    //debugger;
+    //    //var Index = $('#choosenICDCodestableIndex').val();
+    //    var key = $(this).val();
+    //    var SmartSearchStandard = {
+    //        SmartSearch: key
+    //    }
+    //    if ((key.length >= 1) && !(e.keyCode === 38 || e.keyCode === 40)) {
+    //        ajaxStart();
+    //        AjaxCallAsync("/Compliance/GetStandardNameSmartSearch", "POST", SmartSearchStandard, GetStandardNameSmartSearchSuccessCallBack, '', '');
+    //    }
+    //});
+
+    });
+
+    $('#toggle1').on(function () {
+
+        $('#toggle_1').show();
+        return false;
+    });
+    $('#toggle_1').on(function () {
+
+        $('#toggle_1').hide();
+        return false;
+    });
+    $('#toggle2').click(function () {
+        $('#toggle_2').show();
+        return false;
+    });
+    $('#toggle_2').click(function () {
+        $('#toggle_2').hide();
+        return false;
+    });
+    $('#toggle3').click(function () {
+        $('#toggle_3').show();
+        return false;
+    });
+    $('#toggle_3').click(function () {
+        $('#toggle_3').hide();
+        return false;
+    });
+    $('#toggle4').click(function () {
+        $('#toggle_4').show();
+        return false;
+    });
+    $('#toggle_4').click(function () {
+        $('#toggle_4').hide();
+        return false;
+    });
+    $('#toggle5').click(function () {
+        $('#toggle_5').show();
+        return false;
+    });
+    $('#toggle_5').click(function () {
+        $('#toggle_5').hide();
+        return false;
+    });
+    $('#toggle6').click(function () {
+        $('#toggle_6').show();
+        return false;
+    });
+    $('#toggle_6').click(function () {
+        $('#toggle_6').hide();
+        return false;
+    });
+    $('#toggle7').click(function () {
+        $('#toggle_7').show();
+        return false;
+    });
+    $('#toggle_7').click(function () {
+        $('#toggle_7').hide();
+        return false;
+    });
+    $('#toggle8').click(function () {
+        $('#toggle_8').show();
+        return false;
+    });
+    $('#toggle_8').click(function () {
+        $('#toggle_8').hide();
+        return false;
+    });
+    $('#toggle9').click(function () {
+        $('#toggle_9').show();
+        return false;
+    });
+    $('#toggle_9').click(function () {
+        $('#toggle_9').hide();
+        return false;
+    });
+    $('#toggle10').click(function () {
+        $('#toggle_10').show();
+        return false;
+    });
+    $('#toggle_10').click(function () {
+        $('#toggle_10').hide();
+        return false;
+    });
+    $('#toggle11').click(function () {
+        $('#toggle_11').show();
+        return false;
+    });
+    $('#toggle_11').click(function () {
+        $('#toggle_11').hide();
+        return false;
+    });
+    $('#toggle12').click(function () {
+        $('#toggle_12').show();
+        return false;
+    });
+    $('#toggle_12').click(function () {
+        $('#toggle_12').hide();
+        return false;
+    });
+
+    $('#next').click(function () {
+        alert('next');
+        $('#step-2').show();
+    });
+
+    function showdiv() {
+        document.getElementById("mainpanel").style.display = "block";
+        //$("#maindiv").appendTo("#mainpanel");
+    }
+
+
+    //Felix
+    //function GetPharmacy() {
+    //    alert($("#txtPharmacySrchName").val());
+    //    //$("#txtPharmacySrchName").val();
+    //    var  P_Name =$("#txtPharmacySrchName").val();
+    //    //var param = {P_Name = P_Name}
+
+    //$.ajax({
+    //    type: 'POST',
+    //    url: '/SeeDoctor/GetPharmacyAddress',
+    //    data:  { "P_Name": P_Name },
+    //    dataType: 'json',
+    //    success: function (response) {
+    //        alert("Felix");
+
+
+    //            if (response.length>0) {
+    //                PharmacyAddress = response.PharmacyAddress;
+    //                $("#txtPharmacySrchCity").val(response.City);
+
+    //               // bindtoTextBoxAllergies(PharmacyAddress);
+    //            }
+    //        return false;
+    //        // else {alert(data.ErrorMessage);}
+
+
+    //    },
+    //    //error: errorRes
+
+    //});
+
+    //}
+
+
+</script>
+
+
+<!-- /jQuery autocomplete -->

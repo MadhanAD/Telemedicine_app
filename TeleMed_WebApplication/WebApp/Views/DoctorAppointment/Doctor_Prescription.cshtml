@@ -1,0 +1,120 @@
+﻿@model DataAccess.CustomModels.GetAppDetail
+
+@{
+    Layout = "~/Views/Shared/_DoctorLayout.cshtml";
+
+}
+<style>
+    .space{
+        margin-bottom: 20px!important;
+    }
+</style>
+<div class="right_col">
+    <div class="page-title">
+        <div class="title_left">
+            <h3>Prescription</h3>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div>
+            <div class="col-md-12" style="margin-bottom:7px; padding-left:0px; padding-right:0px;">
+                <div class="col-md-4">
+                    <label>Drug Name</label>
+                    <div class="input-group" style="width: 100%;">
+                        <div style="color:red; display:none;float:right" id="divmedicine">Drug is required.</div>
+                        <input maxlength="50" display:block" type="text" name="country" placeholder="Search Drug" id="txtDrugName" class="form-control" onchange="GetDrugDescription()" />
+
+                        @*<select id="txtDrugName" data-placeholder="Choose an Standard Name..." class="chosen-select col-md-12 choosenStandard">
+                    <option value="-1"></option>
+                </select>*@
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label class="">Frequency </label>
+                    <select class="form-control" id="Frequency" style="display:block">
+                        <option value="">Choose Frequency</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="">Schedule</label>
+                    <div id="">
+                        <label for="" style="font-weight:500">
+                            <input type="checkbox" id="Sh1" value="Morning" />Morning
+                        </label>
+                        <label for="" style="font-weight:500">
+                            <input type="checkbox" id="Sh2" value="After Noon" />After Noon
+                        </label>
+                        <label for="" style="font-weight:500">
+                            <input type="checkbox" id="Sh3" value="Evening" />Evening
+                        </label>
+                        <label for="" style="font-weight:500">
+                            <input type="checkbox" id="Sh4" value="Night" />Night
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" style="margin-bottom:7px; padding-left:0px; padding-right:0px;">
+                <div class="col-md-8">
+                    <label>Drug Description</label>
+                    <textarea id="lblDescription" class="form-control" disabled style="display:block; height:35px;"></textarea>
+                </div>
+                <div class="col-md-4" style="margin-bottom:10px;">
+                    <label>Quantity</label>
+                    <input type="text" id="txtQuantity" class="form-control" />
+
+                </div>
+            </div>
+            <div class="col-md-12" style="margin-bottom:7px; padding-left:0px; padding-right:0px;">
+                <div class="col-md-4">
+                    <label class="">Food Status</label>
+                    <div>
+                        <input type="checkbox" id="Fs1" value="Before Food" />Before Food
+                        <input type="checkbox" id="Fs2" value="After Food" />After Food
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label>Dose</label>
+                    <input type="text" id="txtDose" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                    <label>Days</label>
+                    <input type="text" id="txtDays" class="form-control" />
+                </div>
+            </div>
+            <div class="col-md-12" style="margin-bottom:12px;">
+                <button id="btnAdd" class="btn btn-primary" style="float:right" value="@Model.appID" onclick="AddTable('@Model.appID')">Add</button>
+            </div>
+        </div>
+
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table id="Descriptiontable" class="table table-striped table-bordered" cellspacing="0" style="width:100%">
+                        <thead>
+                            <tr class="headings">
+                                @*<th class="column-title">S.No </th>*@
+                                <th class="column-title">Drug Name </th>
+                                <th class="column-title">Quantity </th>
+                                <th class="column-title">Frequency</th>
+                                <th class="column-title">Schedule</th>
+                                <th class="column-title">Food Status</th>
+                                <th class="column-title">Dose</th>
+                                <th class="column-title">Days</th>
+                                <th class="column-title">Action</th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <button id="SavePrescription" type="button" class="btn btn-primary" style="float:right;" href="@Url.Action("Index","DoctorProfile")" onclick="SavePrescription()">Save</button>
+        </div>
+
+</div>
+
+@*<script src="~/Scripts/Prescription/Prescription.js"></script>*@
+<script src="@Url.Content("~/Scripts/Prescription/Prescription.js")"></script>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>

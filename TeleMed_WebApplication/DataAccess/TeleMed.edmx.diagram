@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="de10f385544e4a0180a36fc581852655" Name="Diagram1">
+        <EntityTypeShape EntityType="TeleMedModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.AdminUser" Width="1.5" PointX="8" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Alert" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Allergy" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.AppAttachment" Width="1.5" PointX="8.25" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Appointment" Width="1.5" PointX="6" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.AspNetRole" Width="1.5" PointX="5.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.AspNetUserClaim" Width="1.5" PointX="10.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.AspNetUserLogin" Width="1.5" PointX="10.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.AspNetUser" Width="1.5" PointX="8" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.ChatLog" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.City" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Condition" Width="1.5" PointX="3" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Consultation" Width="1.5" PointX="11.25" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.ConsultationRO" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Doctor" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.DoctorLanguage" Width="1.5" PointX="6" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.DoctorLicenseState" Width="1.5" PointX="6" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.DoctorSpeciality" Width="1.5" PointX="6" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.DoctorTiming" Width="1.5" PointX="6" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.DocumentType" Width="1.5" PointX="13.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Drug" Width="1.5" PointX="13.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.EPrescriptinXMLDate" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.FamilyHXItem" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.FavouriteDoctor" Width="1.5" PointX="15.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.FileType" Width="1.5" PointX="15.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Frequency" Width="1.5" PointX="15.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Language" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.LifeStyleQuestion" Width="1.5" PointX="17.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.LiveReqLog" Width="1.5" PointX="17.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Medication" Width="1.5" PointX="3" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Medicine" Width="1.5" PointX="17.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.MessageFile" Width="1.5" PointX="10.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Message" Width="1.5" PointX="17.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Module" Width="1.5" PointX="8.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.News" Width="1.5" PointX="19.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Patient" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.PatientAllergy" Width="1.5" PointX="3" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.PatientFamilyHX" Width="1.5" PointX="3" PointY="35.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.PatientLanguage" Width="1.5" PointX="19.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.PatientLifeStyle" Width="1.5" PointX="19.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.PatientSurgery" Width="1.5" PointX="3" PointY="39.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.PatientSystem" Width="1.5" PointX="1.5" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Pharmacy" Width="1.5" PointX="19.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.PrescriptionFrequency" Width="1.5" PointX="13.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Prescription" Width="1.5" PointX="21.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Reaction" Width="1.5" PointX="21.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Relationship" Width="1.5" PointX="21.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.RoleModule" Width="1.5" PointX="11" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Role" Width="1.5" PointX="5.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.ROV" Width="1.5" PointX="21.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.SecretQuestion" Width="1.5" PointX="15.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Severity" Width="1.5" PointX="21.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Speciallity" Width="1.5" PointX="21.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.State" Width="1.5" PointX="2.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.SuffixMaster" Width="1.5" PointX="17.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Surgery" Width="1.5" PointX="23.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.sysdiagram" Width="1.5" PointX="23.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.SystemItemss" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.TimeZone" Width="1.5" PointX="23.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.TitleMaster" Width="1.5" PointX="23.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.UserFile" Width="1.5" PointX="9" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.VCLog" Width="1.5" PointX="23.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeleMedModel.Zip" Width="1.5" PointX="23.75" PointY="18.75" IsExpanded="true" />
+        <AssociationConnector Association="TeleMedModel.FK_AdminUsers_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_AppAttachment_Appointments" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_Appointments_Doctor" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_Appointments_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_Consultation_Appointments" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_Conditions_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_Consultation_ConsultationROS" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_Consultation_Doctor" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_Consultation_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_ConsultationROS_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_ConsultationROS_SystemItems" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_DoctorLanguages_Doctor" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_DoctorLicenseStates_Doctor" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_DoctorSpeciality_Doctor" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_DoctorTimings_Doctor" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_UserFiles_Doctor" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_Medications_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_RoleModules_Modules" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_Allergies_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_FamilyHX_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_Surgeries_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_UserFiles_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_SystemItems_Systems" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.FK_RoleModules_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="TeleMedModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

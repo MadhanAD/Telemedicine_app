@@ -1,0 +1,896 @@
+﻿@using WebApp.Helper;
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="@Url.Content("~/Scripts/Formatdate.js")"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    @*<meta name="viewport" content="width=device-width, initial-scale=1">*@
+    <meta name="viewport" content="width=device-width;initial-scale=1.5;maximum-scale=5.0;" />
+    <meta name="HandheldFriendly" content="true" />
+    <title>@ViewBag.Title</title>
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <!-- Font Awesome -->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="@Url.Content("~/Content/css/font-awesome.min.css")" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="@Url.Content("~/Content/css/custom.min.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/css/style.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/css/select2.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/pnotify.css")" rel="stylesheet">
+    <link href="@Url.Content("/Content/css/green.css")" rel="stylesheet" />
+    <link href="@Url.Content("/Content/css/dataTables.bootstrap.min.css")" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    @*<script type="text/javascript" src="https://rawgit.com/FezVrasta/bootstrap-material-design/master/dist/js/material.min.js"></script>*@
+    @*<script type="text/javascript" src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>*@
+    <script type="text/javascript" src="@Url.Content("~/Scripts/moment-with-locales.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/custom.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/pnotify.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.cropit.js")"></script>
+    <script src="@Url.Content("~/Scripts/icheck.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/select2.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/material.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/daterangepiker/daterangepicker.js")"></script>
+
+    <script src="@Url.Content("~/Scripts/blockUI.js")"></script>
+    <script src="@Url.Content("~/Scripts/general.js")"></script>
+
+    <script src="@Url.Content("~/Scripts/jquery.cookie.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.signalR-2.2.1.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.dataTables.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/dataTables.bootstrap.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/dataTables.buttons.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/dataTables.responsive.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/bootstrap-wysiwyg.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.hotkeys.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/eModal.min.js")"></script>
+    <!--  If this is an MVC project then use the following -->
+    <!--  <script src="~/signalr/hubs" type="text/javascript"></script> -->
+    <script src="@Url.Content("~/signalr/hubs")"></script>
+    <style type="text/css">
+        .redBorder, .redBorder:focus, .redBorder:active {
+            border-color: red;
+        }
+
+        /* Spinner */
+        .spinner {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            padding: 0px;
+            border-radius: 100%;
+            border: 6px solid;
+            border-top-color: #005a9c;
+            border-bottom-color: #005a9c;
+            border-left-color: rgba(0, 90, 156, 0.15);
+            border-right-color: rgba(0, 90, 156, 0.15);
+            -webkit-animation: spinner 0.8s ease-in-out infinite alternate;
+            animation: spinner 0.8s ease-in-out infinite alternate;
+        }
+
+        @@keyframes spinner {
+            from {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            to {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @@-webkit-keyframes spinner {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+    </style>
+
+
+
+</head>
+<body class="nav-md">
+
+    <ul id="messages" style="display:none"></ul>
+    <div class="container body">
+        <div class="main_container" style="background-color: #2a3f54;">
+            <div class="col-md-3 left_col menu_fixed">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="#" class="">
+                            <i><img class="img-responsive bk-c-w" src="~/Content/images/Logos.png" /></i>
+                            <span><img class="img-responsive bk-c-w" src="~/Content/images/Logo-heart.png" /></span>
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <br />
+                    <!-- menu profile quick info -->
+                    <div class="profile m-b-60">
+                        <div class="profile_pic">
+                            <a href="@Url.Action("Profile","DoctorProfile")">
+                                <img style="width:56px;height:56px" src="@SessionHandler.ProfilePhoto" alt="..." class="img-circle profile_img">
+                            </a>
+                        </div>
+                        <div class="profile_info" style="word-break:break-word">
+                            <span>Welcome,</span>
+                            <h2>@SessionHandler.UserInfo.FirstName&nbsp;@SessionHandler.UserInfo.LastName</h2>
+                        </div>
+                    </div>
+                    <!-- /menu profile quick info -->
+                    <br />
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <ul class="nav side-menu" style="margin-top: 10px;">
+                                <li class="scheduler" style="border-top: 1px solid !important;">
+                                    <a href="@Url.Action("Index","DoctorAppointment")"><img src="~/Content/images/schedule.png" alt=""> &nbsp <span class="menu-txt"> Appointments</span></a>
+                                    @*<ul class="nav child_menu">
+                                            <li><a href="appointments.html">Rescheduled Appointments</a></li>
+                                            <li><a href="appointments.html">Pending Appointments</a></li>
+                                            <li><a href="appointments.html">Cancelled Appointments</a></li>
+                                            <li><a href="appointments.html">Completed Appointments</a></li>
+                                        </ul>*@
+                                </li>
+                                <li class="doctor">
+                                    <a href="@Url.Action("DoctorTimings", "Doctor")"><img src="~/Content/images/blood.png" alt="">  &nbsp <span class="menu-txt">Scheduler</span> </a>
+                                </li>
+                                <li class="appointment">
+                                    <a href="@Url.Action("Index","DoctorConsultation")"><img src="~/Content/images/icon_appointment.png" alt="">  &nbsp <span class="menu-txt">Televisits</span></a>
+                                    @*<ul class="nav child_menu">
+                                            <li><a href="p_call_history.html"> Patient Call History</a></li>
+                                        </ul>*@
+                                </li>
+                                @*<li class="help_ticket">
+                                    <a href="@Url.Action("PatientForApproval", "Patient")" >
+                                        <i alt="" class="fa fa-send-o" style="color: #ff6000;font-weight:bold;"></i> &nbsp;<span class="menu-txt">Patient Approval  </span>
+                                    </a>
+                                </li>*@
+                                <li class="message">
+                                <a href="@Url.Action("PatientForApproval", "Patient")"><img src="~/Content/images/union.png" alt=""> &nbsp <span class="menu-txt">Patient Approval</span> </a>
+                                </li>
+                                @*<li class="message">
+                                        <a href="@Url.Action("Index", "Messages")"><img src="~/Content/images/icon_messages.png" alt=""> &nbsp <span class="menu-txt">Messages</span> </a>
+                                    </li>*@
+
+                                <li class="whats_news">
+                                    <a href="@Url.Action("Index","News")"><img src="~/Content/images/whats-new.png" alt="">  &nbsp <span class="menu-txt">What's New</span> </a>
+                                </li>
+                                <li class="help_ticket">
+                                    <a href="@Url.Action("Index","DoctorHelpTicket")"><img src="~/Content/images/ticket.png" alt=""> &nbsp;<span class="menu-txt">Help Ticket</span>
+                                    </a>
+                                </li>
+                                <li class="help_ticket">
+                                    <a href="@Url.Action("Index","DoctorHelpTicket")"><img src="~/Content/images/alerts.png" alt=""> &nbsp;<span class="menu-txt">Notifications(Alerts)</span>
+                                    </a>
+                                </li>
+                                <li class="help_ticket">
+                                    <a href="@Url.Action("Index","DoctorHelpTicket")">
+                                        <i alt="" class="fa fa-send-o" style="color: #ff6000;font-weight:bold;"></i> &nbsp;<span class="menu-txt">TCM/CCM Visit</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sidebar-footer hidden-small" style="background: #172D44;">
+                        <a data-toggle="tooltip" data-placement="top" title="My Profile"  href="@Url.Action("Index","PatientProfile")">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Full Screen" onclick="toggleFullScreen();">
+                            
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Create Help Ticket">
+                         
+                        </a>
+                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <a data-toggle="tooltip" data-placement="top" title="Logout"
+                               href="javascript:document.getElementById('logoutForm').submit()">
+                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                            </a>
+                        }
+                    </div>
+                    <!-- /sidebar menu -->
+                </div>
+            </div>
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                       
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="@SessionHandler.ProfilePhoto" alt="">@SessionHandler.UserName
+                                    <span class="fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li><a href="@Url.Action("Index","DoctorProfile")"> My Profile</a></li>
+
+                                    <li><a href="@Url.Action("Index","DoctorHelpTicket")">Create Help Ticket</a></li>
+                                    <li>
+                                        <a href="javascript:document.getElementById('logoutForm').submit()">
+                                            <i class="fa fa-sign-out pull-right"></i>
+                                            Log Out
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                           
+                           
+                            <li id="alertview" role="presentation" class="dropdown">
+                                @{
+                                    Html.RenderAction("DoctorAlertView", "DoctorAlert");
+                                }
+
+                            </li>
+
+                            <li id="refillerror">
+
+                                @{
+                                    Html.RenderAction("DoctorRefillErrorCountView", "Doctor");
+                                }
+
+                            </li>
+
+                            
+
+                           
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            @RenderBody()
+            <!-- /top navigation -->
+            <!-- saeed-style-here-start -->
+            <!-- saeed-style-here-end -->
+            <!-- footer content -->
+            <footer>
+                <div class="bdr-l">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <p>
+                                Copyright &copy;
+                                <script language="JavaScript" type="text/javascript">document.write((new Date()).getFullYear());</script>@*<a href="#"></a>*@
+                                <img class="menu-txt" style="width:11em ;" src="~/Content/images/logo.png" />  
+                             </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+        </div>
+    </div>
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1">
+        <div class="modal-dialog" role="document" style="width: 350px;">
+            <div class="modal-content" style="border-radius: 0;">
+                <div class="modal-header text-center" style="background: #E4F1FE; border-bottom-color: #c3bebe;">
+                    <h2 style="margin: 0; color: #337ab7" id="heading"><b></b></h2>
+                </div><!--/.modal header-->
+                <div class="modal-body text-left" style="text-align:center;">
+                    <p class="text-center" style="color: #375781;" id="bodytext"></p>
+                    <button style="width: 29%; border-radius: 0; padding: 15px -15px; font-size: 20px;" onclick="$('#myModal1').modal('hide');" type="button" class="btn btn-primary">OK</button>
+                </div><!--/.modal body-->
+            </div>
+        </div>
+    </div><!-- mymodal1 -->
+    
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1">
+        <div class="modal-dialog" role="document" style="width: 500px;">
+            <div class="modal-content" style="border-radius: 0;">
+                <div class="modal-header text-center" style="background: #E4F1FE; border-bottom-color: #c3bebe;">
+                    <h2 style="margin: 0; color: #337ab7" id="heading"><b>Update your timezone</b></h2>
+                </div><!--/.modal header-->
+                <div class="modal-body text-left" style="text-align:center;">
+                    <div class="row">
+                        <label class="control-label" style="margin-left:-361px;margin-bottom:5px">
+                            Select Time Zone<span class="required">*</span>
+                        </label>
+                        <div>
+                            <span id="spnErrorTimeZone" style="display:none; color:red; float:right;margin-bottom:5px">TimeZone is required</span>
+
+                        </div>
+                        <select class="form-control" id="Timezone" style="margin-bottom:5px">
+                            <option value="">ALL</option>
+
+                        </select>
+
+
+                    </div>
+                    <button style="width: 29%; border-radius: 0; padding: 15px -15px; font-size: 20px;" onclick="updateTimeZone();" type="button" class="btn btn-primary">Save</button>
+                </div><!--/.modal body-->
+            </div>
+        </div>
+    </div><!-- mymodal2 -->
+    
+    <script>
+
+        setInterval(function () {
+            $.ajax({
+                url: "@Url.Action("SessionExpiry", "Account")",
+                type: 'POST',
+                success: function (response) {
+                    if (response.result == 0) {
+                        $.ajax({
+                            url: "@Url.Action("DoctorAlertView", "DoctorAlert")",
+                            type: 'POST',
+                            dataType: 'html',
+                            cache: false,
+                            success: function (html) {
+                                $("#alertview").html(html);
+                            }
+                        });
+                    }
+                    else {
+                        window.location.href = '@Url.Action("DoctorLogin","Account")';
+                    }
+
+                }
+            });
+
+        }, 60 * 1000);
+
+
+        setInterval(function () {
+            $.ajax({
+                url: "@Url.Action("DoctorRefillErrorCountView", "Doctor")",
+                type: 'POST',
+                dataType: 'html',
+                cache: false,
+                success: function (html) {
+                    //console.log($("#refillerror").html());
+                    $("#refillerror").html(html);
+                }
+            });
+        }, 15 * 60 * 1000);
+
+
+        var mymodal = $('#myModal1');
+        function showAlert(heading, body) {
+
+            mymodal.find('#heading').text(heading);
+            mymodal.find('#bodytext').text(body);
+            mymodal.modal('show');
+        }
+
+    </script>
+    <script type="text/javascript">
+
+
+        // Proxy created on the fly
+        var chat = $.connection.chatHub;
+
+        var testing;
+        var availablePatients = {
+            patient: [
+                {
+                    connectionId: "",
+                    firstName: "",
+                    lastName: "",
+                    userName: "",
+                    patId: null
+                }
+            ]
+        };
+
+        function makeCallToPatient(patId, appId, consultID, oPat) {
+            var oPatInfo = oPat;
+            localStorage.setItem('consultationKey', consultID);
+            chat.server.sendMessageToPatient({
+                SenderId: '@SessionHandler.UserInfo.Id',
+                UserName: '@SessionHandler.UserInfo.Email',
+                ReceiverConnectionId: oPatInfo.connectionId,
+                ReceiverId: patId,
+                SenderType: 'Doctor',
+                Message: JSON.stringify({ status: 'consultID', name: consultID })
+            });
+
+            /*for (var i = 0; i < availablePatients.patient.length; i++) {
+                if (availablePatients.patient[i].patId == patId) {
+                    oPatInfo = availablePatients.patient[i];
+                    break;
+                }
+            }
+
+            if (oPatInfo == null) {
+                showAlert('Alert', 'Patient is not online now');
+                //alert('Patient is not online now');
+                return;
+            }*/
+
+            var PatientName = oPatInfo.firstName + ' ' + oPatInfo.lastName;
+
+            //Log Call Info - Starts
+            var cCallLogUrl = '@Url.Action("DoctorCallPatient", "UserChat")?patientId=' + patId;
+          //  $.post(cCallLogUrl);
+            //Log Call Info- Ends
+
+            chat.server.callPatient(
+            {
+                SenderId: '@SessionHandler.UserInfo.Id',
+                UserName: '@SessionHandler.UserInfo.Email',
+                ReceiverConnectionId: oPatInfo.connectionId,
+                ReceiverId: patId,
+                PatientName: oPatInfo.firstName + ' ' + oPatInfo.lastName,
+                DoctorName: '@(SessionHandler.UserInfo.FirstName + " " + SessionHandler.UserInfo.LastName)',
+                SenderType: 'Doctor',
+                consultID: consultID,
+                Message: JSON.stringify({ status: 'call', name: '@(SessionHandler.UserInfo.FirstName + " " + SessionHandler.UserInfo.LastName)' }),
+                UserGroup: 'doctors'
+            });
+        }
+
+        $(function () {
+
+            // Start the connection
+            
+            $.connection.hub.logging = true;
+         //   showLoader();
+            $.connection.hub.start().done(function () {
+                var sid = $.cookie('sid');
+                debugger;
+                chat.server.join(
+                    {
+                        Id: '@SessionHandler.UserInfo.Id',
+                        UserName: '@SessionHandler.UserInfo.Email',
+                        FirstName: '@SessionHandler.UserInfo.FirstName',
+                        LastName: '@SessionHandler.UserInfo.LastName',
+                        UserType: 'Doctor'
+                    }).done(function () {
+                        console.log("New doctor has joined... Notify all connected patients");
+                        chat.server.getUsersPatient();
+                        chat.server.getUsersDoctor();
+                    });
+
+                //chat.server.adminJoinDoctor().done(function () {
+                //    //alert("New doctor has joined... Refresh list;");
+                //    chat.server.getUsersPatient();
+                //    chat.server.getUsersDoctor();
+                //});
+
+            });
+
+            // Declare a function on the chat hub so the server can invoke it
+            chat.client.showConnected = function (message) {
+                console.log('Object recieved by ShowConnected function:');
+                console.log(message);
+                debugger;
+                availablePatients.patient = [];
+
+                for (var i = 0; i < message.length; i++) {
+                    if (message[i].Value.UserType == 'Patient') {
+                        availablePatients.patient.push({
+                            connectionId: message[i].Key,
+                            firstName: message[i].Value.FirstName,
+                            lastName: message[i].Value.LastName,
+                            userName: message[i].Value.UserName,
+                            patId: message[i].Value.Id
+                        });
+                    }
+                }
+                hideLoader();
+
+                /*   if (handleOnlinePatientsDisplay) {
+                       handleOnlinePatientsDisplay();
+                   }*/
+
+            };
+
+            chat.client.patientAcceptedCall = function (patientName, patId, appId, patUserName) {
+                localStorage.setItem('otherUser', patUserName);
+                
+                new PNotify({ title: 'Success', text: 'Patient  accepted call. ', type: 'info', addclass: 'dark', styling: 'bootstrap3' });
+                //alert('Patient ' + patUserName + ' accepted call. this alert is in _DoctorLayout. NEed to redirect to page');
+            }
+
+            chat.client.patientRejectedCall = function (patientName, patId, appId, patUserName) {
+                //showAlert('Alert', );
+                new PNotify({ title: 'Success', text: 'Patient  rejected call.Please try again.', type: 'info', addclass: 'dark', styling: 'bootstrap3' });
+                //alert('Patient ' + patUserName + ' rejected call.this alert is in _DoctorLayout');
+                return;
+            }
+
+            chat.client.patientRedirectedToCallHandle = function (tokboxInfo, patId, patName) {
+                debugger;
+                //
+                localStorage.setItem('tokbox', tokboxInfo);
+                 // var cUrlReadyForCall = "@Url.Action("ReadyForCall","UserChat")?senderId=@SessionHandler.UserInfo.Id&userType=Doctor&receiverId=" + patId + "&doctorName=@(SessionHandler.UserInfo.FirstName + " "+ SessionHandler.UserInfo.LastName)&patientName=" + patName;
+
+                //  $.post(cUrlReadyForCall, function (oResp) {
+                if (tokboxInfo != '0')
+                    window.location = '@Url.Action("Index","UserChat")?tokboxInfo=' + tokboxInfo;  //Redirected doctor to call
+                else alert('Err in tokbox connection');
+                //localStorage.setItem('consultationKey', consultId);
+
+
+
+               //  });
+            }
+            var _tokboxinfo;
+            chat.client.receiveMessage = function (msgFrom, msg, receiverId, senderid) {
+                $('#messages').empty();
+                debugger;
+                if (msgFrom != 'ChatHub') {
+                   
+                    //alert(msg);
+                    var fromJson = JSON.parse(msg);
+                    // alert(fromJson.status);
+
+                    if (fromJson.status == 'consultID') {
+                     //   alert('consultID recieved:' + fromJson.name);
+                        localStorage.setItem('consultationKey', fromJson.name);
+                            //Show pnotify alert "Patient is ready for consultation.We are taking you to conference page."
+                            window.location = '@Url.Action("Index","UserChat")?tokboxInfo=' + _tokboxinfo;
+                    }
+                    
+                    //for iOS
+                    @*if (fromJson.status == 'tokbox') {
+                        //   alert('consultID recieved:' + fromJson.name);
+                        localStorage.setItem('tokbox', fromJson.name);
+                        if (tokboxInfo != '0')
+                            window.location = '@Url.Action("Index","UserChat")?tokboxInfo=' + fromJson.name;  //Redirected doctor to call
+                        else alert('Err in tokbox connection');
+                    }*@
+                    //end for iOS
+                    var confirmCall;
+                    if (fromJson.status == 'call') {
+                        var options = {
+                            message: fromJson.name + " want to have a video consultation, Please press OK to accept!",
+                            title: 'Patient is Calling',
+                            size: eModal.size.lg
+                        };
+
+                        eModal.confirm(options)
+                            .then(function () {
+                                localStorage.setItem('otherUser', msgFrom);
+                                txt = "Accepted";
+
+                                //Log Call Accepted - Starts
+                                var cCallLogUrl = '@Url.Action("DoctorAcceptedCall", "UserChat")?patientId=' + senderid;
+                                $.post(cCallLogUrl);
+                                //Log Call Accepted - Ends
+                                //Save SignalR Information to local storage so that it can be used whenever needed.
+                                var signalRInfo = {
+                                    SenderId: '@SessionHandler.UserInfo.Id',
+                                    UserName: '@SessionHandler.UserInfo.Email',
+                                    ReceiverConnectionId: receiverId,
+                                    ReceiverId: senderid
+                                }
+                                var strSignalRInfo = window.JSON.stringify(signalRInfo);
+                                localStorage.setItem('signalRInfo', strSignalRInfo);
+
+                                var doctorName = '@string.Format("{0} {1}", SessionHandler.UserInfo.FirstName, SessionHandler.UserInfo.LastName)';
+
+                                chat.server.sendMessageToPatient({
+                                    SenderId: '@SessionHandler.UserInfo.Id',
+                                    UserName: '@SessionHandler.UserInfo.Email',
+                                    ReceiverConnectionId: receiverId,
+                                    ReceiverId: '20',
+                                    SenderType: 'Doctor',
+                                    Message: JSON.stringify({ status: txt, name: doctorName })
+                                });
+
+                                //Create tokbox info, and save in local storage
+                                debugger;
+                               
+                                var cUrlReadyForCall = "@Url.Action("ReadyForCall","UserChat")?senderId=" + signalRInfo.SenderId + "&userType=Doctor&receiverId=" + signalRInfo.ReceiverId + "&recipientName=" + fromJson.name + "&consultID=" + fromJson.name + "&tokbox=" + fromJson.name;
+
+                                $.post(cUrlReadyForCall, function (oResp) {
+                                    if (oResp != "0") {
+                                        //Log Tokbox info generated event
+                                        var cCallLogUrl = '@Url.Action("TokBoxInfoCreatedbyDoctor", "UserChat")?patientId=' + senderid;
+                                        $.post(cCallLogUrl);
+                                        localStorage.setItem('tokbox', oResp);
+                                        _tokboxinfo = oResp;
+                                        chat.server.sendMessageToPatient({
+                                            SenderId: '@SessionHandler.UserInfo.Id',
+                                            UserName: '@SessionHandler.UserInfo.Email',
+                                            ReceiverConnectionId: receiverId,
+                                            ReceiverId: '20',
+                                            SenderType: 'Doctor',
+                                            Message: JSON.stringify({ status: 'tokbox', name: oResp })
+                                        });
+                                        //Redirect doctor to call
+                                        // window.location = '@Url.Action("Index","UserChat")?tokboxInfo=' + oResp;
+                                    }
+
+                                    else {
+                                        var cCallLogUrl = '@Url.Action("TokBoxInfoCreationFailedbyDoctor", "UserChat")?patientId=' + senderid;
+                                        $.post(cCallLogUrl);
+                                        alert('Err in generating tokbox info');
+                                    }
+                                });
+                            },
+                            function () {
+                                txt = "Declined";
+
+                                //Log Call Declined - Starts
+                                var cCallLogUrl = '@Url.Action("DoctorDeclinedCall", "UserChat")?patientId=' + senderid;
+                                $.post(cCallLogUrl);
+                                //Log Call Declined - Ends
+                                var doctorName = '@string.Format("{0} {1}", SessionHandler.UserInfo.FirstName, SessionHandler.UserInfo.LastName)';
+                                chat.server.sendMessageToPatient({
+                                    SenderId: '@SessionHandler.UserInfo.Id',
+                                    UserName: '@SessionHandler.UserInfo.Email',
+                                    ReceiverConnectionId: receiverId,
+                                    ReceiverId: '20',
+                                    SenderType: 'Doctor',
+                                    Message: JSON.stringify({ status: txt, name: doctorName })
+                                });
+                                //if (txt == 'Declined') return; //if doctor decline then stop here
+                            });
+                        //var confirmCall = confirm(fromJson.name + " want to have a video consultation, Please press OK to accept!");
+
+                        
+
+                        @*//Save SignalR Information to local storage so that it can be used whenever needed.
+                        var signalRInfo = {
+                            SenderId: '@SessionHandler.UserInfo.Id',
+                            UserName: '@SessionHandler.UserInfo.Email',
+                            ReceiverConnectionId: receiverId,
+                            ReceiverId: senderid
+                        }
+                        var strSignalRInfo = window.JSON.stringify(signalRInfo);
+                        localStorage.setItem('signalRInfo', strSignalRInfo);
+
+                        var doctorName = '@string.Format("{0} {1}", SessionHandler.UserInfo.FirstName, SessionHandler.UserInfo.LastName)';
+
+                        chat.server.sendMessageToPatient({
+                            SenderId: '@SessionHandler.UserInfo.Id',
+                            UserName: '@SessionHandler.UserInfo.Email',
+                            ReceiverConnectionId: receiverId,
+                            ReceiverId: '20',
+                            SenderType: 'Doctor',
+                            Message: JSON.stringify({ status: txt, name: doctorName })
+                        });
+
+                        //Create tokbox info, and save in local storage
+                        debugger;
+                        if (txt == 'Declined') return; //if doctor decline then stop here
+                        var cUrlReadyForCall = "@Url.Action("ReadyForCall","UserChat")?senderId=" + signalRInfo.SenderId + "&userType=Doctor&receiverId=" + signalRInfo.ReceiverId + "&recipientName=" + fromJson.name + "&consultID=" + fromJson.name + "&tokbox=" + fromJson.name;
+
+                        $.post(cUrlReadyForCall, function (oResp) {
+                            if (oResp != "0") {
+                                //Log Tokbox info generated event
+                                var cCallLogUrl = '@Url.Action("TokBoxInfoCreatedbyDoctor", "UserChat")?patientId=' + senderid;
+                                 $.post(cCallLogUrl);
+                                localStorage.setItem('tokbox', oResp);
+                                _tokboxinfo = oResp;
+                                chat.server.sendMessageToPatient({
+                                    SenderId: '@SessionHandler.UserInfo.Id',
+                                    UserName: '@SessionHandler.UserInfo.Email',
+                                    ReceiverConnectionId: receiverId,
+                                    ReceiverId: '20',
+                                    SenderType: 'Doctor',
+                                    Message: JSON.stringify({ status: 'tokbox', name: oResp })
+                                });
+                                //Redirect doctor to call
+                                // window.location = '@Url.Action("Index","UserChat")?tokboxInfo=' + oResp;
+                            }
+
+                            else {
+                                var cCallLogUrl = '@Url.Action("TokBoxInfoCreationFailedbyDoctor", "UserChat")?patientId=' + senderid;
+                                  $.post(cCallLogUrl);
+                                alert('Err in generating tokbox info');
+                            }
+                        });*@
+                    }
+                }
+            }
+            // };
+        });
+
+
+    </script>
+    <script>
+        $(document).ajaxSuccess(function (evt, request, settings) {
+           // console.log(request.response);
+            if (request.response != null) {
+                if (request.response.redirectUrl != null)
+                    window.location.href = request.response.redirectUrl;
+            }
+        });
+        $('#menu_toggle').click(function () { if (document.body.className == "nav-md footer_fixed") { ($("body").attr("class", "nav-sm footer_fixed")); $('.fa-angle-down').show(); } else { $("body").attr("class", "nav-md footer_fixed"); } });
+        $('.menu_section li').hover(
+           function () { $(this).addClass('current-page') },
+           function () { $(this).removeClass('current-page') }
+    )
+        function errorRes(data) {
+            new PNotify({
+                title: 'Error',
+                text: data.Message,
+                type: 'error',
+                styling: 'bootstrap3'
+            });
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+          
+
+            Date.prototype.stdTimezoneOffset = function () {
+                var jan = new Date(this.getFullYear(), 0, 1);
+                var jul = new Date(this.getFullYear(), 6, 1);
+                return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
+            }
+
+            Date.prototype.dst = function () {
+                return this.getTimezoneOffset() < this.stdTimezoneOffset();
+            }
+
+            $('#myModal2').find('#Timezone').change(function () {
+                if ($('#myModal2').find("#spnErrorTimeZone").is(":visible") && $('#myModal2').find("#Timezone").val() != "") {
+                    $('#myModal2').find("#Timezone").removeClass("redBorder");
+                    $('#myModal2').find("#spnErrorTimeZone").show();
+                }
+            });
+
+            if ('@SessionHandler.UserInfo.title' == '') {
+                if (!parent.location.href.toLowerCase().includes('profile')) {
+                    window.location.href = '@Url.Action("Index", "DoctorProfile")';
+                }
+            }
+            if ('@SessionHandler.UserInfo.title' != '') {
+                debugger;
+                var rightNow = new Date();
+                var jan1 = new Date(rightNow.getFullYear(), 0, 1, 0, 0, 0, 0);
+                var temp = jan1.toGMTString();
+                var jan2 = new Date(temp.substring(0, temp.lastIndexOf(" ") - 1));
+                var std_time_offset = (jan1 - jan2) / (1000 * 60 * 60);
+               
+                if (rightNow.dst()) {  std_time_offset = std_time_offset + 1; }
+                std_time_offset = std_time_offset * (-60);
+                //alert(std_time_offset + ' ' + '@SessionHandler.UserInfo.timeZoneOffset');
+                if ('@SessionHandler.UserInfo.timeZoneOffset' == '' ||
+                    '@SessionHandler.UserInfo.timeZoneOffset' != std_time_offset.toString()) {
+                    @*$.ajax({
+                        url: '@Url.Action("UpdateDoctorTimezone", "DoctorAppointment")',
+                        type: "POST",
+                        data: { 'offset': new Date().getTimezoneOffset().toString() },
+                        dataType: 'json',
+                        success: function (result) {
+                            //Reload container
+                            if (result.Message != undefined) {
+                                new PNotify({ title: 'Error', text: result.Message.ReasonPhrase, type: 'error', styling: 'bootstrap3' });
+                                hideLoader();
+                            }
+                            else {
+
+                                if (result.ApiResultModel.message == "") {
+                                    new PNotify({ title: 'Success', text: "Timezone is updated successfully.", type: 'info', addclass: 'dark', styling: 'bootstrap3' });
+                                    hideLoader();
+
+                                }
+                                else {
+                                    new PNotify({ title: 'Error', text: result.ApiResultModel.message, type: 'error', styling: 'bootstrap3' });
+                                    hideLoader();
+
+                                }
+
+
+                            }
+
+                        },
+                        error: function (err) {
+                            //alert(err.statusText);
+                            new PNotify({ title: 'Error', text: err.statusText, type: 'error', styling: 'bootstrap3' });
+                            //Stop displaying loader
+                            hideLoader();
+                        }
+                    });*@
+                    var param = "{}";
+                    var listitems;
+                    var $select = $('#myModal2').find('#Timezone');
+                    $.ajax({
+                        type: 'POST',
+                        url: '/DoctorAppointment/GetTimeZones',
+                        data: param,
+                        dataType: 'json',
+                        success: function (response) {
+                            $.each(response.Object, function (item) {
+                                listitems += '<option value=' + response.Object[item].zoneid + '>' + response.Object[item].timeZonee + '</option>';
+
+                            });
+                            $select.append(listitems);
+                        },
+                        error: errorRes
+
+                    });
+                    //$('#myModal2').modal({ backdrop: 'static', keyboard: false });
+                }
+
+            }
+
+        });
+        function errorRes(httpObj) {
+            //function (httpObj, textStatus) {
+            var messages = $.parseJSON(httpObj.getResponseHeader('X-Responded-JSON'));
+            if (messages != undefined && messages != null) {
+                if (messages.status == 401) {
+                    //window.location.href = "/Account/PatientLogin";
+                    new PNotify({
+                        title: 'Error',
+                        text: "Unauthorize access",
+                        type: 'error',
+                        styling: 'bootstrap3'
+                    });
+                }
+            }
+            else {
+
+                new PNotify({
+                    title: 'Error',
+                    text: messages.statusText,
+                    type: 'error',
+                    styling: 'bootstrap3'
+                });
+            }
+
+
+        }
+        function updateTimeZone() {
+            if ($('#myModal2').find('#Timezone').val() == "") {
+
+                $('#myModal2').find('#Timezone').addClass("redBorder").focus();
+                $("#spnErrorTimeZone").hide();
+                return;
+            }
+            var tz = $('#myModal2').find('#Timezone');
+            $.ajax({
+                url: '@Url.Action("UpdateTimezone", "DoctorAppointment")',
+                type: "POST",
+                data: { 'zoneid': $('#myModal2').find('#Timezone').val() },
+                dataType: 'json',
+                success: function (result) {
+                    //Reload container
+                    if (result.Message != undefined) {
+                        new PNotify({ title: 'Error', text: result.Message.ReasonPhrase, type: 'error', styling: 'bootstrap3' });
+                        hideLoader();
+                    }
+                    else {
+
+                        if (result.ApiResultModel.message == "") {
+                            new PNotify({ title: 'Success', text: "Timezone is updated successfully.", type: 'info', addclass: 'dark', styling: 'bootstrap3' });
+                            hideLoader();
+
+                        }
+                        else {
+                            new PNotify({ title: 'Error', text: result.ApiResultModel.message, type: 'error', styling: 'bootstrap3' });
+                            hideLoader();
+
+                        }
+
+
+                    }
+
+                },
+                error: function (err) {
+                    //alert(err.statusText);
+                    new PNotify({ title: 'Error', text: err.statusText, type: 'error', styling: 'bootstrap3' });
+                    //Stop displaying loader
+                    hideLoader();
+                }
+            });
+            $('#myModal2').modal('hide');
+        }
+    </script>
+
+    @RenderSection("scripts", required: false)
+
+
+</body>
+</html>

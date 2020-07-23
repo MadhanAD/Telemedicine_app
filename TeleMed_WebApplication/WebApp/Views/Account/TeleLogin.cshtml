@@ -1,0 +1,119 @@
+﻿@model WebApp.Models.LoginRegisterViewModel
+<link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/css/pnotify.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+<script src="~/Scripts/pnotify.js"></script>
+<script src="@Url.Content("~/Scripts/jquery.signalR-2.2.1.min.js")"></script>
+
+@{
+    ViewBag.Title = "TeleLogin";
+    <!-- Layout = "~/Views/Shared/_AccountsLayout.cshtml"; -->
+    Layout = null;
+    ViewBag.IsPatient = false;
+}
+
+<script>
+    @if (ViewBag.ModelError != null)
+    {
+         @: new PNotify({ title: 'Error', text: "@ViewBag.ModelError", type: 'error', styling: 'bootstrap3' });
+    }
+</script>
+
+    <style type="text/css">
+        .home-login-bg {
+            /*background-image: url('./Content/images/homepage-login.png') !important;*/
+            background-image: url('../../Content/images/homepage-login.png') !important;
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .heading-tele{
+            font-size: 32px;
+            font-weight: bold;
+            color: #720e9e;
+            padding: 20px 0;
+            text-shadow: 5px 5px 2px #fff;
+            letter-spacing: 3px;
+            text-align: left;
+        }
+        .ul-design{
+            list-style: none;
+            padding: 6%;
+            
+        }
+        .list-bg-color{
+           padding: 5%;
+            margin: 10%;
+            background: linear-gradient(to right, #9a52da, #fff)!important;
+        }
+        .list-bg-color a{
+            color: #fff;
+            font-size: 18px;
+        }
+        .list-bg-color a:hover{
+        color: #6242bc;
+    }
+        .advertise_form {
+            /*background: linear-gradient(to right, #9a52da, #fff)!important;*/
+            border-radius: 4px;
+            color: black;
+            max-width: 400px;
+            height: 250px;
+            position: relative;
+            z-index: 1;
+            margin: 60px 0 0 100px;
+}
+    </style>
+
+   
+<div class="home-login-bg">
+<div class="row" style="width: 100%;">
+    <div class="col-md-12">
+             <img src="~/Content/images/Logos.png" style="float:right;" />
+    </div>
+    
+     <div class="col-md-12">
+    <div class="col-md-6"></div>
+    <div class="col-md-6">        
+         <div class="advertise_form">
+
+            @using (Html.BeginForm("TeleLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <form>
+                    <ul class="ul-design">
+                        <li class="list-bg-color">
+                            <a href="@Url.Action("AdminLogin", "Account")" class="">Admin Login</a> 
+                        </li>
+                        <li class="list-bg-color">
+                           <a href="@Url.Action("DoctorLogin", "Account")" class="">Doctor Login</a>
+                        </li>
+                        <li class="list-bg-color">
+                           <a href="@Url.Action("PatientLogin", "Account")"  class="">Patient Login</a> 
+                        </li>
+                    </ul> 
+                </form>
+            }
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

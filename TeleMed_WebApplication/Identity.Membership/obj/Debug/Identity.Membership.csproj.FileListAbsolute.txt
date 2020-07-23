@@ -1,0 +1,258 @@
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.dll.config
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.pdb
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Facebook.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Google.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Twitter.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\bin\Debug\System.Web.Mvc.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Newtonsoft.Json.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.Migrations.InitialCreate.resources
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.Migrations.First.resources
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.Migrations.Second.resources
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.csproj.GenerateResource.Cache
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.pdb
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.csprojResolveAssemblyReference.cache
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.dll.config
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.pdb
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Facebook.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Google.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Twitter.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\System.Web.Mvc.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Newtonsoft.Json.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.csprojResolveAssemblyReference.cache
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.Migrations.InitialCreate.resources
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.Migrations.First.resources
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.Migrations.Second.resources
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.csproj.GenerateResource.Cache
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.pdb
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.dll.config
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.pdb
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.SqlServer.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Facebook.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Google.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Twitter.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\System.Web.Mvc.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.xml
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.SqlServer.xml
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Web.Infrastructure.xml
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.Migrations.InitialMigrations.resources
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.csproj.GenerateResource.Cache
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.pdb
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.csprojResolveAssemblyReference.cache
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.dll.config
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.pdb
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Facebook.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Google.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Twitter.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\System.Web.Mvc.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.xml
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.csprojResolveAssemblyReference.cache
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.Migrations.InitialMigrations.resources
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.csproj.GenerateResource.Cache
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.pdb
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.dll.config
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.pdb
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Facebook.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Google.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Twitter.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\System.Web.Mvc.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.xml
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.Migrations.InitialCreate.resources
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.csproj.GenerateResource.Cache
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.pdb
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.dll.config
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.pdb
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.SqlServer.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Facebook.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Google.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Twitter.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\System.Web.Mvc.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Newtonsoft.Json.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.xml
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.SqlServer.xml
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.Migrations.InitialCreate.resources
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.csproj.GenerateResource.Cache
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.pdb
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.dll.config
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.pdb
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.SqlServer.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Facebook.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Google.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Twitter.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\System.Web.Mvc.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Newtonsoft.Json.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.xml
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.SqlServer.xml
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.Migrations.InitialCreate.resources
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.csproj.GenerateResource.Cache
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.pdb
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.csprojResolveAssemblyReference.cache
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.dll.config
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.pdb
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.SqlServer.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Facebook.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Google.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Twitter.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\System.Web.Mvc.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Newtonsoft.Json.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.xml
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.SqlServer.xml
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.csprojAssemblyReference.cache
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.Migrations.InitialCreate.resources
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.csproj.GenerateResource.cache
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.csproj.CopyComplete
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.pdb
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.dll.config
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.pdb
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.SqlServer.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Facebook.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Google.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Twitter.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\System.Web.Mvc.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\Newtonsoft.Json.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.xml
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\bin\Debug\EntityFramework.SqlServer.xml
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.Migrations.InitialCreate.resources
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.csproj.GenerateResource.cache
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.csproj.CoreCompileInputs.cache
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.csproj.CopyComplete
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.pdb
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.dll.config
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\bin\Debug\Identity.Membership.pdb
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\bin\Debug\EntityFramework.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\bin\Debug\EntityFramework.SqlServer.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Facebook.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Google.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\bin\Debug\Microsoft.Owin.Security.Twitter.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\bin\Debug\System.Web.Mvc.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\bin\Debug\Newtonsoft.Json.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\bin\Debug\EntityFramework.xml
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\bin\Debug\EntityFramework.SqlServer.xml
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.csprojAssemblyReference.cache
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.Migrations.InitialCreate.resources
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.csproj.GenerateResource.cache
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.csproj.CopyComplete
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\Identity.Membership\obj\Debug\Identity.Membership.pdb

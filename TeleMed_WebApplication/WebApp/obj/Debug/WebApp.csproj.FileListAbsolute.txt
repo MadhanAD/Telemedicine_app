@@ -1,0 +1,430 @@
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\bin\WebApp.dll.config
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\bin\WebApp.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\bin\WebApp.pdb
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\bin\DataAccess.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\bin\DataAccess.pdb
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.pdb
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.xml
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.xml
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.xml
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.xml
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.pdb
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.pdb
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\DataAccess.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\DataAccess.pdb
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.pdb
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.xml
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.xml
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.xml
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.pdb
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.dll.config
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.ApplicationBlocks.Data.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.dll.config
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.pdb
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\DataAccess.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.SqlServer.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.ApplicationBlocks.Data.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Web.Infrastructure.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\System.Web.Http.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\System.Web.Mvc.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\DataAccess.pdb
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.pdb
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.xml
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.SqlServer.xml
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.xml
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.xml
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.xml
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.xml
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.pdb
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.xml
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\System.Web.Http.xml
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Web.Infrastructure.xml
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.dll
+F:\Kumaresan\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.pdb
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.dll.config
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.pdb
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\DataAccess.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.SqlServer.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.ApplicationBlocks.Data.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\System.Web.Mvc.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\DataAccess.pdb
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.pdb
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.xml
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.SqlServer.xml
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.xml
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.xml
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.xml
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.pdb
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.xml
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.dll
+D:\Projects\SwiftKare New\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.pdb
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\D_27.png
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\D_279.png
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\D_627.png
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\P_10022.png
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\P_10318.png
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\P_10337.png
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.dll.config
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.pdb
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\DataAccess.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.SqlServer.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.ApplicationBlocks.Data.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\System.Web.Mvc.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\DataAccess.pdb
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.pdb
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.xml
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.SqlServer.xml
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.xml
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.xml
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.xml
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.pdb
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.xml
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.pdb
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\D_27.png
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\D_279.png
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\D_627.png
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\P_10022.png
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\P_10318.png
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\P_10337.png
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.dll.config
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.pdb
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\DataAccess.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.SqlServer.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.ApplicationBlocks.Data.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\System.Web.Mvc.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\DataAccess.pdb
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.pdb
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.xml
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.SqlServer.xml
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.xml
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.xml
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.xml
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.xml
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.pdb
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.xml
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.dll
+E:\Frontier_ProjectFile\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.pdb
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\D_27.png
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\D_279.png
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\D_627.png
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\P_10022.png
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\P_10318.png
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\P_10337.png
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.dll.config
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.pdb
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\DataAccess.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.SqlServer.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.ApplicationBlocks.Data.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\System.Web.Mvc.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\DataAccess.pdb
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.pdb
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.xml
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.SqlServer.xml
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.xml
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.xml
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.xml
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.xml
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.pdb
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.xml
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.pdb
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\D_27.png
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\D_279.png
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\D_627.png
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\P_10022.png
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\P_10318.png
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\P_10337.png
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.dll.config
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.dll
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.pdb
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\DataAccess.dll
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.dll
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.SqlServer.dll
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.dll
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.ApplicationBlocks.Data.dll
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.dll
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.dll
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.dll
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.dll
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\System.Web.Mvc.dll
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\DataAccess.pdb
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\DataAccess.dll.config
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.pdb
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.dll.config
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.xml
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.SqlServer.xml
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.xml
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.xml
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.xml
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.pdb
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.xml
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.csprojAssemblyReference.cache
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.csproj.CoreCompileInputs.cache
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.csproj.CopyComplete
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.dll
+C:\Felix\SwitchKare\Swiftkare_WebAPP_28042020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.pdb
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\D_27.png
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\D_279.png
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\D_627.png
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\P_10022.png
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\P_10318.png
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\P_10337.png
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.dll.config
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.pdb
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\DataAccess.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.SqlServer.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.ApplicationBlocks.Data.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\System.Web.Mvc.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\DataAccess.pdb
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\DataAccess.dll.config
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.pdb
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.dll.config
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.xml
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.SqlServer.xml
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.xml
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.xml
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.xml
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.xml
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.pdb
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.xml
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.csprojAssemblyReference.cache
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.csproj.CopyComplete
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.dll
+C:\tele\Telemedicine\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.pdb
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\D_27.png
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\D_279.png
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\D_627.png
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\P_10022.png
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\P_10318.png
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Content\ProfilePicture\P_10337.png
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.dll.config
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\WebApp.pdb
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\DataAccess.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.SqlServer.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.ApplicationBlocks.Data.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Plivo.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\System.Web.Mvc.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\DataAccess.pdb
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\DataAccess.dll.config
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.pdb
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Identity.Membership.dll.config
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.xml
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\EntityFramework.SqlServer.xml
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.xml
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.xml
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.xml
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.pdb
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\bin\Newtonsoft.Json.xml
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.csprojAssemblyReference.cache
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.csproj.CoreCompileInputs.cache
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.csproj.CopyComplete
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\WebApp\obj\Debug\WebApp.pdb
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Content\ProfilePicture\D_27.png
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Content\ProfilePicture\D_279.png
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Content\ProfilePicture\D_627.png
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Content\ProfilePicture\P_10022.png
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Content\ProfilePicture\P_10318.png
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Content\ProfilePicture\P_10337.png
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\WebApp.dll.config
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\WebApp.dll
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\WebApp.pdb
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\DataAccess.dll
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\EntityFramework.dll
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\EntityFramework.SqlServer.dll
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Identity.Membership.dll
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.ApplicationBlocks.Data.dll
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.dll
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.Owin.dll
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.Owin.Security.dll
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Newtonsoft.Json.dll
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Plivo.dll
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\System.Web.Mvc.dll
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\DataAccess.pdb
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\DataAccess.dll.config
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Identity.Membership.pdb
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Identity.Membership.dll.config
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\EntityFramework.xml
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\EntityFramework.SqlServer.xml
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.xml
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.Owin.xml
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.Owin.Security.xml
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Newtonsoft.Json.pdb
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Newtonsoft.Json.xml
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\obj\Debug\WebApp.csprojAssemblyReference.cache
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\obj\Debug\WebApp.csproj.CoreCompileInputs.cache
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\obj\Debug\WebApp.csproj.CopyComplete
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\obj\Debug\WebApp.dll
+C:\Felix\SwitchKare\Backup\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\obj\Debug\WebApp.pdb
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Content\ProfilePicture\D_27.png
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Content\ProfilePicture\D_279.png
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Content\ProfilePicture\D_627.png
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Content\ProfilePicture\P_10022.png
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Content\ProfilePicture\P_10318.png
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Content\ProfilePicture\P_10337.png
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\WebApp.dll.config
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\WebApp.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\WebApp.pdb
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\DataAccess.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\EntityFramework.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\EntityFramework.SqlServer.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Identity.Membership.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.ApplicationBlocks.Data.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.Owin.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.Owin.Security.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Newtonsoft.Json.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Plivo.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\System.Web.Mvc.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\DataAccess.pdb
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\DataAccess.dll.config
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Identity.Membership.pdb
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Identity.Membership.dll.config
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\EntityFramework.xml
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\EntityFramework.SqlServer.xml
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Client.xml
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.Owin.xml
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.Owin.Security.xml
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Newtonsoft.Json.pdb
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\bin\Newtonsoft.Json.xml
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\obj\Debug\WebApp.csprojAssemblyReference.cache
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\obj\Debug\WebApp.csproj.CopyComplete
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\obj\Debug\WebApp.dll
+C:\Telemedicine\TeleMed_WebAPP_16-6-2020\TeleMed_WebAPP\TeleMed_WebApplication\WebApp\obj\Debug\WebApp.pdb

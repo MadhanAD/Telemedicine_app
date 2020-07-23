@@ -1,0 +1,545 @@
+﻿@using WebApp.Helper
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PatientLayout.cshtml";
+}
+
+<!-- page content -->
+<div class="right_col">
+    <div class="page-title">
+        <div class="title_left">
+            <h3>Appointments</h3>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+    <div class="" role="tabpanel" data-example-id="togglable-tabs" style="padding-bottom: 180px;">
+        <ul id="myTab" class="nav nav-tabs bar_tabs m-b-40" role="tablist">
+            <li role="presentation" class="active">
+                <a href="#call_history" id="doctor" role="tab" data-toggle="tab" aria-expanded="true" onclick="setTab('U')">Upcoming</a>
+            </li>
+            <li role="presentation" class="">
+                <a href="#find_doctor" role="tab" id="history" data-toggle="tab" aria-expanded="false" onclick="setTab('R')">Reschedule</a>
+            </li>
+            <li role="presentation" class="">
+                <a href="#pending_doctor" role="tab" id="ppending_doctor" data-toggle="tab" aria-expanded="false" onclick="setTab('P')">Pending</a>
+            </li>
+
+           
+        </ul>
+        <div id="myTabContent" class="tab-content">
+
+            <div role="tabpanel" class="tab-pane fade active in" id="call_history" aria-labelledby="call_history">
+                <div class="x_panel">
+
+
+                    <div class="x_content">
+                        <div id="divUpcoming" class="table-responsive">
+
+                            @{
+                                Html.RenderAction("PartialUpcoming", "Appointment");
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="find_doctor" aria-labelledby="find_doctor">
+                <div class="x_panel">
+
+
+                    <div class="x_content">
+                        <div id="divReschedule" class="table-responsive">
+
+                            @*@{
+                                Html.RenderAction("PartialReschedule", "Appointment");
+                            }*@
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="pending_doctor" aria-labelledby="pending_doctor">
+                <div class="x_panel">
+
+
+                    <div class="x_content">
+                        <div id="divPending" class="table-responsive">
+
+                            @*@{
+                                Html.RenderAction("PartialPending", "Appointment");
+                            }*@
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+            </div>
+    <input type="text" style="display:none" id="pvappid" value="0">
+    <input type="text" style="display:none" id="pvcid" value="0">
+    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4">
+        <div class="modal-dialog" role="document" style="width: 350px;">
+            <div id='myModalContent' class="modal-content" style="border-radius: 0;">
+                @{
+                    Html.RenderAction("ViewAppDetails", "Appointment",new {appID=0});
+                }
+            </div>
+        </div>
+    </div><!-- View App Detail -->
+    
+
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="timingsmodaltitle"></h4>
+                </div><!--/.modal header-->
+
+                <div class="modal-body text-left" >
+                    <div class="row" id="docrow">
+                        <input type="text" style="display:none" id="doctorid">
+
+                        <form class="form-horizontal form-label-left">
+                            <div class="col-sm-offset-4 col-sm-4" style="width:320px">
+                                <button style="font-size:14px;display:none" type="button" class="btn btn-primary btn-sm pull-right" id="RAPP" onclick="rescheduleApp($('#RAppID').val())">Reschedule App</button>
+                                <div class="xdisplay_inputx form-group has-feedback" style="width:168px">
+                                    <input type="text" class="form-control has-feedback-left active" id="fetchdate" placeholder="Choose a Date" aria-describedby="inputSuccess2Status">
+                                    
+                                    <span class="fa fa-calendar-o form-control-feedback left date" aria-hidden="true"></span>
+                                    <span id="inputSuccess2Status" class="sr-only">(success)</span>
+                                </div>
+                            </div>
+                        </form>
+                      
+                        <form class="form-horizontal form-label-left">
+                            <div class="col-sm-12 text-center" style="height:230px;overflow:auto">
+                                <ul class="doctor_time" id="TimingsData"></ul>
+                            </div>
+                            <input type="text" style="display:none" id="RAppID">
+                           
+                        </form>
+
+                    </div><!-- Timing Slots -->
+                </div>
+            </div>
+        </div>
+    </div><!-- col1 -->
+
+    
+    
+</div>
+<div class="modal fade" id="myModal8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel8">
+    <div class="modal-dialog" role="document" style="border-bottom: 0;">
+        <div id='DoctorProfileContent' class="modal-content" style="overflow:auto; border-radius: 0;">
+
+        </div>
+
+
+    </div>
+</div>
+<iframe id="iframeDownload" style="display:none;"></iframe>
+<!-- /page content -->
+
+ <!-- Load View App Detail Popup -->
+<script>
+
+    function showProfile(docid) {
+
+        var did = docid;//$("#pvdocid").val();
+
+        $("#DoctorProfileContent").load('@Url.Action("DoctorProfile", "Appointment")?doctorID=' + did, function () {
+           
+        });
+
+    }
+
+    function downloadFile(fileId) {
+
+        if (confirm("Are you sure you want to downlod file?")) {
+            var cUrl = "@Url.Action("Download", "PatientFiles")?fileId=" + fileId;
+            console.log(cUrl);
+            $('#iframeDownload').attr('src',cUrl);
+            //$("#iframeDownload").contents().find('html').html('data:text/html;base64,dmFyIHRpbWluZ3NMaXN0ID0gb2JqVGltaW5nUmVwby5HZXRMaXN0QnlEb2N0b3JJZChtb2RlbC5kb2N0b3JJRCk7DQogICAgICAgICAgICAgICAgc3RyaW5nIHRpbWV6b25laWQgPSBvYmpUaW1pbmdSZXBvLkdldERvY3RvclRpbWVab25lSUQobW9kZWwuZG9jdG9ySUQpOw0KICAgICAgICAgICAgICAgIFRpbWVab25lSW5mbyB6b25lSW5mbyA9IFRpbWVab25lSW5mby5GaW5kU3lzdGVtVGltZVpvbmVCeUlkKHRpbWV6b25laWQuVG9TdHJpbmcoKSk7DQogICAgICAgICAgICAgICAgRGF0ZVRpbWUgZnJvbXRpbWVVVEMgPSBEYXRlVGltZS5QYXJzZUV4YWN0KG1vZGVsLmZyb20sDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiaGg6bW0gdHQiLCBDdWx0dXJlSW5mby5JbnZhcmlhbnRDdWx0dXJlKTsNCiAgICAgICAgICAgICAgICBmcm9tdGltZVVUQyA9IFRpbWVab25lSW5mby5Db252ZXJ0VGltZVRvVXRjKGZyb210aW1lVVRDLCB6b25lSW5mbyk7DQogICAgICAgICAgICAgICAgRGF0ZVRpbWUgdG90aW1lVVRDID0gRGF0ZVRpbWUuUGFyc2VFeGFjdChtb2RlbC50bywNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgImhoOm1tIHR0IiwgQ3VsdHVyZUluZm8uSW52YXJpYW50Q3VsdHVyZSk7DQogICAgICAgICAgICAgICAgdG90aW1lVVRDID0gVGltZVpvbmVJbmZvLkNvbnZlcnRUaW1lVG9VdGModG90aW1lVVRDLCB6b25lSW5mbyk7DQogICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICB2YXIgYWxyZWFkSXRlbXMgPSB0aW1pbmdzTGlzdA0KICAgICAgICAgICAgICAgICAgICAuV2hlcmUobyA9PiBvLmRheSA9PSBtb2RlbC5kYXkgJiYNCiAgICAgICAgICAgICAgICAgICAgKG8uZnJvbSA9PSBmcm9tdGltZVVUQy5Ub1N0cmluZygiaGg6bW0gdHQiKSB8fCBvLnRvID09IHRvdGltZVVUQy5Ub1N0cmluZygiaGg6bW0gdHQiKQ0KICAgICAgICAgICAgICAgICAgICB8fA0KICAgICAgICAgICAgICAgICAgICAoDQogICAgICAgICAgICAgICAgICAgIGZyb210aW1lVVRDLlRpbWVPZkRheSA PQ0KICAgICAgICAgICAgICAgICAgICBEYXRlVGltZS5QYXJzZUV4YWN0KG8uZnJvbSwgImhoOm1tIHR0IiwgQ3VsdHVyZUluZm8uSW52YXJpYW50Q3VsdHVyZSkuVGltZU9mRGF5DQogICAgICAgICAgICAgICAgICAgICYmDQogICAgICAgICAgICAgICAgICAgIGZyb210aW1lVVRDLlRpbWVPZkRheSA8DQogICAgICAgICAgICAgICAgICAgIERhdGVUaW1lLlBhcnNlRXhhY3Qoby50bywgImhoOm1tIHR0IiwgQ3VsdHVyZUluZm8uSW52YXJpYW50Q3VsdHVyZSkuVGltZU9mRGF5DQoNCiAgICAgICAgICAgICAgICAgICAgKQ0KICAgICAgICAgICAgICAgICAgICB8fA0KICAgICAgICAgICAgICAgICAgICAoDQogICAgICAgICAgICAgICAgICAgIHRvdGltZVVUQy5UaW1lT2ZEYXkgPg0KICAgICAgICAgICAgICAgICAgICBEYXRlVGltZS5QYXJzZUV4YWN0KG8uZnJvbSwgImhoOm1tIHR0IiwgQ3VsdHVyZUluZm8uSW52YXJpYW50Q3VsdHVyZSkuVGltZU9mRGF5DQogICAgICAgICAgICAgICAgICAgICYmDQogICAgICAgICAgICAgICAgICAgIHRvdGltZVVUQy5UaW1lT2ZEYXkgPD0NCiAgICAgICAgICAgICAgICAgICAgRGF0ZVRpbWUuUGFyc2VFeGFjdChvLnRvLCAiaGg6bW0gdHQiLCBDdWx0dXJlSW5mby5JbnZhcmlhbnRDdWx0dXJlKS5UaW1lT2ZEYXkNCiAgICAgICAgICAgICAgICAgICAgKQ0KDQogICAgICAgICAgICAgICAgICAgIHx8DQogICAgICAgICAgICAgICAgICAgICgNCiAgICAgICAgICAgICAgICAgICAgZnJvbXRpbWVVVEMuVGltZU9mRGF5IDw9DQogICAgICAgICAgICAgICAgICAgIERhdGVUaW1lLlBhcnNlRXhhY3Qoby5mcm9tLCAiaGg6bW0gdHQiLCBDdWx0dXJlSW5mby5JbnZhcmlhbnRDdWx0dXJlKS5UaW1lT2ZEYXkNCiAgICAgICAgICAgICAgICAgICAgJiYNCiAgICAgICAgICAgICAgICAgICAgdG90aW1lVVRDLlRpbWVPZkRheSA PQ0KICAgICAgICAgICAgICAgICAgICBEYXRlVGltZS5QYXJzZUV4YWN0KG8udG8sICJoaDptbSB0dCIsIEN1bHR1cmVJbmZvLkludmFyaWFudEN1bHR1cmUpLlRpbWVPZkRheQ0KICAgICAgICAgICAgICAgICAgICApDQogICAgICAgICAgICAgICAgICAgIHx8DQogICAgICAgICAgICAgICAgICAgICgNCiAgICAgICAgICAgICAgICAgICAgZnJvbXRpbWVVVEMgPA0KICAgICAgICAgICAgICAgICAgICBEYXRlVGltZS5QYXJzZUV4YWN0KG8uZnJvbSwgImhoOm1tIHR0IiwgQ3VsdHVyZUluZm8uSW52YXJpYW50Q3VsdHVyZSkNCiAgICAgICAgICAgICAgICAgICAgJiYNCiAgICAgICAgICAgICAgICAgICAgdG90aW1lVVRDID49DQogICAgICAgICAgICAgICAgICAgIERhdGVUaW1lLlBhcnNlRXhhY3Qoby50bywgImhoOm1tIHR0IiwgQ3VsdHVyZUluZm8uSW52YXJpYW50Q3VsdHVyZSkNCiAgICAgICAgICAgICAgICAgICAgKQ0KICAgICAgICAgICAgICAgICAgICApKS5Ub0xpc3QoKTsNCiAgICAgICAgICAgICAgICAvL3ZhciBhbHJlYWRJdGVtcyA9IHRpbWluZ3NMaXN0DQogICAgICAgICAgICAgICAgLy8gICAgLldoZXJlKG8gPT4gby5kYXkgPT0gbW9kZWwuZGF5ICYmDQogICAgICAgICAgICAgICAgLy8gICAgKG8uZnJvbSA9PSBtb2RlbC5mcm9tIHx8IG8udG8gPT0gbW9kZWwudG8NCiAgICAgICAgICAgICAgICAvLyAgICB8fA0KICAgICAgICAgICAgICAgIC8vICAgICgNCiAgICAgICAgICAgICAgICAvLyAgICBEYXRlVGltZS5QYXJzZUV4YWN0KG1vZGVsLmZyb20sICJoaDptbSB0dCIsIEN1bHR1cmVJbmZvLkludmFyaWFudEN1bHR1cmUpLlRpbWVPZkRheSA PQ0KICAgICAgICAgICAgICAgIC8vICAgIERhdGVUaW1lLlBhcnNlRXhhY3Qoby5mcm9tLCAiaGg6bW0gdHQiLCBDdWx0dXJlSW5mby5JbnZhcmlhbnRDdWx0dXJlKS5UaW1lT2ZEYXkNCiAgICAgICAgICAgICAgICAvLyAgICAmJg0KICAgICAgICAgICAgICAgIC8vICAgIERhdGVUaW1lLlBhcnNlRXhhY3QobW9kZWwuZnJvbSwgImhoOm1tIHR0IiwgQ3VsdHVyZUluZm8uSW52YXJpYW50Q3VsdHVyZSkuVGltZU9mRGF5IDw9DQogICAgICAgICAgICAgICAgLy8gICAgRGF0ZVRpbWUuUGFyc2VFeGFjdChvLnRvLCAiaGg6bW0gdHQiLCBDdWx0dXJlSW5mby5JbnZhcmlhbnRDdWx0dXJlKS5UaW1lT2ZEYXkNCg0KICAgICAgICAgICAgICAgIC8vICAgICkNCiAgICAgICAgICAgICAgICAvLyAgICB8fA0KICAgICAgICAgICAgICAgIC8vICAgICgNCiAgICAgICAgICAgICAgICAvLyAgICBEYXRlVGltZS5QYXJzZUV4YWN0KG1vZGVsLnRvLCAiaGg6bW0gdHQiLCBDdWx0dXJlSW5mby5JbnZhcmlhbnRDdWx0dXJlKS5UaW1lT2ZEYXkgPj0NCiAgICAgICAgICAgICAgICAvLyAgICBEYXRlVGltZS5QYXJzZUV4YWN0KG8uZnJvbSwgImhoOm1tIHR0IiwgQ3VsdHVyZUluZm8uSW52YXJpYW50Q3VsdHVyZSkuVGltZU9mRGF5DQogICAgICAgICAgICAgICAgLy8gICAgJiYNCiAgICAgICAgICAgICAgICAvLyAgICBEYXRlVGltZS5QYXJzZUV4YWN0KG1vZGVsLnRvLCAiaGg6bW0gdHQiLCBDdWx0dXJlSW5mby5JbnZhcmlhbnRDdWx0dXJlKS5UaW1lT2ZEYXkgPD0NCiAgICAgICAgICAgICAgICAvLyAgICBEYXRlVGltZS5QYXJzZUV4YWN0KG8udG8sICJoaDptbSB0dCIsIEN1bHR1cmVJbmZvLkludmFyaWFudEN1bHR1cmUpLlRpbWVPZkRheQ0KICAgICAgICAgICAgICAgIC8vICAgICkNCg0KICAgICAgICAgICAgICAgIC8vICAgIHx8DQogICAgICAgICAgICAgICAgLy8gICAgKA0KICAgICAgICAgICAgICAgIC8vICAgIERhdGVUaW1lLlBhcnNlRXhhY3QobW9kZWwuZnJvbSwgImhoOm1tIHR0IiwgQ3VsdHVyZUluZm8uSW52YXJpYW50Q3VsdHVyZSkuVGltZU9mRGF5IDw9DQogICAgICAgICAgICAgICAgLy8gICAgRGF0ZVRpbWUuUGFyc2VFeGFjdChvLmZyb20sICJoaDptbSB0dCIsIEN1bHR1cmVJbmZvLkludmFyaWFudEN1bHR1cmUpLlRpbWVPZkRheQ0KICAgICAgICAgICAgICAgIC8vICAgICYmDQogICAgICAgICAgICAgICAgLy8gICAgRGF0ZVRpbWUuUGFyc2VFeGFjdChtb2RlbC50bywgImhoOm1tIHR0IiwgQ3VsdHVyZUluZm8uSW52YXJpYW50Q3VsdHVyZSkuVGltZU9mRGF5ID49DQogICAgICAgICAgICAgICAgLy8gICAgRGF0ZVRpbWUuUGFyc2VFeGFjdChvLnRvLCAiaGg6bW0gdHQiLCBDdWx0dXJlSW5mby5JbnZhcmlhbnRDdWx0dXJlKS5UaW1lT2ZEYXkNCiAgICAgICAgICAgICAgICAvLyAgICApDQoNCiAgICAgICAgICAgICAgICAvLyAgICApKS5Ub0xpc3QoKTsNCiAgICAgICAgICAgICAgICBpZiAoYWxyZWFkSXRlbXMuQ291bnQgPD0gMCkNCiAgICAgICAgICAgIHsNCiAgICAgICAgICAgICAgICB2YXIgdXNlck5hbWUgPSBTZXNzaW9uSGFuZGxlci5Vc2VyTmFtZTsNCg0KICAgICAgICAgICAgICAgIGlmIChtb2RlbC5kb2N0b3JUaW1pbmdzSUQgPD0gMCkNCiAgICAgICAgICAgICAgICB7DQogICAgICAgICAgICAgICAgICAgIG1vZGVsLnVzZXJuYW1lID0gdXNlck5hbWU7DQogICAgICAgICAgICAgICAgICAgIG9ialRpbWluZ1JlcG8uQWRkKG1vZGVsKTsNCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgZWxzZQ0KICAgICAgICAgICAgICAgIHsNCiAgICAgICAgICAgICAgICAgICAgbW9kZWwudXNlcm5hbWUgPSB1c2VyTmFtZTsNCiAgICAgICAgICAgICAgICAgICAgb2JqVGltaW5nUmVwby5QdXQobW9kZWwuZG9jdG9yVGltaW5nc0lELCBtb2RlbCk7DQogICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgIHJldHVybiBKc29uKG1vZGVsLCBKc29uUmVxdWVzdEJlaGF2aW9yLkFsbG93R2V0KTsNCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGVsc2UNCiAgICAgICAgICAgIHsNCiAgICAgICAgICAgICAgICByZXR1cm4gSnNvbigib3ZlcmxhcHBlZCIsIEpzb25SZXF1ZXN0QmVoYXZpb3IuQWxsb3dHZXQpOw0KICAgICAgICAgICAgfQ==');
+            $('#iframeDownload').load();
+        }
+    }
+
+    var currentTab = "";
+
+    var fetchDate="";
+    var _objAppointment = {};
+    var _doctorName="";
+    var _doctorID="";
+    var appdate = "";
+    $(document).ready(function () {
+        currentTab = "U";
+
+    });
+    function setTab(cTab) {
+        currentTab = cTab;
+        if (cTab == 'U') {
+           $("#divUpcoming").load('@Url.Action("PartialUpcoming", "Appointment")', function () {
+                //callback();
+            });
+
+        }
+        if(cTab=='R')
+        {
+            $("#divReschedule").load('@Url.Action("PartialReschedule", "Appointment")', function () {
+                //callback();
+            });
+        }
+        if (cTab == 'P') {
+             $("#divPending").load('@Url.Action("PartialPending", "Appointment")', function () {
+                //callback();
+             });
+        }
+    }
+
+
+    function sendVariables(appDate,doctorid, editappid,elem) {
+
+        _doctorID=doctorid;
+        _doctorName= $(elem).data('assigned-id');
+        showDoctorTimings(doctorid,editappid,appDate);
+    }
+
+    function completeConsult(editappid,cid) {
+
+               //showLoader();
+                var objCRR = {};
+
+                objCRR["userID"] = '@SessionHandler.UserInfo.userId';
+                objCRR["appID"] = editappid;
+                $.ajax({
+                    url: '@Url.Action("CompleteApp", "Appointment")',
+                    type: "POST",
+                    data: objCRR,
+                    dataType: 'json',
+                    success: function (result) {
+
+                        //Reload container
+                        if (result.Message != undefined) {
+
+                            new PNotify({ title: 'Error', text: "Consultation "+" "+result.Message, type: 'error', styling: 'bootstrap3' });
+                            $('#myModal4').modal('hide');
+                            //stopLoader();
+                        }
+                        else {
+                            new PNotify({ title: 'Success', text: "Consultation is completed successfully.", type: 'info',addclass: 'dark', styling: 'bootstrap3' });
+                            $('#myModal4').modal('hide');
+
+                            reloadContainer(function () {
+
+
+                                //Stop displaying loader
+                                //stopLoader();
+                            });
+                        }
+
+                    },
+                    error: function (err) {
+                        //alert(err.statusText);
+                        new PNotify({ title: 'Error', text: err.statusText, type: 'error', styling: 'bootstrap3' });
+                        //Stop displaying loader
+                        //stopLoader();
+                    }
+                });
+
+    }
+
+
+
+
+    //Reschedule App
+
+    function rescheduleApp(appID)
+    {
+
+        _objAppointment["appID"] = appID;// $("#RAppID").val();
+        _objAppointment["appType"] = currentTab;
+
+        _objAppointment["userID"] = '@SessionHandler.UserInfo.userId';
+        $.ajax({
+            url: '@Url.Action("RescheduleApp", "Appointment")',
+            type: "POST",
+            data: _objAppointment,
+            dataType: 'json',
+            success: function (result) {
+                //Reload container
+                if (result.Message != undefined) {
+                    new PNotify({ title: 'Error', text: result.Message.ReasonPhrase, type: 'error', styling: 'bootstrap3' });
+                    $('#myModal1').modal('hide');
+                    $('#myModal4').modal('hide');
+                    //stopLoader();
+                }
+                else {
+
+                        if(result.ApiResultModel.message=="")
+                        {
+                            new PNotify({ title: 'Success', text: "Appointment is rescheduled successfully.", type: 'info',addclass: 'dark', styling: 'bootstrap3' });
+                            $('#myModal1').modal('hide');
+                            $('#myModal4').modal('hide');
+                            reloadContainer(function ()
+                            {
+                                //Stop displaying loader
+                                //stopLoader();
+
+                            });
+                        }
+                        else
+                        {
+                            new PNotify({ title: 'Error', text: result.ApiResultModel.message, type: 'error', styling: 'bootstrap3' });
+                            $('#myModal1').modal('hide');
+                            $('#myModal4').modal('hide');
+
+                        }
+
+
+                }
+
+            },
+            error: function (err) {
+                //alert(err.statusText);
+                new PNotify({ title: 'Error', text: err.statusText, type: 'error', styling: 'bootstrap3' });
+                //Stop displaying loader
+                //stopLoader();
+            }
+        });
+    }
+    //////////////////
+    //Show Timing Slots
+    //$(".reschedule").click(function () {
+
+    //    //debugger;
+    //    var $buttonClicked = $(this);
+    //    appdate = $buttonClicked.attr('data-id');
+    //    //alert($('#fetchdate').val());
+    //});
+    $("#myModal1").on('show.bs.modal', function (e) {
+        var $modal = $(this);
+        var todoId="";
+        var docName="";
+        var mydocid = e.relatedTarget.id;
+        if(mydocid=="editappointment")
+        {
+            todoId =_doctorID ;
+            docName =_doctorName ;
+        }
+        else
+        {
+            todoId = $('#' + mydocid).data('todo').docid;
+
+            docName = $('#' + mydocid).data('todo').doctorName;
+        }
+
+        $("#doctorid").val(todoId);
+        var caps=docName.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+        $("#timingsmodaltitle").text(caps + " Timings");
+
+
+
+    });
+    $("#fetchdate").daterangepicker({
+        singleDatePicker: true,
+        calender_style: "picker_2",
+        format: 'DD/MM/YYYY ',
+        minDate: new Date()
+    });
+    $('#fetchdate').on('apply.daterangepicker', function (ev, picker) {
+        //do something, like clearing an input
+
+        fetchTimings( $('#fetchdate').val());
+
+    });
+    $('#fetchdate').data('daterangepicker').setStartDate();
+    function fetchTimings(fetchdate) { //is called when date is changed from date control
+        debugger;
+        showLoader();
+        var _objSearch = {};
+        _objSearch["appDate"] = fetchdate;//$("#fetchdate").val();
+        //alert( _objSearch["appDate"]);
+        _objSearch["doctorID"] = $("#doctorid").val();
+
+        var div = "";
+        $.ajax({
+            type: 'POST',
+            url: '/SeeDoctor/FetchDoctorTimingsNew',
+            data: _objSearch,
+            dataType: 'json',
+            success: function (response) {
+                if (response.Message != undefined) {
+                    //alert(response.Message.ReasonPhrase);
+                    new PNotify({
+                        title: 'Error',
+                        text: response.Message.ReasonPhrase,
+                        type: 'error',
+                        styling: 'bootstrap3'
+                    });
+                }
+                else {
+                    var tablehtml = "";
+                    $.each(response.Object, function (item) {
+
+                        //var tolocalTime = converttoLocal(response.Object[item]);
+                       
+                        var flag = compareDateTime(fetchdate.trim(), response.Object[item]);
+                        if (flag) {
+
+                            tablehtml = tablehtml + " <li><button id ='" + response.Object[item] + "' type='button' class='btn btn-primary' onclick='setDateTime(\"" + response.Object[item] + "\",\"" + fetchdate + "\")' style='width:85px'>" + response.Object[item] + "</button></li>";
+                        }
+
+
+                    });
+
+                    if (tablehtml == "") { document.getElementById("TimingsData").innerHTML = "<center>Sorry, Doctor is not available on this day.</center>"; }
+                    else { document.getElementById("TimingsData").innerHTML = tablehtml; }
+                }
+
+            },
+
+        });
+        hideLoader();
+    }
+
+    function showDoctorTimings(doctorID, appID, appDate) { //is called when modal dialog is opened
+        console.log('showDoctorTimings '+ appDate);
+        showLoader();
+        var cappDate = appDate.split("/");
+        var f = new Date(cappDate[2], cappDate[1] - 1, cappDate[0]);
+        $("#RAppID").val(appID);
+        var today = new Date();
+        var currDate = today;
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+
+        if (dd < 10) {
+            dd = '0' + dd
+        }
+
+        if (mm < 10) {
+            mm = '0' + mm
+        }
+
+        today = dd + '/' + mm + '/' + yyyy;
+
+        $('#fetchdate').val(today);
+        var _objSearch = {};
+        var dtdateParts = today.split("/");
+        var dtoday = new Date(dtdateParts[2], dtdateParts[1] - 1, dtdateParts[0]);
+        var addateParts = appDate.split("/");
+        var dappDate = new Date(addateParts[2], addateParts[1] - 1, addateParts[0]);
+        //alert('today ' + dtoday + ' App Date ' + dappDate);
+        console.log('today ' + dtoday + ' App Date ' + dappDate);
+        if (dtoday > dappDate)
+        {
+            //alert('today ' + dtoday + ' App Date ' + dappDate);
+            //console.log('today ' + dtoday + ' App Date ' + dappDate);
+            $('#fetchdate').val(today);
+            _objSearch["appDate"] = today;
+            _objSearch["doctorID"] = doctorID;
+        }
+        else if (dtoday < dappDate)
+        {
+            //alert('today ' + dtoday + ' App Date ' + dappDate);
+            //console.log('today ' + dtoday + ' App Date ' + dappDate);
+            $('#fetchdate').val(today);
+            _objSearch["appDate"] = today;
+            _objSearch["doctorID"] = doctorID;
+        }
+       
+
+        var div = "";
+        $.ajax({
+            type: 'POST',
+            url: '/SeeDoctor/FetchDoctorTimingsNew',
+            data: _objSearch,
+            dataType: 'json',
+            success: function (response) {
+                if (response.Message != undefined) {
+
+                }
+                else {
+                    var tablehtml = "";
+                    $.each(response.Object, function (item) {
+                        //var tolocalTime = converttoLocal(response.Object[item]);
+                        var flag = compareTime(response.Object[item]);
+                        if (flag) {
+
+                            tablehtml = tablehtml + " <li><button id ='" + response.Object[item] + "' type='button' class='btn btn-primary' onclick='setDateTime(\"" + response.Object[item] + "\",\"" + $("#fetchdate").val() + "\")' style='width:85px'>" + response.Object[item] + "</button></li>";
+                        }
+                    });
+
+                    if (tablehtml == "") { document.getElementById("TimingsData").innerHTML = "<center>Sorry, Doctor is not available on this day.</center>"; }
+                    else { document.getElementById("TimingsData").innerHTML = tablehtml; }
+
+                }
+
+            },
+
+        });
+        hideLoader();
+    }
+
+    function setDateTime(myappTime, myappDate) {
+
+        _objAppointment["appDate"] = myappDate;
+        _objAppointment["appTime"] = myappTime;
+        _selecteddoctorID = $("#doctorid").val();
+        //alert($('#RAppID').val());
+        rescheduleApp($('#RAppID').val());
+        return false;
+
+    }
+
+    function reloadContainer(callback) {
+
+        $("#divReschedule").load('@Url.Action("PartialReschedule", "Appointment")', function () {
+            callback();
+        });
+        $("#divUpcoming").load('@Url.Action("PartialUpcoming", "Appointment")', function () {
+            callback();
+        });
+        $("#divPending").load('@Url.Action("PartialPending", "Appointment")', function () {
+            callback();
+        });
+
+
+    }
+    function reloadModelContainer(callback) {
+        debugger;
+        var appid=$("#pvappid").val();
+        //alert(appid);
+        $("#myModalContent").load('@Url.Action("ViewAppDetails", "Appointment")?appID='+appid, function () {
+            callback();
+        });
+
+    }
+    //$(".scheduler").addClass("current-page");
+</script> 
+
+<script type="text/javascript">
+        @*$(document).ready(function () {
+
+            
+
+            if('@SessionHandler.UserInfo.timeZone'=='')
+            {
+                new PNotify({
+                    title: 'Info',
+                    text: "Please update your timezone.",
+                    type: 'info',
+                    styling: 'bootstrap3'
+                });
+                window.location = '@Url.Action("Index","PatientProfile")';
+
+            }
+        });*@
+</script>

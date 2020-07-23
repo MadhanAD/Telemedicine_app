@@ -1,0 +1,2023 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TeleMedModelStoreContainer" CdmEntityContainer="TeleMedEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="TeleMedModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminUsers">
+      <EntityTypeMapping TypeName="TeleMedModel.AdminUser">
+        <MappingFragment StoreEntitySet="AdminUsers">
+          <ScalarProperty Name="adminID" ColumnName="adminID" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="roleID" ColumnName="roleID" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Alerts">
+      <EntityTypeMapping TypeName="TeleMedModel.Alert">
+        <MappingFragment StoreEntitySet="Alerts">
+          <ScalarProperty Name="alertID" ColumnName="alertID" />
+          <ScalarProperty Name="alertText" ColumnName="alertText" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="read" ColumnName="read" />
+          <ScalarProperty Name="alertFor" ColumnName="alertFor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Allergies">
+      <EntityTypeMapping TypeName="TeleMedModel.Allergy">
+        <MappingFragment StoreEntitySet="Allergy">
+          <ScalarProperty Name="allergyID" ColumnName="allergyID" />
+          <ScalarProperty Name="allergyName" ColumnName="allergyName" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AppAttachments">
+      <EntityTypeMapping TypeName="TeleMedModel.AppAttachment">
+        <MappingFragment StoreEntitySet="AppAttachment">
+          <ScalarProperty Name="appAttachmentID" ColumnName="appAttachmentID" />
+          <ScalarProperty Name="appID" ColumnName="appID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="fileContent" ColumnName="fileContent" />
+          <ScalarProperty Name="fileurl" ColumnName="fileurl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Appointments">
+      <EntityTypeMapping TypeName="TeleMedModel.Appointment">
+        <MappingFragment StoreEntitySet="Appointments">
+          <ScalarProperty Name="appID" ColumnName="appID" />
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="appDate" ColumnName="appDate" />
+          <ScalarProperty Name="appTime" ColumnName="appTime" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="paymentID" ColumnName="paymentID" />
+          <ScalarProperty Name="paymentAmt" ColumnName="paymentAmt" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="appTypeAV" ColumnName="appTypeAV" />
+          <ScalarProperty Name="chiefComplaints" ColumnName="chiefComplaints" />
+          <ScalarProperty Name="rov" ColumnName="rov" />
+          <ScalarProperty Name="consultationType" ColumnName="consultationType" />
+          <ScalarProperty Name="appointmentStatus" ColumnName="appointmentStatus" />
+          <ScalarProperty Name="rescheduleRequiredBy" ColumnName="rescheduleRequiredBy" />
+          <ScalarProperty Name="Pharmacy_Id" ColumnName="Pharmacy_Id" />
+          <ScalarProperty Name="Pharmacy_Name" ColumnName="Pharmacy_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="TeleMedModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="TeleMedModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="TeleMedModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="TeleMedModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChatLogs">
+      <EntityTypeMapping TypeName="TeleMedModel.ChatLog">
+        <MappingFragment StoreEntitySet="ChatLog">
+          <ScalarProperty Name="chatID" ColumnName="chatID" />
+          <ScalarProperty Name="sender" ColumnName="sender" />
+          <ScalarProperty Name="reciever" ColumnName="reciever" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="consultID" ColumnName="consultID" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="TeleMedModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="cityID" ColumnName="cityID" />
+          <ScalarProperty Name="cityName" ColumnName="cityName" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conditions">
+      <EntityTypeMapping TypeName="TeleMedModel.Condition">
+        <MappingFragment StoreEntitySet="Conditions">
+          <ScalarProperty Name="conditionID" ColumnName="conditionID" />
+          <ScalarProperty Name="conditionName" ColumnName="conditionName" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="reportedDate" ColumnName="reportedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consultations">
+      <EntityTypeMapping TypeName="TeleMedModel.Consultation">
+        <MappingFragment StoreEntitySet="Consultation">
+          <ScalarProperty Name="consultID" ColumnName="consultID" />
+          <ScalarProperty Name="appID" ColumnName="appID" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="review" ColumnName="review" />
+          <ScalarProperty Name="reviewStar" ColumnName="reviewStar" />
+          <ScalarProperty Name="reviewStatus" ColumnName="reviewStatus" />
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="consultationRosID" ColumnName="consultationRosID" />
+          <ScalarProperty Name="subjective" ColumnName="subjective" />
+          <ScalarProperty Name="objective" ColumnName="objective" />
+          <ScalarProperty Name="assessment" ColumnName="assessment" />
+          <ScalarProperty Name="plans" ColumnName="plans" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="startTime" ColumnName="startTime" />
+          <ScalarProperty Name="endTime" ColumnName="endTime" />
+          <ScalarProperty Name="seesionID" ColumnName="seesionID" />
+          <ScalarProperty Name="token" ColumnName="token" />
+          <ScalarProperty Name="endby" ColumnName="endby" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConsultationROS">
+      <EntityTypeMapping TypeName="TeleMedModel.ConsultationRO">
+        <MappingFragment StoreEntitySet="ConsultationROS">
+          <ScalarProperty Name="consultationRosID" ColumnName="consultationRosID" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="systemItemID" ColumnName="systemItemID" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="systemItemName" ColumnName="systemItemName" />
+          <ScalarProperty Name="consultationID" ColumnName="consultationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doctors">
+      <EntityTypeMapping TypeName="TeleMedModel.Doctor">
+        <MappingFragment StoreEntitySet="Doctor">
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="secretQuestion1" ColumnName="secretQuestion1" />
+          <ScalarProperty Name="secretQuestion2" ColumnName="secretQuestion2" />
+          <ScalarProperty Name="secretQuestion3" ColumnName="secretQuestion3" />
+          <ScalarProperty Name="secretAnswer1" ColumnName="secretAnswer1" />
+          <ScalarProperty Name="secretAnswer2" ColumnName="secretAnswer2" />
+          <ScalarProperty Name="secretAnswer3" ColumnName="secretAnswer3" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="homePhone" ColumnName="homePhone" />
+          <ScalarProperty Name="cellPhone" ColumnName="cellPhone" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="licenseNumber" ColumnName="licenseNumber" />
+          <ScalarProperty Name="npiNumber" ColumnName="npiNumber" />
+          <ScalarProperty Name="additionalInfo" ColumnName="additionalInfo" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="lon" ColumnName="lon" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="publication" ColumnName="publication" />
+          <ScalarProperty Name="aboutMe" ColumnName="aboutMe" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="consultCharges" ColumnName="consultCharges" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="education" ColumnName="education" />
+          <ScalarProperty Name="workexperience" ColumnName="workexperience" />
+          <ScalarProperty Name="specialization" ColumnName="specialization" />
+          <ScalarProperty Name="timezone" ColumnName="timezone" />
+          <ScalarProperty Name="iOSToken" ColumnName="iOSToken" />
+          <ScalarProperty Name="AndroidToken" ColumnName="AndroidToken" />
+          <ScalarProperty Name="ProfilePhotoBase64" ColumnName="ProfilePhotoBase64" />
+          <ScalarProperty Name="reviewStar" ColumnName="reviewStar" />
+          <ScalarProperty Name="timezoneoffset" ColumnName="timezoneoffset" />
+          <ScalarProperty Name="deaNumber" ColumnName="deaNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoctorLanguages">
+      <EntityTypeMapping TypeName="TeleMedModel.DoctorLanguage">
+        <MappingFragment StoreEntitySet="DoctorLanguages">
+          <ScalarProperty Name="doctorLanguageID" ColumnName="doctorLanguageID" />
+          <ScalarProperty Name="languageName" ColumnName="languageName" />
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoctorLicenseStates">
+      <EntityTypeMapping TypeName="TeleMedModel.DoctorLicenseState">
+        <MappingFragment StoreEntitySet="DoctorLicenseStates">
+          <ScalarProperty Name="doctorLicenseStateID" ColumnName="doctorLicenseStateID" />
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="stateName" ColumnName="stateName" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoctorSpecialities">
+      <EntityTypeMapping TypeName="TeleMedModel.DoctorSpeciality">
+        <MappingFragment StoreEntitySet="DoctorSpeciality">
+          <ScalarProperty Name="doctorSpecialityID" ColumnName="doctorSpecialityID" />
+          <ScalarProperty Name="specialityName" ColumnName="specialityName" />
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="CB" ColumnName="CB" />
+          <ScalarProperty Name="MB" ColumnName="MB" />
+          <ScalarProperty Name="CD" ColumnName="CD" />
+          <ScalarProperty Name="MD" ColumnName="MD" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoctorTimings">
+      <EntityTypeMapping TypeName="TeleMedModel.DoctorTiming">
+        <MappingFragment StoreEntitySet="DoctorTimings">
+          <ScalarProperty Name="doctorTimingsID" ColumnName="doctorTimingsID" />
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="day" ColumnName="day" />
+          <ScalarProperty Name="from" ColumnName="from" />
+          <ScalarProperty Name="to" ColumnName="to" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="repeatTimings" ColumnName="repeatTimings" />
+          <ScalarProperty Name="utcDay" ColumnName="utcDay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentTypes">
+      <EntityTypeMapping TypeName="TeleMedModel.DocumentType">
+        <MappingFragment StoreEntitySet="DocumentType">
+          <ScalarProperty Name="docTypeID" ColumnName="docTypeID" />
+          <ScalarProperty Name="typeName" ColumnName="typeName" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drugs">
+      <EntityTypeMapping TypeName="TeleMedModel.Drug">
+        <MappingFragment StoreEntitySet="Drug">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="RXCUI_DrugCoded_" ColumnName="RXCUI(DrugCoded)" />
+          <ScalarProperty Name="GENERIC_RXCUI" ColumnName="GENERIC_RXCUI" />
+          <ScalarProperty Name="TTY_DrugDBCodeQualifier_" ColumnName="TTY(DrugDBCodeQualifier)" />
+          <ScalarProperty Name="FULL_NAME" ColumnName="FULL_NAME" />
+          <ScalarProperty Name="RXN_DOSE_FORM" ColumnName="RXN_DOSE_FORM" />
+          <ScalarProperty Name="FULL_GENERIC_NAME" ColumnName="FULL_GENERIC_NAME" />
+          <ScalarProperty Name="BRAND_NAME" ColumnName="BRAND_NAME" />
+          <ScalarProperty Name="DISPLAY_NAME" ColumnName="DISPLAY_NAME" />
+          <ScalarProperty Name="ROUTE" ColumnName="ROUTE" />
+          <ScalarProperty Name="NEW_DOSE_FORM" ColumnName="NEW_DOSE_FORM" />
+          <ScalarProperty Name="STRENGTH" ColumnName="STRENGTH" />
+          <ScalarProperty Name="SUPPRESS_FOR" ColumnName="SUPPRESS_FOR" />
+          <ScalarProperty Name="DISPLAY_NAME_SYNONYM" ColumnName="DISPLAY_NAME_SYNONYM" />
+          <ScalarProperty Name="IS_RETIRED" ColumnName="IS_RETIRED" />
+          <ScalarProperty Name="SXDG_RXCUI" ColumnName="SXDG_RXCUI" />
+          <ScalarProperty Name="SXDG_TTY" ColumnName="SXDG_TTY" />
+          <ScalarProperty Name="SXDG_NAME" ColumnName="SXDG_NAME" />
+          <ScalarProperty Name="PSN_DrugDescription_" ColumnName="PSN(DrugDescription)" />
+          <ScalarProperty Name="NCPDP_Quantity_Term" ColumnName="NCPDP_Quantity_Term" />
+          <ScalarProperty Name="Potency_Unit_Code" ColumnName="Potency Unit Code" />
+          <ScalarProperty Name="DEA_Schedule__" ColumnName="DEA_Schedule_#" />
+          <ScalarProperty Name="DEA_Schedule" ColumnName="DEA_Schedule" />
+          <ScalarProperty Name="Ingredients" ColumnName="Ingredients" />
+          <ScalarProperty Name="Drug_Interaction" ColumnName="Drug Interaction" />
+          <ScalarProperty Name="Unit_Source_Code" ColumnName="Unit Source Code" />
+          <ScalarProperty Name="Code_List_Qualifier" ColumnName="Code List Qualifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EPrescriptinXMLDates">
+      <EntityTypeMapping TypeName="TeleMedModel.EPrescriptinXMLDate">
+        <MappingFragment StoreEntitySet="EPrescriptinXMLDate">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="XMLDate" ColumnName="XMLDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FamilyHXItems">
+      <EntityTypeMapping TypeName="TeleMedModel.FamilyHXItem">
+        <MappingFragment StoreEntitySet="FamilyHXItems">
+          <ScalarProperty Name="familyHXItemsID" ColumnName="familyHXItemsID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FavouriteDoctors">
+      <EntityTypeMapping TypeName="TeleMedModel.FavouriteDoctor">
+        <MappingFragment StoreEntitySet="FavouriteDoctor">
+          <ScalarProperty Name="favID" ColumnName="favID" />
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FileTypes">
+      <EntityTypeMapping TypeName="TeleMedModel.FileType">
+        <MappingFragment StoreEntitySet="FileType">
+          <ScalarProperty Name="fileTypeID" ColumnName="fileTypeID" />
+          <ScalarProperty Name="typeName" ColumnName="typeName" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Frequencies">
+      <EntityTypeMapping TypeName="TeleMedModel.Frequency">
+        <MappingFragment StoreEntitySet="Frequency">
+          <ScalarProperty Name="frequencyID" ColumnName="frequencyID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Languages">
+      <EntityTypeMapping TypeName="TeleMedModel.Language">
+        <MappingFragment StoreEntitySet="Languages">
+          <ScalarProperty Name="languageID" ColumnName="languageID" />
+          <ScalarProperty Name="languageName" ColumnName="languageName" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LifeStyleQuestions">
+      <EntityTypeMapping TypeName="TeleMedModel.LifeStyleQuestion">
+        <MappingFragment StoreEntitySet="LifeStyleQuestions">
+          <ScalarProperty Name="questionID" ColumnName="questionID" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LiveReqLogs">
+      <EntityTypeMapping TypeName="TeleMedModel.LiveReqLog">
+        <MappingFragment StoreEntitySet="LiveReqLog">
+          <ScalarProperty Name="LiveReqID" ColumnName="LiveReqID" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="From" ColumnName="From" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Medications">
+      <EntityTypeMapping TypeName="TeleMedModel.Medication">
+        <MappingFragment StoreEntitySet="Medications">
+          <ScalarProperty Name="medicationID" ColumnName="medicationID" />
+          <ScalarProperty Name="medicineName" ColumnName="medicineName" />
+          <ScalarProperty Name="frequency" ColumnName="frequency" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="patientId" ColumnName="patientId" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="reportedDate" ColumnName="reportedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Medicines">
+      <EntityTypeMapping TypeName="TeleMedModel.Medicine">
+        <MappingFragment StoreEntitySet="Medicine">
+          <ScalarProperty Name="medicineID" ColumnName="medicineID" />
+          <ScalarProperty Name="medicineName" ColumnName="medicineName" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MessageFiles">
+      <EntityTypeMapping TypeName="TeleMedModel.MessageFile">
+        <MappingFragment StoreEntitySet="MessageFiles">
+          <ScalarProperty Name="msgFileID" ColumnName="msgFileID" />
+          <ScalarProperty Name="msgID" ColumnName="msgID" />
+          <ScalarProperty Name="fileContent" ColumnName="fileContent" />
+          <ScalarProperty Name="fileName" ColumnName="fileName" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="TeleMedModel.Message">
+        <MappingFragment StoreEntitySet="Messages">
+          <ScalarProperty Name="msgID" ColumnName="msgID" />
+          <ScalarProperty Name="mesage" ColumnName="mesage" />
+          <ScalarProperty Name="from" ColumnName="from" />
+          <ScalarProperty Name="to" ColumnName="to" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="isRead" ColumnName="isRead" />
+          <ScalarProperty Name="replyLink" ColumnName="replyLink" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="senderName" ColumnName="senderName" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="hasAttachment" ColumnName="hasAttachment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modules">
+      <EntityTypeMapping TypeName="TeleMedModel.Module">
+        <MappingFragment StoreEntitySet="Modules">
+          <ScalarProperty Name="moduleID" ColumnName="moduleID" />
+          <ScalarProperty Name="moduleName" ColumnName="moduleName" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="TeleMedModel.News">
+        <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="newsID" ColumnName="newsID" />
+          <ScalarProperty Name="newsTitle" ColumnName="newsTitle" />
+          <ScalarProperty Name="newsDetail" ColumnName="newsDetail" />
+          <ScalarProperty Name="newsThumbnail" ColumnName="newsThumbnail" />
+          <ScalarProperty Name="newsImage" ColumnName="newsImage" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="newsThumbnailBase64" ColumnName="newsThumbnailBase64" />
+          <ScalarProperty Name="newsImageBase64" ColumnName="newsImageBase64" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patients">
+      <EntityTypeMapping TypeName="TeleMedModel.Patient">
+        <MappingFragment StoreEntitySet="Patient">
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="secretQuestion1" ColumnName="secretQuestion1" />
+          <ScalarProperty Name="secretQuestion2" ColumnName="secretQuestion2" />
+          <ScalarProperty Name="secretQuestion3" ColumnName="secretQuestion3" />
+          <ScalarProperty Name="secretAnswer1" ColumnName="secretAnswer1" />
+          <ScalarProperty Name="secretAnswer2" ColumnName="secretAnswer2" />
+          <ScalarProperty Name="secretAnswer3" ColumnName="secretAnswer3" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="homePhone" ColumnName="homePhone" />
+          <ScalarProperty Name="cellPhone" ColumnName="cellPhone" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="languages" ColumnName="languages" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="pharmacy" ColumnName="pharmacy" />
+          <ScalarProperty Name="pharmacyid" ColumnName="pharmacyid" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="timezone" ColumnName="timezone" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="lon" ColumnName="lon" />
+          <ScalarProperty Name="iOSToken" ColumnName="iOSToken" />
+          <ScalarProperty Name="AndroidToken" ColumnName="AndroidToken" />
+          <ScalarProperty Name="DoseSpotPatientId" ColumnName="DoseSpotPatientId" />
+          <ScalarProperty Name="pharmacyaddress" ColumnName="pharmacyaddress" />
+          <ScalarProperty Name="pharmacycitystatezip" ColumnName="pharmacycitystatezip" />
+          <ScalarProperty Name="ProfilePhotoBase64" ColumnName="ProfilePhotoBase64" />
+          <ScalarProperty Name="timezoneoffset" ColumnName="timezoneoffset" />
+          <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="ReminderId" ColumnName="ReminderId" />
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PatientAllergies">
+      <EntityTypeMapping TypeName="TeleMedModel.PatientAllergy">
+        <MappingFragment StoreEntitySet="PatientAllergies">
+          <ScalarProperty Name="allergiesID" ColumnName="allergiesID" />
+          <ScalarProperty Name="allergyName" ColumnName="allergyName" />
+          <ScalarProperty Name="severity" ColumnName="severity" />
+          <ScalarProperty Name="reaction" ColumnName="reaction" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="reportedDate" ColumnName="reportedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PatientFamilyHXes">
+      <EntityTypeMapping TypeName="TeleMedModel.PatientFamilyHX">
+        <MappingFragment StoreEntitySet="PatientFamilyHX">
+          <ScalarProperty Name="fhxid" ColumnName="fhxid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="relationship" ColumnName="relationship" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PatientLanguages">
+      <EntityTypeMapping TypeName="TeleMedModel.PatientLanguage">
+        <MappingFragment StoreEntitySet="PatientLanguages">
+          <ScalarProperty Name="patientLanguageID" ColumnName="patientLanguageID" />
+          <ScalarProperty Name="languageName" ColumnName="languageName" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PatientLifeStyles">
+      <EntityTypeMapping TypeName="TeleMedModel.PatientLifeStyle">
+        <MappingFragment StoreEntitySet="PatientLifeStyle">
+          <ScalarProperty Name="patientlifestyleID" ColumnName="patientlifestyleID" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="answer" ColumnName="answer" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PatientSurgeries">
+      <EntityTypeMapping TypeName="TeleMedModel.PatientSurgery">
+        <MappingFragment StoreEntitySet="PatientSurgeries">
+          <ScalarProperty Name="surgeryID" ColumnName="surgeryID" />
+          <ScalarProperty Name="bodyPart" ColumnName="bodyPart" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="reportedDate" ColumnName="reportedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PatientSystems">
+      <EntityTypeMapping TypeName="TeleMedModel.PatientSystem">
+        <MappingFragment StoreEntitySet="PatientSystems">
+          <ScalarProperty Name="systemID" ColumnName="systemID" />
+          <ScalarProperty Name="systemName" ColumnName="systemName" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pharmacies">
+      <EntityTypeMapping TypeName="TeleMedModel.Pharmacy">
+        <MappingFragment StoreEntitySet="Pharmacy">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="APP" ColumnName="APP" />
+          <ScalarProperty Name="NCPDP" ColumnName="NCPDP" />
+          <ScalarProperty Name="NCPDP_safe" ColumnName="NCPDP_safe" />
+          <ScalarProperty Name="Mutually_Defined_ID" ColumnName="Mutually_Defined_ID" />
+          <ScalarProperty Name="Mutually_Defined_ID_safe" ColumnName="Mutually_Defined_ID_safe" />
+          <ScalarProperty Name="NPI" ColumnName="NPI" />
+          <ScalarProperty Name="NPI_safe" ColumnName="NPI_safe" />
+          <ScalarProperty Name="Business_Name" ColumnName="Business_Name" />
+          <ScalarProperty Name="Address_Line_1" ColumnName="Address_Line_1" />
+          <ScalarProperty Name="Address_Line_2" ColumnName="Address_Line_2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="ZipCode_safe" ColumnName="ZipCode_safe" />
+          <ScalarProperty Name="Country_Code" ColumnName="Country_Code" />
+          <ScalarProperty Name="Country_Code__1" ColumnName="Country_Code&#xD;&#xA;1" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Pharmacy_Phone" ColumnName="Pharmacy_Phone" />
+          <ScalarProperty Name="Pharmacy_Phone_safe" ColumnName="Pharmacy_Phone_safe" />
+          <ScalarProperty Name="Pharmacy_Fax" ColumnName="Pharmacy_Fax" />
+          <ScalarProperty Name="Pharmacy_Fax_safe" ColumnName="Pharmacy_Fax_safe" />
+          <ScalarProperty Name="Types" ColumnName="Types" />
+          <ScalarProperty Name="Script_Msg_Accepted" ColumnName="Script_Msg_Accepted" />
+          <ScalarProperty Name="Specialized_Msg_Accepted" ColumnName="Specialized_Msg_Accepted" />
+          <ScalarProperty Name="Connectivity_Status" ColumnName="Connectivity_Status" />
+          <ScalarProperty Name="Accept_TSO" ColumnName="Accept_TSO" />
+          <ScalarProperty Name="DEA_Audit_Exp" ColumnName="DEA_Audit_Exp" />
+          <ScalarProperty Name="Test_Pharmacy" ColumnName="Test_Pharmacy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrescriptionFrequencies">
+      <EntityTypeMapping TypeName="TeleMedModel.PrescriptionFrequency">
+        <MappingFragment StoreEntitySet="PrescriptionFrequency">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FrequencyName" ColumnName="FrequencyName" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prescriptions">
+      <EntityTypeMapping TypeName="TeleMedModel.Prescription">
+        <MappingFragment StoreEntitySet="Prescriptions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="Drug_Display_Name" ColumnName="Drug_Display_Name" />
+          <ScalarProperty Name="RXCUI_DrugCode_" ColumnName="RXCUI(DrugCode)" />
+          <ScalarProperty Name="Drug_Full_Name" ColumnName="Drug_Full_Name" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="DrugFrequency" ColumnName="DrugFrequency" />
+          <ScalarProperty Name="Schedule" ColumnName="Schedule" />
+          <ScalarProperty Name="FoodStatus" ColumnName="FoodStatus" />
+          <ScalarProperty Name="Days" ColumnName="Days" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="RecordStatud" ColumnName="RecordStatud" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reactions">
+      <EntityTypeMapping TypeName="TeleMedModel.Reaction">
+        <MappingFragment StoreEntitySet="Reaction">
+          <ScalarProperty Name="reactionID" ColumnName="reactionID" />
+          <ScalarProperty Name="reactionName" ColumnName="reactionName" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Relationships">
+      <EntityTypeMapping TypeName="TeleMedModel.Relationship">
+        <MappingFragment StoreEntitySet="Relationship">
+          <ScalarProperty Name="relationshipID" ColumnName="relationshipID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="activre" ColumnName="activre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleModules">
+      <EntityTypeMapping TypeName="TeleMedModel.RoleModule">
+        <MappingFragment StoreEntitySet="RoleModules">
+          <ScalarProperty Name="roleModuleID" ColumnName="roleModuleID" />
+          <ScalarProperty Name="moduleID" ColumnName="moduleID" />
+          <ScalarProperty Name="roleID" ColumnName="roleID" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="TeleMedModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="roleID" ColumnName="roleID" />
+          <ScalarProperty Name="roleName" ColumnName="roleName" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROVs">
+      <EntityTypeMapping TypeName="TeleMedModel.ROV">
+        <MappingFragment StoreEntitySet="ROV">
+          <ScalarProperty Name="rovID" ColumnName="rovID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecretQuestions">
+      <EntityTypeMapping TypeName="TeleMedModel.SecretQuestion">
+        <MappingFragment StoreEntitySet="SecretQuestions">
+          <ScalarProperty Name="secretQuestionID" ColumnName="secretQuestionID" />
+          <ScalarProperty Name="secretQuestionn" ColumnName="secretQuestionn" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Severities">
+      <EntityTypeMapping TypeName="TeleMedModel.Severity">
+        <MappingFragment StoreEntitySet="Severity">
+          <ScalarProperty Name="severityID" ColumnName="severityID" />
+          <ScalarProperty Name="severityName" ColumnName="severityName" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Speciallities">
+      <EntityTypeMapping TypeName="TeleMedModel.Speciallity">
+        <MappingFragment StoreEntitySet="Speciallity">
+          <ScalarProperty Name="speciallityID" ColumnName="speciallityID" />
+          <ScalarProperty Name="specialityName" ColumnName="specialityName" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="TeleMedModel.State">
+        <MappingFragment StoreEntitySet="States">
+          <ScalarProperty Name="stateID" ColumnName="stateID" />
+          <ScalarProperty Name="stateName" ColumnName="stateName" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuffixMasters">
+      <EntityTypeMapping TypeName="TeleMedModel.SuffixMaster">
+        <MappingFragment StoreEntitySet="SuffixMaster">
+          <ScalarProperty Name="SuffixID" ColumnName="SuffixID" />
+          <ScalarProperty Name="SuffixName" ColumnName="SuffixName" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Surgeries">
+      <EntityTypeMapping TypeName="TeleMedModel.Surgery">
+        <MappingFragment StoreEntitySet="Surgery">
+          <ScalarProperty Name="surgeryID" ColumnName="surgeryID" />
+          <ScalarProperty Name="surgeryName" ColumnName="surgeryName" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="TeleMedModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemItemsses">
+      <EntityTypeMapping TypeName="TeleMedModel.SystemItemss">
+        <MappingFragment StoreEntitySet="SystemItemss">
+          <ScalarProperty Name="systemItemID" ColumnName="systemItemID" />
+          <ScalarProperty Name="systemItemName" ColumnName="systemItemName" />
+          <ScalarProperty Name="systemID" ColumnName="systemID" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeZones">
+      <EntityTypeMapping TypeName="TeleMedModel.TimeZone">
+        <MappingFragment StoreEntitySet="TimeZones">
+          <ScalarProperty Name="zoneID" ColumnName="zoneID" />
+          <ScalarProperty Name="timeZonee" ColumnName="timeZonee" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="zoneName" ColumnName="zoneName" />
+          <ScalarProperty Name="zoneOffset" ColumnName="zoneOffset" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TitleMasters">
+      <EntityTypeMapping TypeName="TeleMedModel.TitleMaster">
+        <MappingFragment StoreEntitySet="TitleMaster">
+          <ScalarProperty Name="titleID" ColumnName="titleID" />
+          <ScalarProperty Name="titleName" ColumnName="titleName" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserFiles">
+      <EntityTypeMapping TypeName="TeleMedModel.UserFile">
+        <MappingFragment StoreEntitySet="UserFiles">
+          <ScalarProperty Name="fileID" ColumnName="fileID" />
+          <ScalarProperty Name="documentType" ColumnName="documentType" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="fileContent" ColumnName="fileContent" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="AppID" ColumnName="AppID" />
+          <ScalarProperty Name="fileContentBase64" ColumnName="fileContentBase64" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VCLogs">
+      <EntityTypeMapping TypeName="TeleMedModel.VCLog">
+        <MappingFragment StoreEntitySet="VCLog">
+          <ScalarProperty Name="VCLogID" ColumnName="VCLogID" />
+          <ScalarProperty Name="consultID" ColumnName="consultID" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="endBy" ColumnName="endBy" />
+          <ScalarProperty Name="endReason" ColumnName="endReason" />
+          <ScalarProperty Name="logBy" ColumnName="logBy" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zips">
+      <EntityTypeMapping TypeName="TeleMedModel.Zip">
+        <MappingFragment StoreEntitySet="Zips">
+          <ScalarProperty Name="zipID" ColumnName="zipID" />
+          <ScalarProperty Name="zipName" ColumnName="zipName" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="TeleMedModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="SearchDoctorJSON" FunctionName="TeleMedModel.Store.SearchDoctorJSON">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SearchDoctorJSON_Result">
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="languageName" ColumnName="languageName" />
+          <ScalarProperty Name="specialityName" ColumnName="specialityName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchDoctorWithShift" FunctionName="TeleMedModel.Store.SearchDoctorWithShift">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SearchDoctorWithShift_Result">
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="ProfilePhotoBase64" ColumnName="ProfilePhotoBase64" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="languageName" ColumnName="languageName" />
+          <ScalarProperty Name="specialityName" ColumnName="specialityName" />
+          <ScalarProperty Name="reviewStar" ColumnName="reviewStar" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_AddAdmin" FunctionName="TeleMedModel.Store.SP_AddAdmin" />
+    <FunctionImportMapping FunctionImportName="SP_AddAlerts" FunctionName="TeleMedModel.Store.SP_AddAlerts" />
+    <FunctionImportMapping FunctionImportName="SP_AddAllergy" FunctionName="TeleMedModel.Store.SP_AddAllergy" />
+    <FunctionImportMapping FunctionImportName="SP_AddAppointment" FunctionName="TeleMedModel.Store.SP_AddAppointment" />
+    <FunctionImportMapping FunctionImportName="SP_AddCity" FunctionName="TeleMedModel.Store.SP_AddCity" />
+    <FunctionImportMapping FunctionImportName="SP_AddConsultReview" FunctionName="TeleMedModel.Store.SP_AddConsultReview" />
+    <FunctionImportMapping FunctionImportName="SP_AddDoctor" FunctionName="TeleMedModel.Store.SP_AddDoctor" />
+    <FunctionImportMapping FunctionImportName="SP_AddDocumentType" FunctionName="TeleMedModel.Store.SP_AddDocumentType" />
+    <FunctionImportMapping FunctionImportName="sp_addextendedproc" FunctionName="TeleMedModel.Store.sp_addextendedproc" />
+    <FunctionImportMapping FunctionImportName="SP_AddLanguage" FunctionName="TeleMedModel.Store.SP_AddLanguage" />
+    <FunctionImportMapping FunctionImportName="SP_AddMedicine" FunctionName="TeleMedModel.Store.SP_AddMedicine" />
+    <FunctionImportMapping FunctionImportName="SP_AddNewss" FunctionName="TeleMedModel.Store.SP_AddNewss" />
+    <FunctionImportMapping FunctionImportName="SP_AddPatient" FunctionName="TeleMedModel.Store.SP_AddPatient" />
+    <FunctionImportMapping FunctionImportName="SP_AddPatientAllergy" FunctionName="TeleMedModel.Store.SP_AddPatientAllergy" />
+    <FunctionImportMapping FunctionImportName="SP_AddPatientConditions" FunctionName="TeleMedModel.Store.SP_AddPatientConditions" />
+    <FunctionImportMapping FunctionImportName="SP_AddPatientMedications" FunctionName="TeleMedModel.Store.SP_AddPatientMedications" />
+    <FunctionImportMapping FunctionImportName="SP_AddPatientROV" FunctionName="TeleMedModel.Store.SP_AddPatientROV" />
+    <FunctionImportMapping FunctionImportName="SP_AddRoles" FunctionName="TeleMedModel.Store.SP_AddRoles" />
+    <FunctionImportMapping FunctionImportName="SP_AddSpeciality" FunctionName="TeleMedModel.Store.SP_AddSpeciality" />
+    <FunctionImportMapping FunctionImportName="SP_AddStates" FunctionName="TeleMedModel.Store.SP_AddStates" />
+    <FunctionImportMapping FunctionImportName="SP_AddSystemItem" FunctionName="TeleMedModel.Store.SP_AddSystemItem" />
+    <FunctionImportMapping FunctionImportName="SP_AddSystems" FunctionName="TeleMedModel.Store.SP_AddSystems" />
+    <FunctionImportMapping FunctionImportName="SP_AddUSerFiles" FunctionName="TeleMedModel.Store.SP_AddUSerFiles" />
+    <FunctionImportMapping FunctionImportName="SP_AddZipCode" FunctionName="TeleMedModel.Store.SP_AddZipCode" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="TeleMedModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="SP_AppointmentReport" FunctionName="TeleMedModel.Store.SP_AppointmentReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_AppointmentReport_Result">
+          <ScalarProperty Name="appID" ColumnName="appID" />
+          <ScalarProperty Name="DName" ColumnName="DName" />
+          <ScalarProperty Name="PName" ColumnName="PName" />
+          <ScalarProperty Name="appDate" ColumnName="appDate" />
+          <ScalarProperty Name="appTime" ColumnName="appTime" />
+          <ScalarProperty Name="consultationStatus" ColumnName="consultationStatus" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ApproveConsultation" FunctionName="TeleMedModel.Store.sp_ApproveConsultation" />
+    <FunctionImportMapping FunctionImportName="sp_ApproveDoctor" FunctionName="TeleMedModel.Store.sp_ApproveDoctor" />
+    <FunctionImportMapping FunctionImportName="SP_CancelRescheduleRequest" FunctionName="TeleMedModel.Store.SP_CancelRescheduleRequest" />
+    <FunctionImportMapping FunctionImportName="SP_CheckForDuplicatePatient" FunctionName="TeleMedModel.Store.SP_CheckForDuplicatePatient">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_CheckForDuplicatePatient_Result">
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_ConsultationReport" FunctionName="TeleMedModel.Store.SP_ConsultationReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_ConsultationReport_Result">
+          <ScalarProperty Name="DName" ColumnName="DName" />
+          <ScalarProperty Name="PName" ColumnName="PName" />
+          <ScalarProperty Name="conDate" ColumnName="conDate" />
+          <ScalarProperty Name="conTime" ColumnName="conTime" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="consultationStatus" ColumnName="consultationStatus" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_ConvertXML_AndSaveXML" FunctionName="TeleMedModel.Store.SP_ConvertXML_AndSaveXML" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="TeleMedModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteAdmin" FunctionName="TeleMedModel.Store.sp_DeleteAdmin" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteAlerts" FunctionName="TeleMedModel.Store.sp_DeleteAlerts" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteAllergy" FunctionName="TeleMedModel.Store.sp_DeleteAllergy" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteCity" FunctionName="TeleMedModel.Store.sp_DeleteCity" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteDoctor" FunctionName="TeleMedModel.Store.sp_DeleteDoctor" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteDocumentType" FunctionName="TeleMedModel.Store.sp_DeleteDocumentType" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteLanguage" FunctionName="TeleMedModel.Store.sp_DeleteLanguage" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteMedicine" FunctionName="TeleMedModel.Store.sp_DeleteMedicine" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteNews" FunctionName="TeleMedModel.Store.sp_DeleteNews" />
+    <FunctionImportMapping FunctionImportName="sp_DeletePatient" FunctionName="TeleMedModel.Store.sp_DeletePatient" />
+    <FunctionImportMapping FunctionImportName="SP_DeletePatientAllergy" FunctionName="TeleMedModel.Store.SP_DeletePatientAllergy" />
+    <FunctionImportMapping FunctionImportName="SP_DeletePatientConditions" FunctionName="TeleMedModel.Store.SP_DeletePatientConditions" />
+    <FunctionImportMapping FunctionImportName="SP_DeletePatientMedications" FunctionName="TeleMedModel.Store.SP_DeletePatientMedications" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteRole" FunctionName="TeleMedModel.Store.sp_DeleteRole" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteSpeciality" FunctionName="TeleMedModel.Store.sp_DeleteSpeciality" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteStates" FunctionName="TeleMedModel.Store.sp_DeleteStates" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteSystemItem" FunctionName="TeleMedModel.Store.sp_DeleteSystemItem" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteSystems" FunctionName="TeleMedModel.Store.sp_DeleteSystems" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteZipCode" FunctionName="TeleMedModel.Store.sp_DeleteZipCode" />
+    <FunctionImportMapping FunctionImportName="SP_DoctorReport" FunctionName="TeleMedModel.Store.SP_DoctorReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_DoctorReport_Result">
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="specialityName" ColumnName="specialityName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="TeleMedModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropextendedproc" FunctionName="TeleMedModel.Store.sp_dropextendedproc" />
+    <FunctionImportMapping FunctionImportName="SP_FetchDoctorTimings" FunctionName="TeleMedModel.Store.SP_FetchDoctorTimings">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_FetchDoctorTimings_Result">
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="from" ColumnName="from" />
+          <ScalarProperty Name="to" ColumnName="to" />
+          <ScalarProperty Name="appDate" ColumnName="appDate" />
+          <ScalarProperty Name="appTime" ColumnName="appTime" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetAppDetail" FunctionName="TeleMedModel.Store.SP_GetAppDetail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_GetAppDetail_Result">
+          <ScalarProperty Name="PatPicture" ColumnName="PatPicture" />
+          <ScalarProperty Name="DocPicture" ColumnName="DocPicture" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="DoctorGender" ColumnName="DoctorGender" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="DoctorAge" ColumnName="DoctorAge" />
+          <ScalarProperty Name="dcellPhone" ColumnName="dcellPhone" />
+          <ScalarProperty Name="pcellPhone" ColumnName="pcellPhone" />
+          <ScalarProperty Name="PatientAge" ColumnName="PatientAge" />
+          <ScalarProperty Name="languages" ColumnName="languages" />
+          <ScalarProperty Name="PatientGender" ColumnName="PatientGender" />
+          <ScalarProperty Name="appDate" ColumnName="appDate" />
+          <ScalarProperty Name="appTime" ColumnName="appTime" />
+          <ScalarProperty Name="rov" ColumnName="rov" />
+          <ScalarProperty Name="chiefComplaints" ColumnName="chiefComplaints" />
+          <ScalarProperty Name="pharmacy" ColumnName="pharmacy" />
+          <ScalarProperty Name="paymentAmt" ColumnName="paymentAmt" />
+          <ScalarProperty Name="specialityName" ColumnName="specialityName" />
+          <ScalarProperty Name="languageName" ColumnName="languageName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetCancelledAppforDoctor" FunctionName="TeleMedModel.Store.SP_GetCancelledAppforDoctor" />
+    <FunctionImportMapping FunctionImportName="SP_GetCancelledAppforPatient" FunctionName="TeleMedModel.Store.SP_GetCancelledAppforPatient" />
+    <FunctionImportMapping FunctionImportName="SP_GetConsultationDetails" FunctionName="TeleMedModel.Store.SP_GetConsultationDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_GetConsultationDetails_Result">
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="specialityName" ColumnName="specialityName" />
+          <ScalarProperty Name="DoctorAge" ColumnName="DoctorAge" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="pharmacy" ColumnName="pharmacy" />
+          <ScalarProperty Name="PatientPicture" ColumnName="PatientPicture" />
+          <ScalarProperty Name="PatientAge" ColumnName="PatientAge" />
+          <ScalarProperty Name="appDate" ColumnName="appDate" />
+          <ScalarProperty Name="chiefComplaints" ColumnName="chiefComplaints" />
+          <ScalarProperty Name="rov" ColumnName="rov" />
+          <ScalarProperty Name="subjective" ColumnName="subjective" />
+          <ScalarProperty Name="assessment" ColumnName="assessment" />
+          <ScalarProperty Name="objective" ColumnName="objective" />
+          <ScalarProperty Name="plans" ColumnName="plans" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetDcotorAllConsultations" FunctionName="TeleMedModel.Store.SP_GetDcotorAllConsultations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_GetDcotorAllConsultations_Result">
+          <ScalarProperty Name="consultID" ColumnName="consultID" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="review" ColumnName="review" />
+          <ScalarProperty Name="reviewStar" ColumnName="reviewStar" />
+          <ScalarProperty Name="reviewStatus" ColumnName="reviewStatus" />
+          <ScalarProperty Name="appTime" ColumnName="appTime" />
+          <ScalarProperty Name="appDate" ColumnName="appDate" />
+          <ScalarProperty Name="rov" ColumnName="rov" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="languageName" ColumnName="languageName" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="utcappDate" ColumnName="utcappDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetDcotorConsultations" FunctionName="TeleMedModel.Store.SP_GetDcotorConsultations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_GetDcotorConsultations_Result">
+          <ScalarProperty Name="consultID" ColumnName="consultID" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="review" ColumnName="review" />
+          <ScalarProperty Name="reviewStar" ColumnName="reviewStar" />
+          <ScalarProperty Name="reviewStatus" ColumnName="reviewStatus" />
+          <ScalarProperty Name="appTime" ColumnName="appTime" />
+          <ScalarProperty Name="appDate" ColumnName="appDate" />
+          <ScalarProperty Name="rov" ColumnName="rov" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="languageName" ColumnName="languageName" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="utcappDate" ColumnName="utcappDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetDoctorInfoforAppointment" FunctionName="TeleMedModel.Store.SP_GetDoctorInfoforAppointment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_GetDoctorInfoforAppointment_Result">
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="doctorName" ColumnName="doctorName" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="consultCharges" ColumnName="consultCharges" />
+          <ScalarProperty Name="cellPhone" ColumnName="cellPhone" />
+          <ScalarProperty Name="specialityName" ColumnName="specialityName" />
+          <ScalarProperty Name="languageName" ColumnName="languageName" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+          <ScalarProperty Name="DoctorAge" ColumnName="DoctorAge" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetDrugSmartSearch" FunctionName="TeleMedModel.Store.SP_GetDrugSmartSearch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_GetDrugSmartSearch_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DrugCode" ColumnName="DrugCode" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetE_Prescription_UserDetails" FunctionName="TeleMedModel.Store.SP_GetE_Prescription_UserDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_GetE_Prescription_UserDetails_Result">
+          <ScalarProperty Name="ph_NCPDP" ColumnName="ph_NCPDP" />
+          <ScalarProperty Name="ph_Phone" ColumnName="ph_Phone" />
+          <ScalarProperty Name="D_FirstName" ColumnName="D_FirstName" />
+          <ScalarProperty Name="D_LastName" ColumnName="D_LastName" />
+          <ScalarProperty Name="D_npiNumber" ColumnName="D_npiNumber" />
+          <ScalarProperty Name="D_licenseNumber" ColumnName="D_licenseNumber" />
+          <ScalarProperty Name="D_address1" ColumnName="D_address1" />
+          <ScalarProperty Name="D_city" ColumnName="D_city" />
+          <ScalarProperty Name="D_State" ColumnName="D_State" />
+          <ScalarProperty Name="D_Zip" ColumnName="D_Zip" />
+          <ScalarProperty Name="D_cellPhone" ColumnName="D_cellPhone" />
+          <ScalarProperty Name="P_FirstName" ColumnName="P_FirstName" />
+          <ScalarProperty Name="P_LastName" ColumnName="P_LastName" />
+          <ScalarProperty Name="P_Gender" ColumnName="P_Gender" />
+          <ScalarProperty Name="P_DOB" ColumnName="P_DOB" />
+          <ScalarProperty Name="P_address1" ColumnName="P_address1" />
+          <ScalarProperty Name="P_city" ColumnName="P_city" />
+          <ScalarProperty Name="P_State" ColumnName="P_State" />
+          <ScalarProperty Name="P_Zip" ColumnName="P_Zip" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetParmacyAddress" FunctionName="TeleMedModel.Store.SP_GetParmacyAddress">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_GetParmacyAddress_Result">
+          <ScalarProperty Name="PharmacyId" ColumnName="PharmacyId" />
+          <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetParmacySmartSearch" FunctionName="TeleMedModel.Store.SP_GetParmacySmartSearch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_GetParmacySmartSearch_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Business_Name" ColumnName="Business_Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetPatientAllConsultations" FunctionName="TeleMedModel.Store.SP_GetPatientAllConsultations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_GetPatientAllConsultations_Result">
+          <ScalarProperty Name="consultID" ColumnName="consultID" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="review" ColumnName="review" />
+          <ScalarProperty Name="reviewStar" ColumnName="reviewStar" />
+          <ScalarProperty Name="reviewStatus" ColumnName="reviewStatus" />
+          <ScalarProperty Name="appTime" ColumnName="appTime" />
+          <ScalarProperty Name="appDate" ColumnName="appDate" />
+          <ScalarProperty Name="rov" ColumnName="rov" />
+          <ScalarProperty Name="specialityName" ColumnName="specialityName" />
+          <ScalarProperty Name="languageName" ColumnName="languageName" />
+          <ScalarProperty Name="utcappDate" ColumnName="utcappDate" />
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetPatientAllergies" FunctionName="TeleMedModel.Store.SP_GetPatientAllergies">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_GetPatientAllergies_Result">
+          <ScalarProperty Name="allergiesID" ColumnName="allergiesID" />
+          <ScalarProperty Name="allergyName" ColumnName="allergyName" />
+          <ScalarProperty Name="severity" ColumnName="severity" />
+          <ScalarProperty Name="reaction" ColumnName="reaction" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="reportedDate" ColumnName="reportedDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetPatientConditions" FunctionName="TeleMedModel.Store.SP_GetPatientConditions">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_GetPatientConditions_Result">
+          <ScalarProperty Name="conditionID" ColumnName="conditionID" />
+          <ScalarProperty Name="conditionName" ColumnName="conditionName" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="reportedDate" ColumnName="reportedDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetPatientConsultations" FunctionName="TeleMedModel.Store.SP_GetPatientConsultations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_GetPatientConsultations_Result">
+          <ScalarProperty Name="consultID" ColumnName="consultID" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="review" ColumnName="review" />
+          <ScalarProperty Name="reviewStar" ColumnName="reviewStar" />
+          <ScalarProperty Name="reviewStatus" ColumnName="reviewStatus" />
+          <ScalarProperty Name="appTime" ColumnName="appTime" />
+          <ScalarProperty Name="appDate" ColumnName="appDate" />
+          <ScalarProperty Name="rov" ColumnName="rov" />
+          <ScalarProperty Name="specialityName" ColumnName="specialityName" />
+          <ScalarProperty Name="languageName" ColumnName="languageName" />
+          <ScalarProperty Name="utcappDate" ColumnName="utcappDate" />
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetPatientMedication" FunctionName="TeleMedModel.Store.SP_GetPatientMedication">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_GetPatientMedication_Result">
+          <ScalarProperty Name="medicationID" ColumnName="medicationID" />
+          <ScalarProperty Name="medicineName" ColumnName="medicineName" />
+          <ScalarProperty Name="frequency" ColumnName="frequency" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="patientId" ColumnName="patientId" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="reportedDate" ColumnName="reportedDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetPatientSurgeries" FunctionName="TeleMedModel.Store.SP_GetPatientSurgeries" />
+    <FunctionImportMapping FunctionImportName="SP_GetPendingAppforDoctor" FunctionName="TeleMedModel.Store.SP_GetPendingAppforDoctor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_GetPendingAppforDoctor_Result">
+          <ScalarProperty Name="consultID" ColumnName="consultID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="appID" ColumnName="appID" />
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="appDate" ColumnName="appDate" />
+          <ScalarProperty Name="appTime" ColumnName="appTime" />
+          <ScalarProperty Name="rov" ColumnName="rov" />
+          <ScalarProperty Name="chiefComplaints" ColumnName="chiefComplaints" />
+          <ScalarProperty Name="utcappDate" ColumnName="utcappDate" />
+          <ScalarProperty Name="languageName" ColumnName="languageName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetPendingAppforPatient" FunctionName="TeleMedModel.Store.SP_GetPendingAppforPatient">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_GetPendingAppforPatient_Result">
+          <ScalarProperty Name="consultID" ColumnName="consultID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="appID" ColumnName="appID" />
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="appDate" ColumnName="appDate" />
+          <ScalarProperty Name="appTime" ColumnName="appTime" />
+          <ScalarProperty Name="rov" ColumnName="rov" />
+          <ScalarProperty Name="chiefComplaints" ColumnName="chiefComplaints" />
+          <ScalarProperty Name="utcappDate" ColumnName="utcappDate" />
+          <ScalarProperty Name="specialityName" ColumnName="specialityName" />
+          <ScalarProperty Name="languageName" ColumnName="languageName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetRescheduleAppforDoctor" FunctionName="TeleMedModel.Store.SP_GetRescheduleAppforDoctor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_GetRescheduleAppforDoctor_Result">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="appID" ColumnName="appID" />
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="appDate" ColumnName="appDate" />
+          <ScalarProperty Name="appTime" ColumnName="appTime" />
+          <ScalarProperty Name="rov" ColumnName="rov" />
+          <ScalarProperty Name="chiefComplaints" ColumnName="chiefComplaints" />
+          <ScalarProperty Name="utcappDate" ColumnName="utcappDate" />
+          <ScalarProperty Name="languageName" ColumnName="languageName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetRescheduleAppforPatient" FunctionName="TeleMedModel.Store.SP_GetRescheduleAppforPatient">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_GetRescheduleAppforPatient_Result">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="appID" ColumnName="appID" />
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="appDate" ColumnName="appDate" />
+          <ScalarProperty Name="appTime" ColumnName="appTime" />
+          <ScalarProperty Name="rov" ColumnName="rov" />
+          <ScalarProperty Name="chiefComplaints" ColumnName="chiefComplaints" />
+          <ScalarProperty Name="utcappDate" ColumnName="utcappDate" />
+          <ScalarProperty Name="specialityName" ColumnName="specialityName" />
+          <ScalarProperty Name="languageName" ColumnName="languageName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetROS" FunctionName="TeleMedModel.Store.SP_GetROS" />
+    <FunctionImportMapping FunctionImportName="SP_GetUpcomingAppforDoctor" FunctionName="TeleMedModel.Store.SP_GetUpcomingAppforDoctor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_GetUpcomingAppforDoctor_Result">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="appID" ColumnName="appID" />
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="appDate" ColumnName="appDate" />
+          <ScalarProperty Name="appTime" ColumnName="appTime" />
+          <ScalarProperty Name="rov" ColumnName="rov" />
+          <ScalarProperty Name="chiefComplaints" ColumnName="chiefComplaints" />
+          <ScalarProperty Name="utcappDate" ColumnName="utcappDate" />
+          <ScalarProperty Name="languageName" ColumnName="languageName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetUpcomingAppforPatient" FunctionName="TeleMedModel.Store.SP_GetUpcomingAppforPatient">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_GetUpcomingAppforPatient_Result">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="appID" ColumnName="appID" />
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="appDate" ColumnName="appDate" />
+          <ScalarProperty Name="appTime" ColumnName="appTime" />
+          <ScalarProperty Name="rov" ColumnName="rov" />
+          <ScalarProperty Name="chiefComplaints" ColumnName="chiefComplaints" />
+          <ScalarProperty Name="utcappDate" ColumnName="utcappDate" />
+          <ScalarProperty Name="specialityName" ColumnName="specialityName" />
+          <ScalarProperty Name="languageName" ColumnName="languageName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="TeleMedModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="TeleMedModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_PatientReport" FunctionName="TeleMedModel.Store.SP_PatientReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_PatientReport_Result">
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="TeleMedModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="SP_RescheduleRequest" FunctionName="TeleMedModel.Store.SP_RescheduleRequest" />
+    <FunctionImportMapping FunctionImportName="sp_ResetDoctorPassword" FunctionName="TeleMedModel.Store.sp_ResetDoctorPassword" />
+    <FunctionImportMapping FunctionImportName="sp_ResetPatientPassword" FunctionName="TeleMedModel.Store.sp_ResetPatientPassword" />
+    <FunctionImportMapping FunctionImportName="SP_SaveDoctorPrescription" FunctionName="TeleMedModel.Store.SP_SaveDoctorPrescription" />
+    <FunctionImportMapping FunctionImportName="SP_SearchDoctor" FunctionName="TeleMedModel.Store.SP_SearchDoctor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_SearchDoctor_Result">
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelectAdmin" FunctionName="TeleMedModel.Store.SP_SelectAdmin">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_SelectAdmin_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelectAlerts" FunctionName="TeleMedModel.Store.SP_SelectAlerts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_SelectAlerts_Result">
+          <ScalarProperty Name="alertID" ColumnName="alertID" />
+          <ScalarProperty Name="alertText" ColumnName="alertText" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="read" ColumnName="read" />
+          <ScalarProperty Name="alertFor" ColumnName="alertFor" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelectAllergy" FunctionName="TeleMedModel.Store.SP_SelectAllergy">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_SelectAllergy_Result">
+          <ScalarProperty Name="allergyID" ColumnName="allergyID" />
+          <ScalarProperty Name="allergyName" ColumnName="allergyName" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelectCity" FunctionName="TeleMedModel.Store.SP_SelectCity">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_SelectCity_Result">
+          <ScalarProperty Name="cityID" ColumnName="cityID" />
+          <ScalarProperty Name="cityName" ColumnName="cityName" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelectConsultation" FunctionName="TeleMedModel.Store.SP_SelectConsultation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_SelectConsultation_Result">
+          <ScalarProperty Name="consultID" ColumnName="consultID" />
+          <ScalarProperty Name="DLastName" ColumnName="DLastName" />
+          <ScalarProperty Name="DFirstName" ColumnName="DFirstName" />
+          <ScalarProperty Name="PLastName" ColumnName="PLastName" />
+          <ScalarProperty Name="PFirstName" ColumnName="PFirstName" />
+          <ScalarProperty Name="review" ColumnName="review" />
+          <ScalarProperty Name="reviewStar" ColumnName="reviewStar" />
+          <ScalarProperty Name="startTime" ColumnName="startTime" />
+          <ScalarProperty Name="endTime" ColumnName="endTime" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelectDoctor" FunctionName="TeleMedModel.Store.SP_SelectDoctor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_SelectDoctor_Result">
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="secretQuestion1" ColumnName="secretQuestion1" />
+          <ScalarProperty Name="secretQuestion2" ColumnName="secretQuestion2" />
+          <ScalarProperty Name="secretQuestion3" ColumnName="secretQuestion3" />
+          <ScalarProperty Name="secretAnswer1" ColumnName="secretAnswer1" />
+          <ScalarProperty Name="secretAnswer2" ColumnName="secretAnswer2" />
+          <ScalarProperty Name="secretAnswer3" ColumnName="secretAnswer3" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="homePhone" ColumnName="homePhone" />
+          <ScalarProperty Name="cellPhone" ColumnName="cellPhone" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="licenseNumber" ColumnName="licenseNumber" />
+          <ScalarProperty Name="npiNumber" ColumnName="npiNumber" />
+          <ScalarProperty Name="additionalInfo" ColumnName="additionalInfo" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="lon" ColumnName="lon" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="publication" ColumnName="publication" />
+          <ScalarProperty Name="aboutMe" ColumnName="aboutMe" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="consultCharges" ColumnName="consultCharges" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="education" ColumnName="education" />
+          <ScalarProperty Name="workexperience" ColumnName="workexperience" />
+          <ScalarProperty Name="specialization" ColumnName="specialization" />
+          <ScalarProperty Name="timezone" ColumnName="timezone" />
+          <ScalarProperty Name="iOSToken" ColumnName="iOSToken" />
+          <ScalarProperty Name="AndroidToken" ColumnName="AndroidToken" />
+          <ScalarProperty Name="ProfilePhotoBase64" ColumnName="ProfilePhotoBase64" />
+          <ScalarProperty Name="reviewStar" ColumnName="reviewStar" />
+          <ScalarProperty Name="timezoneoffset" ColumnName="timezoneoffset" />
+          <ScalarProperty Name="deaNumber" ColumnName="deaNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelectDoctorsForApproval" FunctionName="TeleMedModel.Store.SP_SelectDoctorsForApproval">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_SelectDoctorsForApproval_Result">
+          <ScalarProperty Name="doctorID" ColumnName="doctorID" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="secretQuestion1" ColumnName="secretQuestion1" />
+          <ScalarProperty Name="secretQuestion2" ColumnName="secretQuestion2" />
+          <ScalarProperty Name="secretQuestion3" ColumnName="secretQuestion3" />
+          <ScalarProperty Name="secretAnswer1" ColumnName="secretAnswer1" />
+          <ScalarProperty Name="secretAnswer2" ColumnName="secretAnswer2" />
+          <ScalarProperty Name="secretAnswer3" ColumnName="secretAnswer3" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="homePhone" ColumnName="homePhone" />
+          <ScalarProperty Name="cellPhone" ColumnName="cellPhone" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="licenseNumber" ColumnName="licenseNumber" />
+          <ScalarProperty Name="npiNumber" ColumnName="npiNumber" />
+          <ScalarProperty Name="additionalInfo" ColumnName="additionalInfo" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="lon" ColumnName="lon" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="publication" ColumnName="publication" />
+          <ScalarProperty Name="aboutMe" ColumnName="aboutMe" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="consultCharges" ColumnName="consultCharges" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="education" ColumnName="education" />
+          <ScalarProperty Name="workexperience" ColumnName="workexperience" />
+          <ScalarProperty Name="specialization" ColumnName="specialization" />
+          <ScalarProperty Name="timezone" ColumnName="timezone" />
+          <ScalarProperty Name="iOSToken" ColumnName="iOSToken" />
+          <ScalarProperty Name="AndroidToken" ColumnName="AndroidToken" />
+          <ScalarProperty Name="ProfilePhotoBase64" ColumnName="ProfilePhotoBase64" />
+          <ScalarProperty Name="reviewStar" ColumnName="reviewStar" />
+          <ScalarProperty Name="timezoneoffset" ColumnName="timezoneoffset" />
+          <ScalarProperty Name="deaNumber" ColumnName="deaNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelectDocType" FunctionName="TeleMedModel.Store.SP_SelectDocType">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_SelectDocType_Result">
+          <ScalarProperty Name="docTypeID" ColumnName="docTypeID" />
+          <ScalarProperty Name="typeName" ColumnName="typeName" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelectLanguages" FunctionName="TeleMedModel.Store.SP_SelectLanguages">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_SelectLanguages_Result">
+          <ScalarProperty Name="languageID" ColumnName="languageID" />
+          <ScalarProperty Name="languageName" ColumnName="languageName" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelectMedicine" FunctionName="TeleMedModel.Store.SP_SelectMedicine">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_SelectMedicine_Result">
+          <ScalarProperty Name="medicineID" ColumnName="medicineID" />
+          <ScalarProperty Name="medicineName" ColumnName="medicineName" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelectNewss" FunctionName="TeleMedModel.Store.SP_SelectNewss">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_SelectNewss_Result">
+          <ScalarProperty Name="newsID" ColumnName="newsID" />
+          <ScalarProperty Name="newsTitle" ColumnName="newsTitle" />
+          <ScalarProperty Name="newsDetail" ColumnName="newsDetail" />
+          <ScalarProperty Name="newsThumbnail" ColumnName="newsThumbnail" />
+          <ScalarProperty Name="newsImage" ColumnName="newsImage" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="newsThumbnailBase64" ColumnName="newsThumbnailBase64" />
+          <ScalarProperty Name="newsImageBase64" ColumnName="newsImageBase64" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelectPatient" FunctionName="TeleMedModel.Store.SP_SelectPatient">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_SelectPatient_Result">
+          <ScalarProperty Name="patientID" ColumnName="patientID" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="secretQuestion1" ColumnName="secretQuestion1" />
+          <ScalarProperty Name="secretQuestion2" ColumnName="secretQuestion2" />
+          <ScalarProperty Name="secretQuestion3" ColumnName="secretQuestion3" />
+          <ScalarProperty Name="secretAnswer1" ColumnName="secretAnswer1" />
+          <ScalarProperty Name="secretAnswer2" ColumnName="secretAnswer2" />
+          <ScalarProperty Name="secretAnswer3" ColumnName="secretAnswer3" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="homePhone" ColumnName="homePhone" />
+          <ScalarProperty Name="cellPhone" ColumnName="cellPhone" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="languages" ColumnName="languages" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="pharmacy" ColumnName="pharmacy" />
+          <ScalarProperty Name="pharmacyid" ColumnName="pharmacyid" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="timezone" ColumnName="timezone" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="lon" ColumnName="lon" />
+          <ScalarProperty Name="iOSToken" ColumnName="iOSToken" />
+          <ScalarProperty Name="AndroidToken" ColumnName="AndroidToken" />
+          <ScalarProperty Name="DoseSpotPatientId" ColumnName="DoseSpotPatientId" />
+          <ScalarProperty Name="pharmacyaddress" ColumnName="pharmacyaddress" />
+          <ScalarProperty Name="pharmacycitystatezip" ColumnName="pharmacycitystatezip" />
+          <ScalarProperty Name="ProfilePhotoBase64" ColumnName="ProfilePhotoBase64" />
+          <ScalarProperty Name="timezoneoffset" ColumnName="timezoneoffset" />
+          <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="ReminderId" ColumnName="ReminderId" />
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelectRole" FunctionName="TeleMedModel.Store.SP_SelectRole">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_SelectRole_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelectSpeciality" FunctionName="TeleMedModel.Store.SP_SelectSpeciality">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_SelectSpeciality_Result">
+          <ScalarProperty Name="speciallityID" ColumnName="speciallityID" />
+          <ScalarProperty Name="specialityName" ColumnName="specialityName" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelectStates" FunctionName="TeleMedModel.Store.SP_SelectStates">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_SelectStates_Result">
+          <ScalarProperty Name="stateID" ColumnName="stateID" />
+          <ScalarProperty Name="stateName" ColumnName="stateName" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelectSystemItems" FunctionName="TeleMedModel.Store.SP_SelectSystemItems">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_SelectSystemItems_Result">
+          <ScalarProperty Name="systemItemID" ColumnName="systemItemID" />
+          <ScalarProperty Name="systemItemName" ColumnName="systemItemName" />
+          <ScalarProperty Name="systemID" ColumnName="systemID" />
+          <ScalarProperty Name="systemName" ColumnName="systemName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelectSystems" FunctionName="TeleMedModel.Store.SP_SelectSystems">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_SelectSystems_Result">
+          <ScalarProperty Name="systemID" ColumnName="systemID" />
+          <ScalarProperty Name="systemName" ColumnName="systemName" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectTransactionHistory" FunctionName="TeleMedModel.Store.SP_selectTransactionHistory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_selectTransactionHistory_Result">
+          <ScalarProperty Name="appID" ColumnName="appID" />
+          <ScalarProperty Name="DLastName" ColumnName="DLastName" />
+          <ScalarProperty Name="DFirstName" ColumnName="DFirstName" />
+          <ScalarProperty Name="PFirstName" ColumnName="PFirstName" />
+          <ScalarProperty Name="PLastName" ColumnName="PLastName" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="appDate" ColumnName="appDate" />
+          <ScalarProperty Name="appTime" ColumnName="appTime" />
+          <ScalarProperty Name="paymentAmt" ColumnName="paymentAmt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelectZipCode" FunctionName="TeleMedModel.Store.SP_SelectZipCode">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_SelectZipCode_Result">
+          <ScalarProperty Name="zipID" ColumnName="zipID" />
+          <ScalarProperty Name="zipName" ColumnName="zipName" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="cb" ColumnName="cb" />
+          <ScalarProperty Name="cd" ColumnName="cd" />
+          <ScalarProperty Name="mb" ColumnName="mb" />
+          <ScalarProperty Name="md" ColumnName="md" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_UpdateAlerts" FunctionName="TeleMedModel.Store.sp_UpdateAlerts" />
+    <FunctionImportMapping FunctionImportName="sp_UpdateAllergy" FunctionName="TeleMedModel.Store.sp_UpdateAllergy" />
+    <FunctionImportMapping FunctionImportName="sp_UpdateCity" FunctionName="TeleMedModel.Store.sp_UpdateCity" />
+    <FunctionImportMapping FunctionImportName="sp_UpdateDoctor" FunctionName="TeleMedModel.Store.sp_UpdateDoctor" />
+    <FunctionImportMapping FunctionImportName="sp_UpdateDocumentType" FunctionName="TeleMedModel.Store.sp_UpdateDocumentType" />
+    <FunctionImportMapping FunctionImportName="sp_UpdateLanguages" FunctionName="TeleMedModel.Store.sp_UpdateLanguages" />
+    <FunctionImportMapping FunctionImportName="sp_UpdateMedicine" FunctionName="TeleMedModel.Store.sp_UpdateMedicine" />
+    <FunctionImportMapping FunctionImportName="sp_UpdateNews" FunctionName="TeleMedModel.Store.sp_UpdateNews" />
+    <FunctionImportMapping FunctionImportName="sp_UpdatePatient" FunctionName="TeleMedModel.Store.sp_UpdatePatient" />
+    <FunctionImportMapping FunctionImportName="SP_UpdatePatientAllergy" FunctionName="TeleMedModel.Store.SP_UpdatePatientAllergy" />
+    <FunctionImportMapping FunctionImportName="SP_UpdatePatientConditions" FunctionName="TeleMedModel.Store.SP_UpdatePatientConditions" />
+    <FunctionImportMapping FunctionImportName="SP_UpdatePatientMedications" FunctionName="TeleMedModel.Store.SP_UpdatePatientMedications" />
+    <FunctionImportMapping FunctionImportName="sp_UpdateSpeciality" FunctionName="TeleMedModel.Store.sp_UpdateSpeciality" />
+    <FunctionImportMapping FunctionImportName="sp_UpdateStates" FunctionName="TeleMedModel.Store.sp_UpdateStates" />
+    <FunctionImportMapping FunctionImportName="sp_UpdateSystemItem" FunctionName="TeleMedModel.Store.sp_UpdateSystemItem" />
+    <FunctionImportMapping FunctionImportName="sp_UpdateSystems" FunctionName="TeleMedModel.Store.sp_UpdateSystems" />
+    <FunctionImportMapping FunctionImportName="sp_UpdateZipCode" FunctionName="TeleMedModel.Store.sp_UpdateZipCode" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="TeleMedModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="SP_ViewPatientProfile" FunctionName="TeleMedModel.Store.SP_ViewPatientProfile">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeleMedModel.SP_ViewPatientProfile_Result">
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="cellPhone" ColumnName="cellPhone" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="allergyName" ColumnName="allergyName" />
+          <ScalarProperty Name="severity" ColumnName="severity" />
+          <ScalarProperty Name="reaction" ColumnName="reaction" />
+          <ScalarProperty Name="allergiesID" ColumnName="allergiesID" />
+          <ScalarProperty Name="conditionID" ColumnName="conditionID" />
+          <ScalarProperty Name="conditionName" ColumnName="conditionName" />
+          <ScalarProperty Name="medicationID" ColumnName="medicationID" />
+          <ScalarProperty Name="medicineName" ColumnName="medicineName" />
+          <ScalarProperty Name="frequency" ColumnName="frequency" />
+          <ScalarProperty Name="fhxid" ColumnName="fhxid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="relationship" ColumnName="relationship" />
+          <ScalarProperty Name="patientLanguageID" ColumnName="patientLanguageID" />
+          <ScalarProperty Name="languageName" ColumnName="languageName" />
+          <ScalarProperty Name="surgeryID" ColumnName="surgeryID" />
+          <ScalarProperty Name="bodyPart" ColumnName="bodyPart" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,55 @@
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\DataAccess\bin\Release\DataAccess.dll.config
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\DataAccess\bin\Release\DataAccess.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\DataAccess\bin\Release\DataAccess.pdb
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\DataAccess\bin\Release\EntityFramework.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\DataAccess\bin\Release\EntityFramework.SqlServer.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\DataAccess\bin\Release\EntityFramework.xml
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\DataAccess\bin\Release\EntityFramework.SqlServer.xml
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\DataAccess\obj\Release\DataAccess.dll
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\DataAccess\obj\Release\DataAccess.pdb
+C:\PraveenProjects\Swiftkare_Webapplication_TFS\SwiftKare_WebApplication\DataAccess\obj\Release\DataAccess.csprojResolveAssemblyReference.cache
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\DataAccess.dll.config
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\DataAccess.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\DataAccess.pdb
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\EntityFramework.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\EntityFramework.SqlServer.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\EntityFramework.xml
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\EntityFramework.SqlServer.xml
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\obj\Release\DataAccess.csprojResolveAssemblyReference.cache
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\obj\Release\DataAccess.dll
+C:\Praveen_Projects\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\obj\Release\DataAccess.pdb
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\DataAccess.dll.config
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\DataAccess.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\DataAccess.pdb
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\EntityFramework.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\EntityFramework.SqlServer.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\EntityFramework.xml
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\EntityFramework.SqlServer.xml
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\obj\Release\DataAccess.csprojResolveAssemblyReference.cache
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\obj\Release\DataAccess.dll
+D:\Projects\SwiftKare Working\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\obj\Release\DataAccess.pdb
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\DataAccess.dll.config
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\DataAccess.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\DataAccess.pdb
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\EntityFramework.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\EntityFramework.SqlServer.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\EntityFramework.xml
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\EntityFramework.SqlServer.xml
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\obj\Release\DataAccess.csprojResolveAssemblyReference.cache
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\obj\Release\DataAccess.dll
+E:\Frontier_ProjectFile\Tele Medician Project\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\obj\Release\DataAccess.pdb
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\DataAccess.dll.config
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\DataAccess.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\DataAccess.pdb
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\EntityFramework.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\EntityFramework.SqlServer.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\Newtonsoft.Json.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\Plivo.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\EntityFramework.xml
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\EntityFramework.SqlServer.xml
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\bin\Release\Newtonsoft.Json.xml
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\obj\Release\DataAccess.csprojAssemblyReference.cache
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\obj\Release\DataAccess.csproj.CoreCompileInputs.cache
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\obj\Release\DataAccess.csproj.CopyComplete
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\obj\Release\DataAccess.dll
+C:\Felix\SwitchKare\Backup\Swiftkare_WebAPP_18-5-2020\Swiftkare_WebAPP\SwiftKare_WebApplication\DataAccess\obj\Release\DataAccess.pdb

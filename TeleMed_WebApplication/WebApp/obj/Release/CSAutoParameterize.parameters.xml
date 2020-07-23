@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=doctorisair.clmz7yno4znm.us-east-2.rds.amazonaws.com;Initial Catalog=Swiftkare;User Id=root;Password=DoctorIsAir;persist security info=False;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Projects\\SwiftKare\ Working\\Swiftkare_WebAPP\\SwiftKare_WebApplication\\WebApp\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="SwiftKareDBEntities-Web.config Connection String" description="SwiftKareDBEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/SwiftKareDBModel.csdl|res://*/SwiftKareDBModel.ssdl|res://*/SwiftKareDBModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=doctorisair.clmz7yno4znm.us-east-2.rds.amazonaws.com;Initial Catalog=Swiftkare;User Id=root;Password=DoctorIsAir;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Projects\\SwiftKare\ Working\\Swiftkare_WebAPP\\SwiftKare_WebApplication\\WebApp\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SwiftKareDBEntities']/@connectionString" />
+  </parameter>
+  <parameter name="ConnectionString-Web.config Connection String" description="ConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=doctorisair.clmz7yno4znm.us-east-2.rds.amazonaws.com;Initial Catalog=Swiftkare;User Id=root;Password=DoctorIsAir;persist security info=False;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Projects\\SwiftKare\ Working\\Swiftkare_WebAPP\\SwiftKare_WebApplication\\WebApp\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

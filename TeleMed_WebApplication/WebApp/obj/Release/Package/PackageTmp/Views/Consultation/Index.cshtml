@@ -1,0 +1,545 @@
+﻿
+    @using WebApp.Helper
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PatientLayout.cshtml";
+}
+
+<style>
+    .user-detail {
+        /*max-width: 250px;*/
+        margin: 0 auto;
+        color: #375781;
+        height: 100px;
+    }
+
+    .img-viewdetail {
+        float: left;
+        border-radius: 50%;
+        max-width: 100px;
+    }
+
+    .img-1 {
+        float: left;
+    }
+
+        .img-1 img {
+            border-radius: 50%;
+            max-width: 100px;
+        }
+
+    .name-sec {
+        float: left;
+        margin-left: 20px;
+    }
+</style>
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="clearfix"></div>
+
+    <div class="x_panel" style="margin-bottom: 190px;">
+        <div class="x_title">
+            <h2>Consult History</h2>
+            <ul class="nav navbar-right panel_toolbox">
+                <li>
+                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+            
+        </div>
+        <div id="divshowAll" class="checkbox" style="display: inline-block;">
+        <label style="margin-top: 0px;margin-bottom: 10px;margin-left: -15px;width: 210px;">
+            <input name="showAll" id="chekshowAll" type="checkbox" class="flat">&nbsp; Show All Consultations
+
+        </label>
+        </div>
+        <div class="x_content">
+            
+            <div class="table-responsive" id="divConsultation">
+                @{
+                    Html.RenderAction("PartialViewConsultation", "Consultation");
+                }
+            </div>
+        </div>
+    </div>
+    <input type="text" style="display:none" id="pvappid" value="0">
+    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4">
+        <div class="modal-dialog" role="document" style="width: 648px;">
+            <div id='myModalContent' class="modal-content" style="border-radius: 0;">
+                @{
+                    Html.RenderAction("ViewDetail", "Consultation", new { consultID = 0 });
+                }
+            </div>
+        </div>
+    </div><!-- View App Detail -->
+    
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="width: 500px;margin-left: 280px;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="timingsmodaltitle">Consultation Review</h4>
+                </div><!--/.modal header-->
+
+                <div class="modal-body text-left">
+                    <div class="row" id="docrow">
+                        <input type="text" style="display:none" id="consultID">
+
+                        <form class="form-horizontal form-label-left" style="margin-top: -20px;">
+                            <div class="col-sm-offset-4 col-sm-4">
+                                <div class="xdisplay_inputx form-group has-feedback">
+
+                                    <span id="inputSuccess2Status" class="sr-only">(success)</span>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-horizontal form-label-left">
+                            <div class="col-sm-12 text-center" id="rdiv">
+                                @*style="margin-left:97px"*@
+
+                                <a href="javascript:void(0);" onclick="toggle(this);"><span id="s1" class="fa fa-star-o"></span></a>
+                                <a href="javascript:void(0);"><span id="s2" class="fa-star-o"></span></a>
+                                <a href="javascript:void(0);"><span id="s3" class="fa-star-o"></span></a>
+                                <a href="javascript:void(0);"><span id="s4" class="fa-star-o"></span></a>
+                                <a href="javascript:void(0);"><span id="ss5" class="fa-star-o"></span></a>
+
+                            </div>
+                            <div class="col-sm-12 text-center" style="margin-top: 20px;">
+                                <textarea id="message" class="form-control" name="message" data-parsley-maxlength="1000"
+                                          data-parsley-validation-threshold="10"></textarea>
+                            </div>
+                            <button style="margin-right: 210px;margin-top: 6px;" type="button" class="btn btn-primary btn-sm pull-right" id="apply" onclick=WriteReview($("#message").val())>Submit</button>
+                            <button style="margin-right: 210px;margin-top: 6px; display:none" type="button" class="btn btn-primary btn-sm pull-right" id="ok" onclick="$('#myModal1').modal('hide')">OK</button>
+                        </form>
+
+                    </div><!--/.modal body-->
+                </div>
+            </div>
+        </div>
+    </div><!-- col1 -->
+
+    <div class="modal fade" id="myModal8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel8">
+        <div class="modal-dialog" role="document" style="border-bottom: 0;">
+            <div id='DoctorProfileContent' class="modal-content" style="overflow:auto; border-radius: 0;">
+
+            </div>
+
+
+        </div>
+    </div>
+    
+</div>
+<iframe id="iframeDownload" style="display:none;"></iframe>
+<!-- /page content -->
+<script>
+    $(document).ready(function(){
+        $('#divshowAll').on('ifChecked', 'input', function (event) {
+            showLoader();
+            var cUrl = "@Url.Action("showAllConsultations", "Consultation")?flag=1";
+            $.ajax({
+                url: cUrl,
+                type: 'POST',
+                dataType: 'html',
+                cache: false,
+                success: function (html) {
+                    $("#divConsultation").html(html);
+                   
+                },
+                error: function(){
+                    new PNotify({ title: 'Error', text: ViewBag.Error , type: 'error', styling: 'bootstrap3' });
+                }
+            });
+            hideLoader();
+        });
+
+        $('#divshowAll').on('ifUnchecked', 'input', function (event) {
+            showLoader();
+            var cUrl = "@Url.Action("showAllConsultations", "Consultation")?flag=0";
+            $.ajax({
+                url: cUrl,
+                type: 'POST',
+                dataType: 'html',
+                cache: false,
+                success: function (html) {
+                    $("#divConsultation").html(html);
+                   
+                },
+                error: function(){
+                    new PNotify({ title: 'Error', text: ViewBag.Error , type: 'error', styling: 'bootstrap3' });
+                }
+            });
+            hideLoader();
+        });
+    });
+    var star=0;
+    var cID = 0;
+    function writeReview(consultID)
+    {
+        var mymodal = $('#myModal1');
+        $("span").css("pointer-events", "auto");
+        $("#ss5").removeClass('fa fa-star');
+        $("#ss5").addClass('fa fa-star-o');
+
+        $("#s4").removeClass('fa fa-star');
+        $("#s4").addClass('fa fa-star-o');
+
+        $("#s3").removeClass('fa fa-star');
+        $("#s3").addClass('fa fa-star-o');
+
+        $("#s2").removeClass('fa fa-star');
+        $("#s2").addClass('fa fa-star-o');
+
+        $("#s1").removeClass('fa fa-star');
+        $("#s1").addClass('fa fa-star-o');
+
+        mymodal.find('#message').val("");
+        mymodal.find('#message').removeAttr("disabled");
+        mymodal.find('#apply').show();
+        mymodal.find('#ok').hide();
+
+        mymodal.modal('show');
+        $("#pvappid").val(consultID);
+    }
+    function showReview(consultID)
+    {
+        $.ajax({
+            url: '@Url.Action("GetConsultationReview", "Consultation")',
+            type: "POST",
+            data: {'consultID':consultID},
+            dataType: 'json',
+            success: function (result) {
+                //Reload container
+                if (result.Message != undefined) {
+                    new PNotify({ title: 'Error', text: result.Message, type: 'error', styling: 'bootstrap3' });
+                    hideLoader();
+                }
+                else {
+                    var mymodal = $('#myModal1');
+                    $("span").css("pointer-events", "none");
+                    $("#ss5").removeClass('fa fa-star');
+                    $("#ss5").addClass('fa fa-star-o');
+                    //$("#ss5").off("click");
+                    $("#s4").removeClass('fa fa-star');
+                    $("#s4").addClass('fa fa-star-o');
+                    //$("#s4").off("click");
+                    $("#s3").removeClass('fa fa-star');
+                    $("#s3").addClass('fa fa-star-o');
+                    //$("#s3").off("click");
+                    $("#s2").removeClass('fa fa-star');
+                    $("#s2").addClass('fa fa-star-o');
+                    //$("#s2").off("click");
+                    $("#s1").removeClass('fa fa-star');
+                    $("#s1").addClass('fa fa-star-o');
+                    //$("#s1").off("click");
+                    if( result.Object.star==1)
+                    {
+
+                        $("span#s1").removeClass('fa fa-star-o');
+                        $("span#s1").addClass('fa fa-star');
+
+                    }
+                    if( result.Object.star==2)
+                    {
+
+                        $("span#s1").removeClass('fa fa-star-o');
+                        $("span#s1").addClass('fa fa-star');
+                        $("span#s2").removeClass('fa fa-star-o');
+                        $("span#s2").addClass('fa fa-star');
+
+                    }
+                    if( result.Object.star==3)
+                    {
+
+                        $("span#s1").removeClass('fa fa-star-o');
+                        $("span#s1").addClass('fa fa-star');
+                        $("span#s2").removeClass('fa fa-star-o');
+                        $("span#s2").addClass('fa fa-star');
+                        $("span#s3").removeClass('fa fa-star-o');
+                        $("span#s3").addClass('fa fa-star');
+
+                    }
+                    if( result.Object.star==4)
+                    {
+
+                        $("span#s1").removeClass('fa fa-star-o');
+                        $("span#s1").addClass('fa fa-star');
+                        $("span#s2").removeClass('fa fa-star-o');
+                        $("span#s2").addClass('fa fa-star');
+                        $("span#s3").removeClass('fa fa-star-o');
+                        $("span#s3").addClass('fa fa-star');
+                        $("span#s4").removeClass('fa fa-star-o');
+                        $("span#s4").addClass('fa fa-star');
+
+                    }
+                    if( result.Object.star==5)
+                    {
+
+                        $("span#s1").removeClass('fa fa-star-o');
+                        $("span#s1").addClass('fa fa-star');
+                        $("span#s2").removeClass('fa fa-star-o');
+                        $("span#s2").addClass('fa fa-star');
+                        $("span#s3").removeClass('fa fa-star-o');
+                        $("span#s3").addClass('fa fa-star');
+                        $("span#s4").removeClass('fa fa-star-o');
+                        $("span#s4").addClass('fa fa-star');
+                        $("span#ss5").removeClass('fa fa-star-o');
+                        $("span#ss5").addClass('fa fa-star');
+
+                    }
+                    mymodal.find('#message').val(result.Object.reviewText);
+                    mymodal.find('#message').attr("disabled", "disabled");
+                    mymodal.find('#apply').hide();
+                    mymodal.find('#ok').show();
+                    mymodal.modal('show');
+                    hideLoader();
+
+                }
+
+            },
+            error: function (err) {
+                //alert(err.statusText);
+                new PNotify({ title: 'Error', text: err.statusText, type: 'error', styling: 'bootstrap3' });
+                //Stop displaying loader
+                hideLoader();
+            }
+        });
+    }
+    function showProfile(docid) {
+
+        var did = docid;//$("#pvdocid").val();
+
+        $("#DoctorProfileContent").load('@Url.Action("DoctorProfile", "Appointment")?doctorID=' + did, function () {
+
+        });
+
+    }
+    function downloadFile(fileId) {
+
+        if (confirm("Are you sure you want to downlod file?")) {
+            var cUrl = "@Url.Action("Download", "PatientFiles")?fileId=" + fileId;
+
+            $('#iframeDownload').attr('src', cUrl);
+            $('#iframeDownload').load();
+        }
+    }
+    function showConsult(consultID)
+    {
+        cID = consultID;
+            //debugger;
+             reloadModelContainer(function () {
+                var $modal = $('#myModal4');
+
+
+            });
+
+        }
+    function reloadModelContainer(callback) {
+        $("#myModalContent").load('@Url.Action("ViewDetail", "Consultation")?consultID=' + cID, function () {
+            callback();
+        });
+
+    }
+
+    function reloadConsultation(callback) {
+
+        $("#divConsultation").load('@Url.Action("PartialViewConsultation", "Consultation")', function () {
+            callback();
+        });
+     }
+    //set stars
+    jQuery('span').click(function(){
+        if ( jQuery(this).hasClass('fa-star-o'))
+        {
+
+            //alert($(this).attr('class'));
+            if( jQuery(this).attr("id")=="s1")
+            {
+
+                $("span#s1").removeClass('fa-star-o');
+                $("span#s1").addClass('fa-star');
+                star=1;
+            }
+            if( jQuery(this).attr("id")=="s2")
+            {
+
+                $("span#s1").removeClass('fa-star-o');
+                $("span#s1").addClass('fa-star');
+                $("span#s2").removeClass('fa fa-star-o');
+                $("span#s2").addClass('fa-star');
+                star=2;
+            }
+            if( jQuery(this).attr("id")=="s3")
+            {
+
+                $("span#s1").removeClass('fa-star-o');
+                $("span#s1").addClass('fa-star');
+                $("span#s2").removeClass('fa-star-o');
+                $("span#s2").addClass('fa-star');
+                $("span#s3").removeClass('fa-star-o');
+                $("span#s3").addClass('fa-star');
+                star=3;
+            }
+            if( jQuery(this).attr("id")=="s4")
+            {
+
+                $("span#s1").removeClass('fa-star-o');
+                $("span#s1").addClass('fa-star');
+                $("span#s2").removeClass('fa-star-o');
+                $("span#s2").addClass('fa-star');
+                $("span#s3").removeClass('fa-star-o');
+                $("span#s3").addClass('fa-star');
+                $("span#s4").removeClass('fa-star-o');
+                $("span#s4").addClass('fa-star');
+                star=4;
+            }
+            if( jQuery(this).attr("id")=="ss5")
+            {
+
+                $("span#s1").removeClass('fa-star-o');
+                $("span#s1").addClass('fa-star');
+                $("span#s2").removeClass('fa-star-o');
+                $("span#s2").addClass('fa-star');
+                $("span#s3").removeClass('fa-star-o');
+                $("span#s3").addClass('fa-star');
+                $("span#s4").removeClass('fa-star-o');
+                $("span#s4").addClass('fa-star');
+                $("span#ss5").removeClass('fa-star-o');
+                $("span#ss5").addClass('fa-star');
+                star=5;
+            }
+
+        }
+        else
+        {
+            //alert($(this).attr('class'));
+            if( jQuery(this).attr("id")=="s1")
+            {
+
+                $("#ss5").removeClass('fa fa-star');
+                $("#ss5").addClass('fa fa-star-o');
+                $("#s4").removeClass('fa fa-star');
+                $("#s4").addClass('fa fa-star-o');
+                $("#s3").removeClass('fa fa-star');
+                $("#s3").addClass('fa fa-star-o');
+                $("#s2").removeClass('fa fa-star');
+                $("#s2").addClass('fa fa-star-o');
+                $("#s1").removeClass('fa fa-star');
+                $("#s1").addClass('fa fa-star-o');
+                star=0;
+            }
+            if( jQuery(this).attr("id")=="s2")
+            {
+
+                $("#ss5").removeClass('fa fa-star');
+                $("#ss5").addClass('fa fa-star-o');
+                $("#s4").removeClass('fa fa-star');
+                $("#s4").addClass('fa fa-star-o');
+                $("#s3").removeClass('fa fa-star');
+                $("#s3").addClass('fa fa-star-o');
+                $("#s2").removeClass('fa fa-star');
+                $("#s2").addClass('fa fa-star-o');
+                star=1;
+            }
+            if( jQuery(this).attr("id")=="s3")
+            {
+
+                $("#ss5").removeClass('fa fa-star');
+                $("#ss5").addClass('fa fa-star-o');
+                $("#s4").removeClass('fa fa-star');
+                $("#s4").addClass('fa fa-star-o');
+                $("#s3").removeClass('fa fa-star');
+                $("#s3").addClass('fa fa-star-o');
+
+                star=2;
+            }
+            if( jQuery(this).attr("id")=="s4")
+            {
+                //alert('4');
+                $("#ss5").removeClass('fa fa-star');
+                $("#ss5").addClass('fa fa-star-o');
+                $("#s4").removeClass('fa fa-star');
+                $("#s4").addClass('fa fa-star-o');
+                star=3;
+            }
+            if( jQuery(this).attr("id")=="ss5")
+            {
+
+                $("#ss5").removeClass('fa fa-star');
+                $("#ss5").addClass('fa fa-star-o');
+                star=4;
+            }
+        }
+
+
+    });
+
+    //Write Review
+    function WriteReview(message)
+    {
+        showLoader();
+        if(star==0)
+        {
+            showAlert("Error","Please give stars.");
+            hideLoader();
+            return;
+        }
+        if(message=="")
+        {
+            showAlert("Error","Please write review.");
+            hideLoader();
+            return;
+        }
+        var _objReview = {};
+        _objReview["consultID"] =  $("#pvappid").val();
+        _objReview["patientID"] = @SessionHandler.UserInfo.Id;
+        _objReview["star"] =star;
+        _objReview["reviewText"] =message;
+        $.ajax({
+            url: '@Url.Action("WriteReview", "Consultation")',
+            type: "POST",
+            data: _objReview,
+            dataType: 'json',
+            success: function (result) {
+                //Reload container
+                if (result.Message != undefined) {
+                    new PNotify({ title: 'Error', text: result.Message.ReasonPhrase, type: 'error', styling: 'bootstrap3' });
+                    $('#myModal1').modal('hide');
+                    $('#myModal4').modal('hide');
+                    hideLoader();
+                }
+                else {
+
+                    if(result.ApiResultModel.message=="")
+                    {
+                        new PNotify({ title: 'Success', text: "Consultation is reviewed successfully.", type: 'info',addclass: 'dark', styling: 'bootstrap3' });
+                        $('#myModal1').modal('hide');
+                        $('#myModal4').modal('hide');
+                        reloadConsultation(function ()
+                        {
+                            //Stop displaying loader
+                            hideLoader();
+
+                        });
+                    }
+                    else
+                    {
+                        new PNotify({ title: 'Error', text: result.ApiResultModel.message, type: 'error', styling: 'bootstrap3' });
+                        $('#myModal1').modal('hide');
+                        $('#myModal4').modal('hide');
+                        hideLoader();
+                    }
+
+
+                }
+
+            },
+            error: function (err) {
+                //alert(err.statusText);
+                new PNotify({ title: 'Error', text: err.statusText, type: 'error', styling: 'bootstrap3' });
+                //Stop displaying loader
+                hideLoader();
+            }
+        });
+    }
+</script>

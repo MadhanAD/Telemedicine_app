@@ -1,0 +1,427 @@
+﻿@using WebApp.Helper
+@model IEnumerable<DataAccess.CustomModels.RescheduleAppModel>
+@{
+    Layout = null;
+}
+
+
+@if (Model == null || Model.Count() == 0)
+{
+    <div class="well">
+        There is no upcoming appointment.
+    </div>
+   
+}
+else
+{
+
+    <table id="datatable" class="table table-striped table-bordered" cellspacing="0" style="width:100%">
+        <thead>
+            <tr class="headings">
+                <th class="column-title" style="text-align:center">Patient Name </th>
+                <th class="column-title" style="text-align:center">Appointment Time</th>
+                <th class="column-title" style="text-align:center">Reason of Visit </th>
+                <th class="column-title" style="text-align:center">Chief Complaint</th>
+                <th class="column-title" style="text-align:center">Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @if (Model != null)
+            {
+                var j = 1;
+                foreach (var item in Model)
+                {
+
+                    <tr class="even pointer">
+                        <td style="text-align:center;width:20%">
+                        <a href='' onclick='showProfile(@item.patientID)' id="viewprofile" data-toggle="modal" data-target='#myModal8'>
+
+    @item.PatientName
+</a></td>
+                        <td style="text-align:center;width:15%">
+                            <span class="replaceme" id="@("replaceme"+j)"></span>
+                            <script type="text/javascript">
+                        var fdate = showLocal('@item.utcappDate');
+                            $("#replaceme"+@j).html(fdate);
+                            </script>
+                        </td>
+                        <td style="text-align:center;width:20%">@item.rov</td>
+                        <td style="text-align:center;width:20%">@item.chiefComplaints</td>
+                        <!-- <td><button class="btn btn-primary btn-sm m-b-0 " type="submit">View</button></td> -->
+                        <td style="text-align:center;width:10%">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Action
+                                    <span class="caret"></span>
+                                    
+                                </button>
+                                <a id="@("div"+j)" class="clsMakeCall" title="Call" onclick="checkCallTime('@item.utcappDate','@item.doctorID','@item.patientID','@item.appID');" data-doctorid="@item.patientID" 
+                                   style="display:block;" href="javascript:">
+                                    @*<i class="fa fa-phone" aria-hidden="true" style="margin-right: -23px;margin-top: 9px;width: 20px;"></i>*@
+                                    <img src="~/Content/images/icon_call-history.png" alt="call" style="margin-right: -23px;margin-top: 9px;width: 20px;">
+                                  
+                                </a>
+                                
+                               
+                                <ul class="dropdown-menu dropdown-menu-left">
+                                    <li><a href="#" data-toggle="modal" class="thumbnail-upcoming" data-id="@item.appID" id="@item.doctorID" data-target="#myModal5" onclick=$("#pvappid").val(@item.appID);>View Detail</a></li>
+                                  
+                                    <li><a href="#" class="reschedule" data-id="@item.doctorID" id="@item.appID">Reschedule Req</a></li>
+
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    j = j + 1;
+                }
+
+            }
+        </tbody>
+    </table>
+}
+
+<!-- Datatables -->
+<script>
+    var flag = 0;
+    var _objConsult = {};
+
+    function createConsultFromDoctor(doctorID,patientID,appID)
+    {debugger;
+
+        var oPatInfo = null;
+        for (var i = 0; i < availablePatients.patient.length; i++) {
+            if (availablePatients.patient[i].patId == patientID) {
+                oPatInfo = availablePatients.patient[i];
+                break;
+            }
+        }
+
+        if (oPatInfo == null) {
+            showAlert('Alert','Patient is not online now');
+            //alert('Patient is not online now');
+            return;
+        }
+
+        _objConsult["doctorId"] = doctorID;
+        _objConsult["patientId"] = patientID;
+        _objConsult["appID"] = appID;
+        _objConsult["sessionID"] = "0";
+        _objConsult["token"] = "0";
+        _objConsult["userID"] = '0';
+
+        $.ajax({
+            type: 'POST',
+            url: '/Doctor/CreateConsult',
+            data: JSON.stringify(_objConsult),
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (response) {
+
+                if (response.Success == true) {
+                    if (response.ApiResultModel.message != "") {
+                        new PNotify({
+                            title: 'Error in create consult',
+                            text: response.ApiResultModel.message,
+                            type: 'error',
+                            styling: 'bootstrap3'
+                        });
+                        //Log consult creation error
+                       
+                        var cCallLogUrl = '@Url.Action("ConsultCreationFailedbyDoctor", "UserChat")?patientId=' + patientID;
+                     //   $.post(cCallLogUrl);
+                    }
+                    else if (response.ApiResultModel.message == "") {
+                        new PNotify({
+                            title: 'Success',
+                            text: "Please wait.Initiating video call with patient.",
+                            type: 'info',addclass: 'dark',
+                            styling: 'bootstrap3'
+                        });
+                        var _consultID=response.ApiResultModel.ID;
+                        //Log consultion creation sucess
+                       // var cCallLogUrl = '@Url.Action("ConsultCreatedbyDoctor", "UserChat")?patientId=' + patientID;
+                       // $.post(cCallLogUrl);
+                        debugger;
+                        makeCallToPatient(patientID, appID,_consultID,oPatInfo);
+
+                    }
+                }
+
+            },
+            error: errorRes
+
+        });
+    }
+    function errorRes(data) {
+        new PNotify({
+            title: 'Error',
+            text: data.Message,
+            type: 'error',
+            styling: 'bootstrap3'
+        });
+    }
+    function checkCallTime(utcdate,doctorID,patientID,appID)//"2012-11-29 22:30:00"
+    {
+        var now  = new Date();
+        //var then = localdate;//"2017/01/16 10:44:00";
+
+        var myDate = new Date(new Date(utcdate));
+        var timeString = myDate.getFullYear() + '-' + (myDate.getMonth() + 1) + '-'
+        + myDate.getDate() + ' ' + myDate.getHours() + ':' + myDate.getMinutes();
+        //console.log(timeString);
+        var dbDate = new Date(Date.UTC(myDate.getFullYear(), myDate.getMonth(), myDate.getDate(), myDate.getHours(), myDate.getMinutes(), 0));
+        var options = {
+            weekday: "long", year: "numeric", month: "short",
+            day: "numeric", hour: "2-digit", minute: "2-digit"
+        };
+
+        var then = (dbDate.toLocaleTimeString("en-us", options));
+        then = formatDate(new Date(then), "yyyy/MM/dd HH:mm:ss");
+
+        now = formatDate(new Date(now), "yyyy/MM/dd HH:mm:ss");
+
+        console.log('then '+then);
+        console.log('now '+now);
+
+        console.log(moment(now,"YYYY/MM/DD HH:mm:ss"));
+        console.log(moment(then,"YYYY/MM/DD HH:mm:ss"));
+        var duration = moment.duration(moment(then,"YYYY/MM/DD HH:mm:ss").diff(moment(now,"YYYY/MM/DD HH:mm:ss")));
+
+        //  if((288000>duration._milliseconds)&&(duration._milliseconds>-842000)) //Check for 5 min before and 15 min after
+        if(true)
+        {
+            //alert("Call...");
+            createConsultFromDoctor(doctorID,patientID,appID);
+        }
+        else
+        {
+            if(duration._milliseconds>-842000)
+            {
+                //alert('Apointment time has not been arrived yet.');
+                showAlert('Alert','Apointment time has not been arrived yet.');
+
+            }
+            if(duration._milliseconds<288000)
+            {
+                //alert('Apointment time has been passed.');
+                showAlert('Alert','Apointment time has been passed.');
+            }
+
+        }
+        console.log(duration._milliseconds);
+    }
+
+      $(document).ready(function() {
+
+
+        //$('#datatable').dataTable({
+        //    'order': [[1, 'desc']],
+        //    columnDefs: [
+        //      { type: 'date-dd-mmm-yyyy', targets: 1 }
+        //    ]
+        //});
+          $('#datatable').DataTable(
+            {
+                "ordering": false
+            });
+        //  {
+        //    "bAutoWidth": false, // Disable the auto width calculation 
+        //    "aoColumns": [
+        //     { "sWidth": "15%" },  
+        //     { "sWidth": "18%" }, 
+        //     { "sWidth": "15%" }, 
+        //    { "sWidth": "30%" }, 
+        //    { "sWidth": "15%" }
+        //    ]
+
+
+        //});
+        $('#datatable-responsive').DataTable();
+
+       
+        $('#datatable-fixed-header').DataTable({
+          fixedHeader: true
+        });
+
+
+        //TableManageButtons.init();
+      });
+</script>
+<!-- /Datatables -->
+
+<script>
+    @*function setTab(cTab) {
+        currentTab = cTab;
+        $("#divUpcoming").load('@Url.Action("PartialDoctorUpcoming", "DoctorAppointment")', function () {
+            //callback();
+        });
+    }*@
+    function reschedulefromViewDetail(appType, editappid, elem) {
+        var objCRR = {};
+        showLoader();
+        //objCRR["doctorID"] = doctorid;
+        objCRR["appID"] = editappid;
+        objCRR["appType"] = appType;
+        objCRR["userID"] = '@SessionHandler.UserInfo.userId';
+        $.ajax({
+            url: '@Url.Action("Reschedule", "DoctorAppointment")',
+            type: "POST",
+            data: objCRR,
+            dataType: 'json',
+            success: function (result) {
+                //Reload container
+                if (result.Message != undefined) {
+                    //alert(result.Message.ReasonPhrase);
+                    new PNotify({ title: 'Error', text: result.Message.ReasonPhrase, type: 'error', styling: 'bootstrap3' });
+                    hideLoader();
+                }
+                else {
+                    //alert('Appointment is rescheduled successfully.');
+                    new PNotify({ title: 'Success', text: "Reschedule Request has been sent to patient.", type: 'info',addclass: 'dark', styling: 'bootstrap3' });
+                    $('#myModal5').modal('hide');
+                    reloadContainer(function () {
+
+                        // new PNotify({ title: 'Success', text: "Reschedule request is cancelled successfully.", type: 'info',addclass: 'dark', styling: 'bootstrap3' });
+                        //Stop displaying loader
+                        hideLoader();
+
+                    });
+                }
+
+            },
+            error: function (err) {
+                //alert(err.statusText);
+                new PNotify({ title: 'Error', text: err.statusText, type: 'error', styling: 'bootstrap3' });
+                //Stop displaying loader
+                //stopLoader();
+            }
+        });
+    }
+    $(function () {
+        $(".reschedule").click(function () {
+
+            showLoader();
+            var objCRR = {};
+            
+            var $buttonClicked = $(this);
+            //var AppDetailPostBackURL = '/DoctorAppointment/CancelReschedule';
+            var appID = $buttonClicked.attr('id');
+            var doctorID = $buttonClicked.attr('data-id');
+            objCRR["userID"] = '@SessionHandler.UserInfo.userId';
+            objCRR["appID"] = appID;
+            objCRR["appType"] = currentTab;
+            $.ajax({
+                url: '@Url.Action("Reschedule", "DoctorAppointment")',
+                type: "POST",
+                data: objCRR,
+                dataType: 'json',
+                success: function (result) {
+                    //Reload container
+                    if (result.Message != undefined) {
+                        //alert(result.Message.ReasonPhrase);
+                        new PNotify({ title: 'Error', text: result.Message.ReasonPhrase, type: 'error', styling: 'bootstrap3' });
+                        hideLoader();
+                    }
+                    else {
+                        //alert('Appointment is rescheduled successfully.');
+                        new PNotify({ title: 'Success', text: "Reschedule Request has been sent to patient.", type: 'info',addclass: 'dark', styling: 'bootstrap3' });
+                        reloadContainer(function () {
+
+                            // new PNotify({ title: 'Success', text: "Reschedule request is cancelled successfully.", type: 'info',addclass: 'dark', styling: 'bootstrap3' });
+                            //Stop displaying loader
+                            //stopLoader();
+                        });
+                        hideLoader();
+                    }
+
+                },
+                error: function (err) {
+                    //alert(err.statusText);
+                    new PNotify({ title: 'Error', text: err.statusText, type: 'error', styling: 'bootstrap3' });
+                    //Stop displaying loader
+                    //stopLoader();
+                }
+            });
+
+        });
+
+        //$("#closbtn").click(function () {
+        //    $('#myModal4').modal('hide');
+        //});
+    });
+    </script>
+
+<script>
+    $(function () {
+        $('#datatable').on('click', '.thumbnail-upcoming', function(){
+        //$(".thumbnail-upcoming").click(function () {
+            //debugger;
+            var $buttonClicked = $(this);
+            var AppDetailPostBackURL = '/DoctorAppointment/ViewAppDetails';
+            var id = $buttonClicked.attr('data-id');
+            var docid = $buttonClicked.attr('id');
+            reloadModelContainer(function () {
+                var $modal = $('#myModal5');
+                $editappid = $modal.find('#editappid');
+                $doctorid = $modal.find('#doctorid');
+                $reditappointment = $modal.find('#reditappointment');
+                $ueditappointment = $modal.find('#ueditappointment');
+                $reditappointment.show();
+                $ueditappointment.hide();
+                $editappid.val(id);
+                $doctorid.val(docid);
+                $reditappointment = $modal.find('#reditappointment');
+                $ueditappointment = $modal.find('#ueditappointment');
+                $appType = $modal.find('#appType');
+                $appType.val('U');
+                $ueditappointment.show();
+                $reditappointment.hide();
+                $editappointment = $modal.find('#editappointment');
+                $editappointment.text('Reschedule Request');
+                //Stop displaying loader
+                //stopLoader();
+
+            });
+            //$.ajax({
+            //    type: "GET",
+            //    url: AppDetailPostBackURL,
+            //    contentType: "application/json; charset=utf-8",
+            //    data: { "appID": id },
+            //    datatype: "json",
+            //    success: function (data) {
+            //        $('#myModalContent').html(data);
+            //        $('#myModal5').modal('show');
+            //        var $modal = $('#myModal5');
+            //        $editappid = $modal.find('#editappid');
+            //        $doctorid = $modal.find('#doctorid');
+            //        $editappid.val(id);
+            //        $doctorid.val(docid);
+            //        $reditappointment = $modal.find('#reditappointment');
+            //        $ueditappointment = $modal.find('#ueditappointment');
+            //        $ueditappointment.show();
+            //        $reditappointment.hide();
+            //        //$editappointment = $modal.find('#editappointment');
+            //        //$editappointment.text('Reschedule Request');
+            //    },
+            //    error: function () {
+            //        alert("Dynamic content load failed.");
+            //    }
+            //});
+
+        });
+
+        //$("#closbtn").click(function () {
+        //    $('#myModal4').modal('hide');
+        //});
+    });
+    function reloadModelContainer(callback) {
+        var appid = $("#pvappid").val();
+
+        $("#myModalContent").load('@Url.Action("ViewAppDetails", "DoctorAppointment")?appID=' + appid, function () {
+            callback();
+        });
+
+    }
+</script>
+
